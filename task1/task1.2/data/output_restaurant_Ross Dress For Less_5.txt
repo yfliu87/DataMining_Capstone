@@ -1,0 +1,20 @@
+Topic: 0
+store : 0.609102018969
+consistently : 0.278412413407
+great : 0.112485567624
+Topic: 1
+consistently : 0.736442167274
+great : 0.131990653427
+store : 0.131567179298
+Topic: 2
+consistently : 0.335311042153
+great : 0.333678012194
+store : 0.331010945652
+Topic: 3
+great : 0.738167696741
+store : 0.131226539632
+consistently : 0.130605763628
+Topic: 4
+great : 0.448791335087
+store : 0.447296784845
+consistently : 0.103911880069

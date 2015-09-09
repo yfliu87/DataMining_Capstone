@@ -1,0 +1,10 @@
+Topic: 0
+shop : 1.0
+Topic: 1
+shop : 1.0
+Topic: 2
+shop : 1.0
+Topic: 3
+shop : 1.0
+Topic: 4
+shop : 1.0

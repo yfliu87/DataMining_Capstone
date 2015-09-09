@@ -1,0 +1,20 @@
+Topic: 0
+phone : 0.335528346921
+month : 0.332771888672
+appointment : 0.331699764408
+Topic: 1
+appointment : 0.449029916228
+phone : 0.447736301266
+month : 0.103233782506
+Topic: 2
+appointment : 0.335629045667
+month : 0.332740213782
+phone : 0.33163074055
+Topic: 3
+month : 0.448513246365
+phone : 0.448464606303
+appointment : 0.103022147332
+Topic: 4
+month : 0.448421098604
+appointment : 0.448018715119
+phone : 0.103560186277

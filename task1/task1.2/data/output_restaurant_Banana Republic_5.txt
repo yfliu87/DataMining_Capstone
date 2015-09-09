@@ -1,0 +1,15 @@
+Topic: 0
+customer : 0.500390280983
+service : 0.499609719017
+Topic: 1
+customer : 0.500190845884
+service : 0.499809154116
+Topic: 2
+service : 0.50017382468
+customer : 0.49982617532
+Topic: 3
+customer : 0.500843338931
+service : 0.499156661069
+Topic: 4
+service : 0.503468432697
+customer : 0.496531567303

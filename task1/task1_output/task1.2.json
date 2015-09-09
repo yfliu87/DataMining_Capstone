@@ -1,0 +1,168 @@
+{
+ "name": "restaurant",
+ "children": [
+  {
+   "name": "24 Seven Cafe",
+   "children": [
+    {
+     "name": "rating_5",
+     "children": [
+      {"name": "nice", "size": 0.3},
+      {"name": "cafe", "size": 0.13},
+      {"name": "great", "size": 0.19},
+      {"name": "food", "size": 0.07},
+      {"name": "prime", "size": 0.15}
+     ]
+    },
+    {
+     "name": "rating_4",
+     "children": [
+      {"name": "cafe", "size": 0.3},
+      {"name": "good", "size": 0.15},
+      {"name": "service", "size": 0.17},
+      {"name": "night", "size": 0.06},
+      {"name": "24", "size": 0.15}
+     ]
+    },
+    {
+     "name": "rating_3",
+     "children": [
+      {"name": "service", "size": 0.28},
+      {"name": "cafe", "size": 0.18},
+      {"name": "just", "size": 0.02},
+      {"name": "food", "size": 0.19},
+      {"name": "place", "size": 0.2}
+     ]
+    },
+    {
+      "name":"rating_2",
+      "children": [
+      {"name":"service", "size": 0.2},
+      {"name":"night", "size": 0.11},
+      {"name":"time", "size": 0.05},
+      {"name":"food", "size": 0.15},
+      {"name":"place", "size": 0.07}
+      ]
+    },
+    {
+      "name":"rating_1",
+      "children":[
+      {"name":"food", "size": 0.08},
+      {"name":"order", "size": 0.16},
+      {"name":"waited", "size": 0.05},
+      {"name":"place", "size": 0.14},
+      {"name":"minutes", "size": 0.1}
+      ]
+    }
+   ]
+  },
+  {
+   "name": "Ah-So Sushi & Steak",
+   "children": [
+    {
+     "name": "rating_5",
+     "children": [
+      {"name": "service", "size": 0.1},
+      {"name": "sushi", "size": 0.11},
+      {"name": "great", "size": 0.14},
+      {"name": "like", "size": 0.15},
+      {"name": "love", "size": 0.63}
+     ]
+    },
+    {
+     "name": "rating_4",
+     "children": [
+      {"name": "sushi", "size": 0.18},
+      {"name": "good", "size": 0.25},
+      {"name": "happy", "size": 0.15},
+      {"name": "wait", "size": 0.2},
+      {"name": "food", "size": 0.13}
+     ]
+    },
+    {
+     "name": "rating_3",
+     "children": [
+      {"name": "recommend", "size": 0.07},
+      {"name": "parking", "size": 0.36},
+      {"name": "nice", "size": 0.1},
+      {"name": "sushi", "size": 0.19},
+      {"name": "food", "size": 0.11}
+     ]
+    },
+    {
+      "name":"rating_2",
+      "children": [
+      {"name":"location", "size": 0.2},
+      {"name":"time", "size": 0.07},
+      {"name":"half", "size": 0.06},
+      {"name":"dinner", "size": 0.3},
+      {"name":"did", "size": 0.06}
+      ]
+    },
+    {
+      "name":"rating_1",
+      "children":[
+      {"name":"time", "size": 0.15},
+      {"name":"food", "size": 0.29},
+      {"name":"service", "size": 0.17},
+      {"name":"worst", "size": 0.16},
+      {"name":"lot", "size": 0.12}
+      ]
+    }
+   ]
+  },
+    {
+   "name": "Jersey Mike's Subs",
+   "children": [
+    {
+     "name": "rating_5",
+     "children": [
+      {"name": "definitely", "size": 0.21},
+      {"name": "excellent", "size": 0.05},
+      {"name": "delicious", "size": 0.05},
+      {"name": "sandwich", "size": 0.19},
+      {"name": "mike", "size": 0.19}
+     ]
+    },
+    {
+     "name": "rating_4",
+     "children": [
+      {"name": "sandwich", "size": 0.16},
+      {"name": "good", "size": 0.29},
+      {"name": "store", "size": 0.14},
+      {"name": "new", "size": 0.11},
+      {"name": "service", "size": 0.23}
+     ]
+    },
+    {
+     "name": "rating_3",
+     "children": [
+      {"name": "got", "size": 0.24},
+      {"name": "jersey", "size": 0.10},
+      {"name": "veggie", "size": 0.07},
+      {"name": "like", "size": 0.11},
+      {"name": "just", "size": 0.25}
+     ]
+    },
+    {
+      "name":"rating_2",
+      "children": [
+      {"name":"food", "size": 0.33},
+      {"name":"break", "size": 0.33},
+      {"name":"hard", "size": 0.33}
+      ]
+    },
+    {
+      "name":"rating_1",
+      "children":[
+      {"name":"ordered", "size": 0.16},
+      {"name":"bit", "size": 0.16},
+      {"name":"wrong", "size": 0.08},
+      {"name":"ok", "size": 0.03},
+      {"name":"really", "size": 0.08}
+      ]
+    }
+   ]
+  }
+ ]
+}

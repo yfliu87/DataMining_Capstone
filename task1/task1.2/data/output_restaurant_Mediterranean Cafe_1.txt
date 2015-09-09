@@ -1,0 +1,15 @@
+Topic: 0
+tahini : 0.501935931829
+microwave : 0.498064068171
+Topic: 1
+microwave : 0.847673320976
+tahini : 0.152326679024
+Topic: 2
+tahini : 0.502431261825
+microwave : 0.497568738175
+Topic: 3
+tahini : 0.84729363295
+microwave : 0.15270636705
+Topic: 4
+microwave : 0.500015196933
+tahini : 0.499984803067

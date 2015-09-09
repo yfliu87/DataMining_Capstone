@@ -1,0 +1,10 @@
+Topic: 0
+penney : 1.0
+Topic: 1
+penney : 1.0
+Topic: 2
+penney : 1.0
+Topic: 3
+penney : 1.0
+Topic: 4
+penney : 1.0

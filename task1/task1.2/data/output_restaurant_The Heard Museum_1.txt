@@ -1,0 +1,10 @@
+Topic: 0
+like : 1.0
+Topic: 1
+like : 1.0
+Topic: 2
+like : 1.0
+Topic: 3
+like : 1.0
+Topic: 4
+like : 1.0

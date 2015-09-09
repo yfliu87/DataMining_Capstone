@@ -1,0 +1,20 @@
+Topic: 0
+dillard : 0.559731997999
+fashion : 0.332015735072
+really : 0.10825226693
+Topic: 1
+dillard : 0.335372298421
+really : 0.335019764577
+fashion : 0.329607937001
+Topic: 2
+really : 0.449246661636
+dillard : 0.448726460125
+fashion : 0.102026878239
+Topic: 3
+dillard : 0.337770451163
+really : 0.333847976237
+fashion : 0.3283815726
+Topic: 4
+really : 0.559454127353
+fashion : 0.332996915476
+dillard : 0.107548957171

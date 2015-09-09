@@ -1,0 +1,15 @@
+Topic: 0
+customer : 0.501103635521
+pretty : 0.498896364479
+Topic: 1
+pretty : 0.674864836507
+customer : 0.325135163493
+Topic: 2
+customer : 0.500281417331
+pretty : 0.499718582669
+Topic: 3
+customer : 0.848078499541
+pretty : 0.151921500459
+Topic: 4
+customer : 0.501661230129
+pretty : 0.498338769871

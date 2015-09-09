@@ -1,0 +1,10 @@
+Topic: 0
+night : 1.0
+Topic: 1
+night : 1.0
+Topic: 2
+night : 1.0
+Topic: 3
+night : 1.0
+Topic: 4
+night : 1.0

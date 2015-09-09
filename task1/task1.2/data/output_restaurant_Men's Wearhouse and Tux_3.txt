@@ -1,0 +1,10 @@
+Topic: 0
+suits : 1.0
+Topic: 1
+suits : 1.0
+Topic: 2
+suits : 1.0
+Topic: 3
+suits : 1.0
+Topic: 4
+suits : 1.0

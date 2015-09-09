@@ -1,0 +1,20 @@
+Topic: 0
+means : 0.529893526691
+customer : 0.235195982778
+service : 0.23491049053
+Topic: 1
+customer : 0.448177150903
+service : 0.447372025738
+means : 0.104450823359
+Topic: 2
+means : 0.337972975449
+customer : 0.3312307891
+service : 0.330796235451
+Topic: 3
+means : 0.33983672587
+service : 0.330791534445
+customer : 0.329371739685
+Topic: 4
+means : 0.335071259902
+service : 0.334017986197
+customer : 0.330910753901

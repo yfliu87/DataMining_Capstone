@@ -1,0 +1,10 @@
+Topic: 0
+place : 1.0
+Topic: 1
+place : 1.0
+Topic: 2
+place : 1.0
+Topic: 3
+place : 1.0
+Topic: 4
+place : 1.0

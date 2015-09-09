@@ -1,0 +1,15 @@
+Topic: 0
+mail : 0.847239544649
+packages : 0.152760455351
+Topic: 1
+packages : 0.846437179233
+mail : 0.153562820767
+Topic: 2
+packages : 0.500237312251
+mail : 0.499762687749
+Topic: 3
+mail : 0.554190487357
+packages : 0.445809512643
+Topic: 4
+mail : 0.502857769577
+packages : 0.497142230423

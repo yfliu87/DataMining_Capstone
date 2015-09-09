@@ -1,0 +1,20 @@
+Topic: 0
+cafeteria : 0.340667522904
+mexican : 0.330712124651
+german : 0.328620352444
+Topic: 1
+cafeteria : 0.619471298099
+mexican : 0.190746578449
+german : 0.189782123452
+Topic: 2
+cafeteria : 0.337098096085
+mexican : 0.332271551771
+german : 0.330630352144
+Topic: 3
+german : 0.448703238599
+mexican : 0.445937698829
+cafeteria : 0.105359062571
+Topic: 4
+cafeteria : 0.343029514484
+mexican : 0.328593618834
+german : 0.328376866682

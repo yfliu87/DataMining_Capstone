@@ -1,0 +1,10 @@
+Topic: 0
+restaurant : 1.0
+Topic: 1
+restaurant : 1.0
+Topic: 2
+restaurant : 1.0
+Topic: 3
+restaurant : 1.0
+Topic: 4
+restaurant : 1.0

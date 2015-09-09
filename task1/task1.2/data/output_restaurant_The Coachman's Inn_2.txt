@@ -1,0 +1,10 @@
+Topic: 0
+good : 1.0
+Topic: 1
+good : 1.0
+Topic: 2
+good : 1.0
+Topic: 3
+good : 1.0
+Topic: 4
+good : 1.0

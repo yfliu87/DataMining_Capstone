@@ -1,0 +1,15 @@
+Topic: 0
+tried : 0.849204663254
+husband : 0.150795336746
+Topic: 1
+husband : 0.500806165088
+tried : 0.499193834912
+Topic: 2
+husband : 0.504592553092
+tried : 0.495407446908
+Topic: 3
+tried : 0.501078364839
+husband : 0.498921635161
+Topic: 4
+husband : 0.848616642713
+tried : 0.151383357287

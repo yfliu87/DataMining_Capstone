@@ -1,0 +1,15 @@
+Topic: 0
+food : 0.62723655394
+burrito : 0.37276344606
+Topic: 1
+food : 0.50514423924
+burrito : 0.49485576076
+Topic: 2
+food : 0.500636497121
+burrito : 0.499363502879
+Topic: 3
+food : 0.50102649629
+burrito : 0.49897350371
+Topic: 4
+food : 0.503105369017
+burrito : 0.496894630983

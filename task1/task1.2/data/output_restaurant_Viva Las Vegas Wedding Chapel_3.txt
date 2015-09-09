@@ -1,0 +1,15 @@
+Topic: 0
+elvis : 0.501297306527
+special : 0.498702693473
+Topic: 1
+special : 0.847202677993
+elvis : 0.152797322007
+Topic: 2
+elvis : 0.846212808518
+special : 0.153787191482
+Topic: 3
+elvis : 0.501655402254
+special : 0.498344597746
+Topic: 4
+elvis : 0.501057235861
+special : 0.498942764139

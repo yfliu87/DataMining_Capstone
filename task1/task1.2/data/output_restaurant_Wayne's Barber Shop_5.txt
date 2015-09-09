@@ -1,0 +1,20 @@
+Topic: 0
+barber : 0.556218769889
+atmosphere : 0.332242893496
+great : 0.111538336614
+Topic: 1
+great : 0.838198339019
+barber : 0.0814939068468
+atmosphere : 0.0803077541343
+Topic: 2
+great : 0.339433501682
+barber : 0.33264121519
+atmosphere : 0.327925283128
+Topic: 3
+barber : 0.448487697974
+atmosphere : 0.444660710058
+great : 0.106851591968
+Topic: 4
+great : 0.340408206149
+barber : 0.330249310549
+atmosphere : 0.329342483302

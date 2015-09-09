@@ -1,0 +1,10 @@
+Topic: 0
+life : 1.0
+Topic: 1
+life : 1.0
+Topic: 2
+life : 1.0
+Topic: 3
+life : 1.0
+Topic: 4
+life : 1.0

@@ -1,0 +1,15 @@
+Topic: 0
+parmesan : 0.500946272887
+parmagiana : 0.499053727113
+Topic: 1
+parmagiana : 0.500676017838
+parmesan : 0.499323982162
+Topic: 2
+parmesan : 0.500186753389
+parmagiana : 0.499813246611
+Topic: 3
+parmagiana : 0.501871031065
+parmesan : 0.498128968935
+Topic: 4
+parmesan : 0.503032683503
+parmagiana : 0.496967316497

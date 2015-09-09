@@ -1,0 +1,10 @@
+Topic: 0
+park : 1.0
+Topic: 1
+park : 1.0
+Topic: 2
+park : 1.0
+Topic: 3
+park : 1.0
+Topic: 4
+park : 1.0

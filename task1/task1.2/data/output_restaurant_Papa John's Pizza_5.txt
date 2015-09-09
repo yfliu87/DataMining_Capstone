@@ -1,0 +1,10 @@
+Topic: 0
+papa : 1.0
+Topic: 1
+papa : 1.0
+Topic: 2
+papa : 1.0
+Topic: 3
+papa : 1.0
+Topic: 4
+papa : 1.0

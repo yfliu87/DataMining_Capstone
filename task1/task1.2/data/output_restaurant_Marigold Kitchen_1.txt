@@ -1,0 +1,15 @@
+Topic: 0
+time : 0.504002112831
+restaurant : 0.495997887169
+Topic: 1
+time : 0.503690280881
+restaurant : 0.496309719119
+Topic: 2
+time : 0.500542279306
+restaurant : 0.499457720694
+Topic: 3
+time : 0.501427216424
+restaurant : 0.498572783576
+Topic: 4
+time : 0.57091596089
+restaurant : 0.42908403911

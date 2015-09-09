@@ -1,0 +1,155 @@
+{
+ "name": "sample_topic",
+ "children": [
+  {
+   "name": "Topic_1",
+   "children": [
+      {"name": "pastries", "size": 0.065466847162},
+      {"name": "baked", "size": 0.0380799745206},
+      {"name": "pregnant", "size": 0.0285679965997},
+      {"name": "hire", "size": 0.0239356792992},
+      {"name": "waffles", "size": 0.0168947063531},
+      {"name": "squash", "size": 0.0142587831405},
+      {"name": "earn", "size": 0.014053579252},
+      {"name": "49", "size": 0.0126340654563},
+      {"name": "stumbled", "size": 0.0123661839486},
+      {"name": "orange", "size": 0.0122472318424}
+    ]
+  },
+  {
+   "name": "Topic_2",
+   "children": [
+      {"name": "chai", "size": 0.0491108212726},
+      {"name": "overpriced", "size": 0.0294851143952},
+      {"name": "wrap", "size": 0.0274996134217},
+      {"name": "smooth", "size": 0.018096527782},
+      {"name": "dropping", "size": 0.0179719197625},
+      {"name": "step", "size": 0.0176449288379},
+      {"name": "cleanly", "size": 0.0137997388759},
+      {"name": "eyes", "size": 0.0131797710407},
+      {"name": "refreshing", "size": 0.0119285334471},
+      {"name": "university", "size": 0.0112991176635}
+    ]
+  },
+  {
+   "name": "Topic_3",
+   "children": [
+      {"name": "vegetarian", "size": 0.086148876906},
+      {"name": "beers", "size": 0.0471371026269},
+      {"name": "carte", "size": 0.0456711105738},
+      {"name": "scottsdale", "size": 0.0384219894611},
+      {"name": "stellar", "size": 0.0314767091584},
+      {"name": "wild", "size": 0.0257072254143},
+      {"name": "south", "size": 0.0254778239377},
+      {"name": "hefty", "size": 0.0214960174736},
+      {"name": "ala", "size": 0.0213523889199},
+      {"name": "ny", "size": 0.015858948287}
+    ]
+  },
+  {
+   "name": "Topic_4",
+   "children": [
+      {"name": "adorable", "size": 0.0284745039503},
+      {"name": "beet", "size": 0.0222284403289},
+      {"name": "dairy", "size": 0.0220847914768},
+      {"name": "fluke", "size": 0.0207948410275},
+      {"name": "fool", "size": 0.0188977712694},
+      {"name": "tucson", "size": 0.0179245167301},
+      {"name": "queen", "size": 0.016011021942},
+      {"name": "buffalo", "size": 0.015617907755},
+      {"name": "awkward", "size": 0.0152664983958},
+      {"name": "sucks", "size": 0.0146924358459}
+    ]
+  },
+  {
+   "name": "Topic_5",
+   "children": [
+      {"name": "buffet", "size": 0.0284745039503},
+      {"name": "ceviche", "size": 0.0222284403289},
+      {"name": "breakfast", "size": 0.0220847914768},
+      {"name": "toast", "size": 0.0207948410275},
+      {"name": "brunch", "size": 0.0188977712694},
+      {"name": "eggs", "size": 0.0179245167301},
+      {"name": "muffin", "size": 0.016011021942},
+      {"name": "sunday", "size": 0.015617907755},
+      {"name": "hash", "size": 0.0152664983958},
+      {"name": "coffees", "size": 0.0146924358459}
+    ]
+  },
+  {
+   "name": "Topic_6",
+   "children": [
+      {"name": "unprofessional", "size": 0.0284745039503},
+      {"name": "genuine", "size": 0.0222284403289},
+      {"name": "peaberry", "size": 0.0220847914768},
+      {"name": "sandwich", "size": 0.0207948410275},
+      {"name": "culture", "size": 0.0188977712694},
+      {"name": "eat", "size": 0.0179245167301},
+      {"name": "negative", "size": 0.016011021942},
+      {"name": "okra", "size": 0.015617907755},
+      {"name": "jean", "size": 0.0152664983958},
+      {"name": "fondue", "size": 0.0146924358459}
+    ]
+  },
+  {
+   "name": "Topic_7",
+   "children": [
+      {"name": "dirt", "size": 0.0284745039503},
+      {"name": "lentils", "size": 0.0222284403289},
+      {"name": "superb", "size": 0.0220847914768},
+      {"name": "site", "size": 0.0207948410275},
+      {"name": "convenient", "size": 0.0188977712694},
+      {"name": "pet", "size": 0.0179245167301},
+      {"name": "possible", "size": 0.016011021942},
+      {"name": "words", "size": 0.015617907755},
+      {"name": "rave", "size": 0.0152664983958},
+      {"name": "improvement", "size": 0.0146924358459}
+    ]
+  },
+  {
+   "name": "Topic_8",
+   "children": [
+      {"name": "shake", "size": 0.0284745039503},
+      {"name": "blended", "size": 0.0222284403289},
+      {"name": "kababs", "size": 0.0220847914768},
+      {"name": "shawerma", "size": 0.0207948410275},
+      {"name": "peas", "size": 0.0188977712694},
+      {"name": "dal", "size": 0.0179245167301},
+      {"name": "advertised", "size": 0.016011021942},
+      {"name": "tonkatsu", "size": 0.015617907755},
+      {"name": "twist", "size": 0.0152664983958},
+      {"name": "budget", "size": 0.0146924358459}
+    ]
+  },
+  {
+   "name": "Topic_9",
+   "children": [
+      {"name": "hookah", "size": 0.0284745039503},
+      {"name": "saag", "size": 0.0222284403289},
+      {"name": "aloo", "size": 0.0220847914768},
+      {"name": "knows", "size": 0.0207948410275},
+      {"name": "daal", "size": 0.0188977712694},
+      {"name": "interested", "size": 0.0179245167301},
+      {"name": "undesirable", "size": 0.016011021942},
+      {"name": "spoke", "size": 0.015617907755},
+      {"name": "shisha", "size": 0.0152664983958},
+      {"name": "roasted", "size": 0.0146924358459}
+    ]
+  },
+  {
+   "name": "Topic_10",
+   "children": [
+      {"name": "healthy", "size": 0.0284745039503},
+      {"name": "chandler", "size": 0.0222284403289},
+      {"name": "sandwich", "size": 0.0220847914768},
+      {"name": "avocado", "size": 0.0207948410275},
+      {"name": "upscale", "size": 0.0188977712694},
+      {"name": "quirky", "size": 0.0179245167301},
+      {"name": "include", "size": 0.016011021942},
+      {"name": "stereo", "size": 0.015617907755},
+      {"name": "option", "size": 0.0152664983958},
+      {"name": "dill", "size": 0.0146924358459}
+    ]
+  }
+ ]
+}

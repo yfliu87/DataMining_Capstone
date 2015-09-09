@@ -1,0 +1,15 @@
+Topic: 0
+amber : 0.500033040814
+pharmacy : 0.499966959186
+Topic: 1
+pharmacy : 0.848051499604
+amber : 0.151948500396
+Topic: 2
+amber : 0.627720202801
+pharmacy : 0.372279797199
+Topic: 3
+amber : 0.848853055348
+pharmacy : 0.151146944652
+Topic: 4
+amber : 0.504086120725
+pharmacy : 0.495913879275

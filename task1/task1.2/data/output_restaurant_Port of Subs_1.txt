@@ -1,0 +1,20 @@
+Topic: 0
+location : 0.333703880647
+talking : 0.333284078612
+village : 0.333012040742
+Topic: 1
+village : 0.333576608344
+talking : 0.333214082088
+location : 0.333209309568
+Topic: 2
+village : 0.334091644979
+location : 0.333625525391
+talking : 0.33228282963
+Topic: 3
+talking : 0.334827659327
+village : 0.333613907497
+location : 0.331558433177
+Topic: 4
+location : 0.333890358278
+talking : 0.33352164211
+village : 0.332587999612

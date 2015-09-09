@@ -1,0 +1,15 @@
+Topic: 0
+person : 0.501788621053
+checked : 0.498211378947
+Topic: 1
+person : 0.502095532435
+checked : 0.497904467565
+Topic: 2
+checked : 0.503510241748
+person : 0.496489758252
+Topic: 3
+person : 0.848890843694
+checked : 0.151109156306
+Topic: 4
+checked : 0.675086132179
+person : 0.324913867821

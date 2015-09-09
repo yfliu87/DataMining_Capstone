@@ -1,0 +1,10 @@
+Topic: 0
+shared : 1.0
+Topic: 1
+shared : 1.0
+Topic: 2
+shared : 1.0
+Topic: 3
+shared : 1.0
+Topic: 4
+shared : 1.0

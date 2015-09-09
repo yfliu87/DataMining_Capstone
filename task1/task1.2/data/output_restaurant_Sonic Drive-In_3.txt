@@ -1,0 +1,15 @@
+Topic: 0
+super : 0.501418176285
+usually : 0.498581823715
+Topic: 1
+super : 0.500568889341
+usually : 0.499431110659
+Topic: 2
+usually : 0.500323734695
+super : 0.499676265305
+Topic: 3
+super : 0.501099165208
+usually : 0.498900834792
+Topic: 4
+usually : 0.500609640903
+super : 0.499390359097

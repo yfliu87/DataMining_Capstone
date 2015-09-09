@@ -1,0 +1,15 @@
+Topic: 0
+home : 0.761725449236
+filipino : 0.238274550764
+Topic: 1
+home : 0.500593910173
+filipino : 0.499406089827
+Topic: 2
+filipino : 0.848732863631
+home : 0.151267136369
+Topic: 3
+home : 0.503744890205
+filipino : 0.496255109795
+Topic: 4
+filipino : 0.501828025989
+home : 0.498171974011

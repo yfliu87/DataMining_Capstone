@@ -1,0 +1,20 @@
+Topic: 0
+merchandise : 0.335403474474
+mart : 0.334349178161
+cashier : 0.330247347365
+Topic: 1
+cashier : 0.44707879029
+merchandise : 0.446975544481
+mart : 0.105945665229
+Topic: 2
+merchandise : 0.337499236815
+mart : 0.334229808485
+cashier : 0.3282709547
+Topic: 3
+mart : 0.447964060237
+cashier : 0.44667970074
+merchandise : 0.105356239023
+Topic: 4
+merchandise : 0.460014226467
+mart : 0.459506161889
+cashier : 0.0804796116438

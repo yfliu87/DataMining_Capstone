@@ -1,0 +1,15 @@
+Topic: 0
+ordered : 0.847929381337
+service : 0.152070618663
+Topic: 1
+service : 0.502181663119
+ordered : 0.497818336881
+Topic: 2
+service : 0.500188280126
+ordered : 0.499811719874
+Topic: 3
+service : 0.847250810871
+ordered : 0.152749189129
+Topic: 4
+ordered : 0.500386115503
+service : 0.499613884497

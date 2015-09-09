@@ -1,0 +1,10 @@
+Topic: 0
+quick : 1.0
+Topic: 1
+quick : 1.0
+Topic: 2
+quick : 1.0
+Topic: 3
+quick : 1.0
+Topic: 4
+quick : 1.0

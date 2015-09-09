@@ -1,0 +1,10 @@
+Topic: 0
+customers : 1.0
+Topic: 1
+customers : 1.0
+Topic: 2
+customers : 1.0
+Topic: 3
+customers : 1.0
+Topic: 4
+customers : 1.0

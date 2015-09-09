@@ -1,0 +1,15 @@
+Topic: 0
+cold : 0.500261568204
+environment : 0.499738431796
+Topic: 1
+cold : 0.500441173099
+environment : 0.499558826901
+Topic: 2
+environment : 0.500657122533
+cold : 0.499342877467
+Topic: 3
+environment : 0.500604633028
+cold : 0.499395366972
+Topic: 4
+cold : 0.501100523819
+environment : 0.498899476181

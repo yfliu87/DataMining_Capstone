@@ -1,0 +1,10 @@
+Topic: 0
+great : 1.0
+Topic: 1
+great : 1.0
+Topic: 2
+great : 1.0
+Topic: 3
+great : 1.0
+Topic: 4
+great : 1.0

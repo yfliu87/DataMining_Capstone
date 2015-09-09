@@ -1,0 +1,10 @@
+Topic: 0
+chinese : 1.0
+Topic: 1
+chinese : 1.0
+Topic: 2
+chinese : 1.0
+Topic: 3
+chinese : 1.0
+Topic: 4
+chinese : 1.0

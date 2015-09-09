@@ -1,0 +1,15 @@
+Topic: 0
+probably : 0.502341449462
+food : 0.497658550538
+Topic: 1
+probably : 0.50225266046
+food : 0.49774733954
+Topic: 2
+probably : 0.503861587019
+food : 0.496138412981
+Topic: 3
+probably : 0.848255886211
+food : 0.151744113789
+Topic: 4
+food : 0.675357559311
+probably : 0.324642440689

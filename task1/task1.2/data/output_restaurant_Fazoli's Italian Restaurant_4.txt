@@ -1,0 +1,15 @@
+Topic: 0
+breadsticks : 0.845104531005
+sauce : 0.154895468995
+Topic: 1
+sauce : 0.846354286746
+breadsticks : 0.153645713254
+Topic: 2
+breadsticks : 0.845467965612
+sauce : 0.154532034388
+Topic: 3
+sauce : 0.84517662051
+breadsticks : 0.15482337949
+Topic: 4
+sauce : 0.500645470853
+breadsticks : 0.499354529147

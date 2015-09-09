@@ -1,0 +1,10 @@
+Topic: 0
+car : 1.0
+Topic: 1
+car : 1.0
+Topic: 2
+car : 1.0
+Topic: 3
+car : 1.0
+Topic: 4
+car : 1.0

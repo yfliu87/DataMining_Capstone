@@ -1,0 +1,15 @@
+Topic: 0
+available : 0.501136987313
+nice : 0.498863012687
+Topic: 1
+available : 0.500849372444
+nice : 0.499150627556
+Topic: 2
+available : 0.500059094391
+nice : 0.499940905609
+Topic: 3
+nice : 0.848414174967
+available : 0.151585825033
+Topic: 4
+available : 0.674599901863
+nice : 0.325400098137

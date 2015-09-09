@@ -1,0 +1,10 @@
+Topic: 0
+hair : 1.0
+Topic: 1
+hair : 1.0
+Topic: 2
+hair : 1.0
+Topic: 3
+hair : 1.0
+Topic: 4
+hair : 1.0

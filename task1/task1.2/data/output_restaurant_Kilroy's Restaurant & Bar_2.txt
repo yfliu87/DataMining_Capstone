@@ -1,0 +1,15 @@
+Topic: 0
+just : 0.84529683156
+mushrooms : 0.15470316844
+Topic: 1
+mushrooms : 0.500048106331
+just : 0.499951893669
+Topic: 2
+mushrooms : 0.844613678934
+just : 0.155386321066
+Topic: 3
+mushrooms : 0.845446599072
+just : 0.154553400928
+Topic: 4
+just : 0.845695147331
+mushrooms : 0.154304852669

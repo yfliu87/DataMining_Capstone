@@ -1,0 +1,15 @@
+Topic: 0
+pizza : 0.500391066294
+extreme : 0.499608933706
+Topic: 1
+pizza : 0.500369071631
+extreme : 0.499630928369
+Topic: 2
+extreme : 0.500901691212
+pizza : 0.499098308788
+Topic: 3
+extreme : 0.501721060489
+pizza : 0.498278939511
+Topic: 4
+extreme : 0.50065718102
+pizza : 0.49934281898

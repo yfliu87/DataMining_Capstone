@@ -1,0 +1,10 @@
+Topic: 0
+fresh : 1.0
+Topic: 1
+fresh : 1.0
+Topic: 2
+fresh : 1.0
+Topic: 3
+fresh : 1.0
+Topic: 4
+fresh : 1.0

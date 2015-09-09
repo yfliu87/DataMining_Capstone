@@ -1,0 +1,10 @@
+Topic: 0
+food : 1.0
+Topic: 1
+food : 1.0
+Topic: 2
+food : 1.0
+Topic: 3
+food : 1.0
+Topic: 4
+food : 1.0

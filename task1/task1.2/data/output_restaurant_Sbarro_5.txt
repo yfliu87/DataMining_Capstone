@@ -1,0 +1,10 @@
+Topic: 0
+sbarros : 1.0
+Topic: 1
+sbarros : 1.0
+Topic: 2
+sbarros : 1.0
+Topic: 3
+sbarros : 1.0
+Topic: 4
+sbarros : 1.0

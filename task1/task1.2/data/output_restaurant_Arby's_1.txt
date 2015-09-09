@@ -1,0 +1,25 @@
+Topic: 0
+sandwiches : 0.256081355774
+register : 0.24967355731
+restaurant : 0.247668493648
+place : 0.246576593268
+Topic: 1
+sandwiches : 0.657500684309
+register : 0.114984322948
+restaurant : 0.113977483275
+place : 0.113537509469
+Topic: 2
+sandwiches : 0.252817118969
+register : 0.251155335473
+restaurant : 0.248917151125
+place : 0.247110394433
+Topic: 3
+register : 0.414576419627
+place : 0.250211013997
+restaurant : 0.249177333195
+sandwiches : 0.0860352331812
+Topic: 4
+sandwiches : 0.250928701005
+register : 0.250394097453
+place : 0.249458500585
+restaurant : 0.249218700958

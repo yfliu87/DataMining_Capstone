@@ -1,0 +1,15 @@
+Topic: 0
+dollars : 0.500176587051
+seven : 0.499823412949
+Topic: 1
+seven : 0.502187308277
+dollars : 0.497812691723
+Topic: 2
+seven : 0.500201783003
+dollars : 0.499798216997
+Topic: 3
+dollars : 0.500201194237
+seven : 0.499798805763
+Topic: 4
+dollars : 0.500677536435
+seven : 0.499322463565

@@ -1,0 +1,15 @@
+Topic: 0
+sandwich : 0.500119443651
+sandwiches : 0.499880556349
+Topic: 1
+sandwiches : 0.504381021654
+sandwich : 0.495618978346
+Topic: 2
+sandwich : 0.676930816585
+sandwiches : 0.323069183415
+Topic: 3
+sandwiches : 0.850177862825
+sandwich : 0.149822137175
+Topic: 4
+sandwiches : 0.504091251231
+sandwich : 0.495908748769

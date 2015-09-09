@@ -1,0 +1,15 @@
+Topic: 0
+okay : 0.505556767334
+overall : 0.494443232666
+Topic: 1
+okay : 0.680582836454
+overall : 0.319417163546
+Topic: 2
+okay : 0.500484293481
+overall : 0.499515706519
+Topic: 3
+okay : 0.503911510317
+overall : 0.496088489683
+Topic: 4
+okay : 0.5077154912
+overall : 0.4922845088

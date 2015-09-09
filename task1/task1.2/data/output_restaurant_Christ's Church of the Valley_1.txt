@@ -1,0 +1,10 @@
+Topic: 0
+money : 1.0
+Topic: 1
+money : 1.0
+Topic: 2
+money : 1.0
+Topic: 3
+money : 1.0
+Topic: 4
+money : 1.0

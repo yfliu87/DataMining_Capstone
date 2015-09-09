@@ -1,0 +1,10 @@
+Topic: 0
+just : 1.0
+Topic: 1
+just : 1.0
+Topic: 2
+just : 1.0
+Topic: 3
+just : 1.0
+Topic: 4
+just : 1.0
