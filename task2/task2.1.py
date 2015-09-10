@@ -1,6 +1,11 @@
 import json
+from nltk.cluster.util import cosine_distance
+import sklearn.feature_extraction.text import CountVectorizer
+import sklearn.feature_extraction.text import TfidfTransformer 
+
 
 basePath = '/home/yfliu/Documents/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/'
+
 def restaurantIDCategoryMapping(businessFile):
 	reader = open(businessFile, 'r')
 	reader.seek(0)
@@ -82,18 +87,69 @@ def updateCategoryWithReviews(reviews, categories, cuisineReviewMap):
 			cuisineReviewMap[category].append(review)
 
 
+def findSimilarity(fileFolder):
+	list_of_files = [] 
+	for (dirpath, dirnames, filenames) in os.walk(fileFolder):
+		for filename in filenames:
+			target_file = os.sep.join(dirpath, filename)
+
+			list_of_files.append(target_file)
+
+	print "total file: ", len(list_of_files)
+
+	simDoc = []
+
+	for i in range(len(list_of_files)):
+		ref = list_of_files[i]
+		refDoc = train(ref)
+
+		for j in range(i + 1, len(list_of_files) , 1):
+			candidate = list_of_files[j]
+			candidateDoc = train(candidate)
+
+			sim = getSimilarity(refDoc, candidateDoc)
+
+			print 'similarity between ' + list_of_files[i] + "," + list_of_files[j] + ": " + str(sim)
+			simDoc.append((i, j, sim))
+
+	return simDoc, list_of_files
+
+
+def train(file):
+	words = []
+
+	reader = open(file, 'r')
+	for line in reader:
+		for word in line.strip().split(' '):
+			words.append(word)
+
+	reader.close()
+
+	pipeline = Pipeline([("vect", CountVectorizer(min_df=1, stop_words="english")), ("tfidf", TfidfTransformer(use_idf=False))])
+	return pipeline.fit_transform(words)
+
+
+def getSimilarity(ref, candidate):
+	return cosine_distance(ref, candidate)
+
+
+def generateMatrix(simDoc, fileList):
+
+
+
 def main():
+	'''
 	restaurantFile = basePath + 'yelp_academic_dataset_business.json'
 	reviewFile = basePath + 'yelp_academic_dataset_review.json'
 	cuisineCategoryMap = {}
 
 	idCategoryMap = restaurantIDCategoryMapping(restaurantFile)
-	reviewRestaurantIDMapping(idCategoryMap, reviewFile, cuisineCategoryMap)
 
+	reviewRestaurantIDMapping(idCategoryMap, reviewFile, cuisineCategoryMap)
 	'''
-	findSimilarity(cuisineCategoryMap)
-	generate_graph()
-	'''
+	simDoc, fileList = findSimilarity(basePath + 'output')
+
+	generateMatrix(simDoc, fileList)
 
 if __name__ == '__main__':
 	main()
