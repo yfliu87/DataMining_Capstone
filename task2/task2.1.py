@@ -2,7 +2,10 @@ import json
 from nltk.cluster.util import cosine_distance
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer 
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.pipeline import Pipeline 
+from gensim import models
+from gensim import matutils
 
 
 basePath = '/home/yfliu/Documents/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/'
@@ -161,12 +164,13 @@ def lsiProcessing(file_list):
 			for doc in corpus_lsi:
 				print "lsi doc: ", doc
 
+			'''
 			lda_notfidf = models.LdaModel(corpus, id2word=dictionary, num_topics=2) 
 			print "lda_NoTfidf topic: ", lda_notfidf.print_topics(2)
 
 			lda_tfidf = models.LdaModel(corpus_tfidf, id2word=dictionary, num_topics=2)
 			print "lda_Tfidf topic: ", lda_tfidf.print_topics(2)
-
+			'''
 
 
 def preprocess(target_file):
@@ -229,8 +233,56 @@ def train(file):
 
 def getSimilarity(ref, candidate):
 	return cosine_distance(ref, candidate)
+'''
+
+def ldaProcessing(file_list):
+	for i in range(0, len(file_list) , 1):
+		for j in range(i + 1, len(file_list),  1):
+			ref = file_list[i]
+			candidate = file_list[j]
+
+			reviews = [line.strip() for line in file(ref)]
+			reviews += [line.strip() for line in file(candidate)]
+
+			first_quisine = ref.split('/')[-1].split('.')[0]
+			second_quisine = candidate.split('/')[-1].split('.')[0]
+			output_file = basePath + 'lda/' + first_quisine + '_' + second_quisine
+
+			#no tfidf
+			lda(1, 5, reviews, 5, output_file, False)
+
+			#tfidf
+			lda(1, 5, reviews, 5, output_file, True)
 
 
+def lda(K, numfeatures, texts, num_display_words, outputfile, bIDF):
+    K_clusters = K
+    vectorizer = TfidfVectorizer(max_df=0.5, max_features=numfeatures, min_df=2, stop_words='english', use_idf=bIDF)
+
+    X = vectorizer.fit_transform(texts)
+    
+    id2words ={}
+    for i,word in enumerate(vectorizer.get_feature_names()):
+        id2words[i] = word
+
+    corpus = matutils.Sparse2Corpus(X,  documents_columns=False)
+    lda = models.ldamodel.LdaModel(corpus, num_topics=K_clusters, id2word=id2words)
+        
+    output_text = []
+    for i, item in enumerate(lda.show_topics(num_topics=K_clusters, num_words=num_display_words, formatted=False)):
+        output_text.append("Topic: " + str(i))
+        for weight,term in item:
+            output_text.append( term + " : " + str(weight) )
+
+    if bIDF:
+    	outputfile += '_idf.txt'
+    else:
+    	outputfile += '_noidf.txt'
+
+    with open ( outputfile, 'w' ) as f:
+        f.write('\n'.join(output_text))
+
+'''
 def generateMatrix(simDoc, fileList):
 	pass
 '''
@@ -247,7 +299,8 @@ def main():
 	'''
 	fileList = findSimilarity(basePath + 'categories')
 
-	lsiProcessing(fileList)
+	#lsiProcessing(fileList)
+	ldaProcessing(fileList)
 	#generateMatrix(simDoc, fileList)
 
 if __name__ == '__main__':
