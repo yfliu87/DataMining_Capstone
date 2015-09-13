@@ -9,6 +9,8 @@ from gensim import matutils
 
 
 basePath = '/home/yfliu/Documents/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/'
+categoryPath = '/home/yfliu/Documents/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/categories'
+ldaPath = '/home/yfliu/Documents/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/lda'
 
 def restaurantIDCategoryMapping(businessFile):
 	reader = open(businessFile, 'r')
@@ -125,10 +127,10 @@ def findSimilarity(fileFolder):
 	return simDoc, list_of_files
 '''
 
-def findSimilarity(fileFolder):
+def findSimilarity():
 	file_list = []
 	import os
-	for (dirpath, dirnames, filenames) in os.walk(fileFolder):
+	for (dirpath, dirnames, filenames) in os.walk(categoryPath):
 		for filename in filenames:
 			target_file = os.path.join(dirpath, filename)
 
@@ -136,7 +138,7 @@ def findSimilarity(fileFolder):
 
 	return file_list
 
-
+'''
 def lsiProcessing(file_list):
 
 	for i in range(0, len(file_list) , 1):
@@ -164,13 +166,11 @@ def lsiProcessing(file_list):
 			for doc in corpus_lsi:
 				print "lsi doc: ", doc
 
-			'''
 			lda_notfidf = models.LdaModel(corpus, id2word=dictionary, num_topics=2) 
 			print "lda_NoTfidf topic: ", lda_notfidf.print_topics(2)
 
 			lda_tfidf = models.LdaModel(corpus_tfidf, id2word=dictionary, num_topics=2)
 			print "lda_Tfidf topic: ", lda_tfidf.print_topics(2)
-			'''
 
 
 def preprocess(target_file):
@@ -212,7 +212,7 @@ def preprocess(target_file):
 
 	return final_review
 
-'''
+
 def train(file):
 	import re
 	words = []
@@ -236,6 +236,7 @@ def getSimilarity(ref, candidate):
 '''
 
 def ldaProcessing(file_list):
+	cuisine_map = [] 
 	for i in range(0, len(file_list) , 1):
 		for j in range(i + 1, len(file_list),  1):
 			ref = file_list[i]
@@ -246,16 +247,20 @@ def ldaProcessing(file_list):
 
 			first_quisine = ref.split('/')[-1].split('.')[0]
 			second_quisine = candidate.split('/')[-1].split('.')[0]
-			output_file = basePath + 'lda/' + first_quisine + '_' + second_quisine
+
+			if (first_quisine, second_quisine) in cuisine_map or (second_quisine, first_quisine) in cuisine_map:
+				continue
+			else:
+				cuisine_map.append((first_quisine, second_quisine))
 
 			#no tfidf
-			lda(1, 5, reviews, 5, output_file, False)
+			lda(1, 5, reviews, 5, ldaPath, first_quisine, second_quisine, False)
 
 			#tfidf
-			lda(1, 5, reviews, 5, output_file, True)
+			lda(1, 5, reviews, 5, ldaPath, first_quisine, second_quisine, True)
 
 
-def lda(K, numfeatures, texts, num_display_words, outputfile, bIDF):
+def lda(K, numfeatures, texts, num_display_words, outputFolder, first_cuisine, second_cuisine, bIDF):
     K_clusters = K
     vectorizer = TfidfVectorizer(max_df=0.5, max_features=numfeatures, min_df=2, stop_words='english', use_idf=bIDF)
 
@@ -275,17 +280,79 @@ def lda(K, numfeatures, texts, num_display_words, outputfile, bIDF):
             output_text.append( term + " : " + str(weight) )
 
     if bIDF:
-    	outputfile += '_idf.txt'
+    	outputfile = outputFolder + '/idf/' + first_cuisine + '_' + second_cuisine + '.txt'
     else:
-    	outputfile += '_noidf.txt'
+    	outputfile = outputFolder + '/noidf/' + first_cuisine + '_' + second_cuisine + '.txt'
 
     with open ( outputfile, 'w' ) as f:
         f.write('\n'.join(output_text))
 
-'''
-def generateMatrix(simDoc, fileList):
-	pass
-'''
+
+def generateHeatmap(idfConfig):
+	import plotly.plotly as py
+	import plotly.graph_objs as go
+
+	cuisines_sim, cuisine_list = get_cuisine_similarity(ldaPath + '/' + idfConfig)
+	data = []
+
+	for first_cuisine in cuisine_list:
+		new_row = []
+		for second_cuisine in cuisine_list:
+			if (first_cuisine + second_cuisine) in cuisines_sim:
+				new_row.append(float(cuisines_sim[first_cuisine + second_cuisine]))
+			elif (second_cuisine + first_cuisine) in cuisines_sim:
+				new_row.append(float(cuisines_sim[second_cuisine + first_cuisine]))
+			elif first_cuisine == second_cuisine:
+				new_row.append(1.0)
+			else:
+				new_row.append(0.0)	
+
+		data.append(new_row)
+
+
+	raw_data = go.Data([go.Heatmap(z = data, x = cuisine_list, y = cuisine_list, colorscale = 'Viridis')])
+	layout = go.Layout(title = 'cuisine_similarity_' + idfConfig, xaxis = dict(ticks = ''), yaxis = dict(ticks = ''))
+	fig = go.Figure(data = raw_data, layout = layout)
+	url = py.plot(fig, filename = 'cuisine_similarity_' + idfConfig, validate = True)
+
+
+def get_cuisine_similarity(filepath):
+	cuisine_list = []
+	cuisine_sim = {}
+
+	import os
+	for (dirpath, dirnames, filenames) in os.walk(filepath):
+		for filename in filenames:
+			target_file = os.path.join(dirpath, filename)
+
+			cuisines = filename.split('.')[0].split('_')
+
+			cuisine_sim[cuisines[0] + cuisines[1]] = getMaxSim(target_file)
+			cuisine_list += [cuisines[0], cuisines[1]]
+
+			print 'similarity of ', cuisines[0], cuisines[1], 'is: ', cuisine_sim[cuisines[0] + cuisines[1]]
+
+
+	print 'get cuisine similarity done'
+	return cuisine_sim, list(set(cuisine_list))
+
+
+def getMaxSim(file):
+	reader = open(file, 'r')
+	line = reader.readline()
+
+	maxScore = 0.0
+	while line:
+		score = line.split(':')[1]
+
+		if score > maxScore:
+			maxScore = score
+
+		line = reader.readline()
+
+	reader.close()
+	return maxScore
+
 
 def main():
 	'''
@@ -297,11 +364,12 @@ def main():
 
 	reviewRestaurantIDMapping(idCategoryMap, reviewFile, cuisineCategoryMap)
 	'''
-	fileList = findSimilarity(basePath + 'categories')
+	fileList = findSimilarity()
 
 	#lsiProcessing(fileList)
-	ldaProcessing(fileList)
-	#generateMatrix(simDoc, fileList)
+	#ldaProcessing(fileList)
+	generateHeatmap('idf')
+	generateHeatmap('noidf')
 
 if __name__ == '__main__':
 	main()
