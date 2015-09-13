@@ -153,12 +153,20 @@ def lsiProcessing(file_list):
 			#calculate training document
 			tfidf = models.TfidfModel(corpus)
 			corpus_tfidf = tfidf[corpus]
+			print "tfidf corpus: ", corpus_tfidf
 
 			lsi = models.LsiModel(corpus_tfidf, id2word=dictionary, num_topics = 1)
 			corpus_lsi = lsi[corpus_tfidf]
 
 			for doc in corpus_lsi:
 				print "lsi doc: ", doc
+
+			lda_notfidf = models.LdaModel(corpus, id2word=dictionary, num_topics=2) 
+			print "lda_NoTfidf topic: ", lda_notfidf.print_topics(2)
+
+			lda_tfidf = models.LdaModel(corpus_tfidf, id2word=dictionary, num_topics=2)
+			print "lda_Tfidf topic: ", lda_tfidf.print_topics(2)
+
 
 
 def preprocess(target_file):
