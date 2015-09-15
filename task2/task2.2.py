@@ -8,6 +8,7 @@ from gensim import matutils
 basePath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/'
 categoryPath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/categories'
 ldaPath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/lda'
+lsiOutputPath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/lsi'
 
 def getFiles():
 	file_list = []
@@ -55,25 +56,25 @@ def preprocess(reviews):
 	review_tokenized = [[word.lower() for word in word_tokenize(review.decode('utf-8'))] for review in reviews]
 	'''
 	#remove stop words
-	print 'remove stop words'
+	#print 'remove stop words'
 	from nltk.corpus import stopwords
 	english_stopwords = stopwords.words('english')
 
 	review_filterd_stopwords = [[word for word in review if not word in english_stopwords] for review in review_tokenized]
 
 	#remove punctuations
-	print 'remove punctuations'
+	#print 'remove punctuations'
 	english_punctuations = [',','.',':',';','?','(',')','&','!','@','#','$','%']
 	review_filtered = [[word for word in review if not word in english_punctuations] for review in review_filterd_stopwords]
 
 	#stemming
-	print 'stemming'
+	#print 'stemming'
 	from nltk.stem.lancaster import LancasterStemmer
 	st = LancasterStemmer()
 	review_stemmed = [[st.stem(word) for word in review] for review in review_filtered]
 
 	#remove word whose frequency is 1
-	print 'remove Freq = 1'
+	#print 'remove Freq = 1'
 	all_stems = sum(review_stemmed, [])
 	stems_once = set(stem for stem in set(all_stems) if all_stems.count(stem) == 1)
 	final_review = [[stem for stem in text if stem not in stems_once] for text in review_stemmed]
@@ -106,7 +107,7 @@ def train_by_lsi(reviews):
     return (index, dictionary, lsi)
 
 
-def getSimOfAllReviews(fileList, index, dictionary, lsi):
+def getSimOfAllReviews(outputpath, fileList, index, dictionary, lsi):
 	#go through all reviews and preprocess review
 	#then try to get the similarity between current review and all others
 	for f in fileList:
@@ -119,6 +120,8 @@ def getSimOfAllReviews(fileList, index, dictionary, lsi):
 			curReview += line
 			line = reader.readline()
 
+		reader.close()
+
 		rev = [curReview]
 
 		target_rev = preprocess(rev, low_freq_filter=False)
@@ -127,11 +130,29 @@ def getSimOfAllReviews(fileList, index, dictionary, lsi):
   
 		sims = index[lsi[ml_bow]]
 
-		output(sims, f, fileList)
+		output(outputpath, sims, f, fileList)
 
 
-def output(similarity, currentFile, fileList):
-	pass
+def output(outputpath, similarity, currentFile, fileList):
+	size = len(similarity)
+
+	cur_cuisine = currentFile.split('/')[-1].split('.')[0]
+
+	for i in range(size):
+		file_index = similarity[i][0]
+		file_name = fileList[file_index]
+
+		ref_cuisine = file_name.split('/')[-1].split('.')[0]
+
+		outputfile = build_output_file(putputpath, cur_cuisine, ref_cuisine)
+
+		with open(outputfile, 'w') as writer:
+			writer.write(similarity[i][1])
+
+
+def build_output_file(outputpath, cur_cuisine, ref_cuisine):
+	return outputpath + '/' + cur_cuisine + '_' + ref_cuisine + '.txt'
+
 
 def lda(K, numfeatures, texts, num_display_words, outputFolder, first_cuisine, second_cuisine, bIDF):
     K_clusters = K
@@ -167,9 +188,6 @@ def lda(K, numfeatures, texts, num_display_words, outputFolder, first_cuisine, s
     with open ( outputfile, 'w' ) as f:
         f.write('\n'.join(output_text))
 
-
-def match_by_file(fileList, index, dictionary, lda):
-	pass
 
 def generateHeatmap(idfConfig):
 	import plotly.plotly as py
@@ -248,7 +266,7 @@ def main():
 	(index, dictionary, lsi) = train_by_lsi(reviews_processed)
 	
 
-	getSimOfAllReviews(fileList, index, dictionary, lsi)
+	getSimOfAllReviews(lsiOutputPath, fileList, index, dictionary, lsi)
 
 	'''
 	(index, dictionary, lda) = train_by_lda(reviews_processed)
