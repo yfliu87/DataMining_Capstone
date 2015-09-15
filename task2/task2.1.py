@@ -1,16 +1,10 @@
-import json
 from nltk.cluster.util import cosine_distance
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_extraction.text import TfidfTransformer 
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.pipeline import Pipeline 
 from gensim import models
-from gensim import matutils
 
 
-basePath = '/home/yfliu/Documents/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/'
-categoryPath = '/home/yfliu/Documents/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/categories'
-cosineDistancePath = '/home/yfliu/Documents/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/cosine_distance'
+basePath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/'
+categoryPath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/categories'
+cosineDistancePath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/cosine_distance'
 
 
 def findSimilarity():
