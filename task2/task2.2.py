@@ -209,7 +209,7 @@ def lda(K, numfeatures, texts, num_display_words, outputFolder, first_cuisine, s
         f.write('\n'.join(output_text))
 '''
 
-def generateHeatmap(path, config):
+def generateSimilarityMap(path, config):
 	import plotly.plotly as py
 	import plotly.graph_objs as go
 
@@ -275,11 +275,13 @@ def main():
 	#all reviews have been processed by lsi model
 	(lsi_index, lsi_dictionary, lsi) = train_by_lsi(reviews_processed)	
 	getSimOfAllReviews(lsiOutputPath, fileList, lsi_index, lsi_dictionary, lsi)
-	generateHeatmap(lsiOutputPath, 'LSI_TFIDF')
+	generateSimilarityMap(lsiOutputPath, 'LSI_TFIDF')
+	print "LSI TFIDF similarity done"
 
 	(lda_index, lda_dictionary, lda) = train_by_lda(reviews_processed)
 	getSimOfAllReviews(ldaOutputPath, fileList, lda_index, lda_dictionary, lda)
-	generateHeatmap(ldaOutputPath, 'LDA_TFIDF')
+	generateSimilarityMap(ldaOutputPath, 'LDA_TFIDF')
+	print "LDA TFIDF similarity done"
 
 
 if __name__ == '__main__':
