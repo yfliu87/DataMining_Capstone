@@ -11,14 +11,22 @@ ldaPath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_data
 lsiOutputPath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/lsi'
 
 def getFiles():
-	file_list = []
 	import os
+
+	file_list = []
+	count = 0
 	for (dirpath, dirnames, filenames) in os.walk(categoryPath):
 		for filename in filenames:
 			target_file = os.path.join(dirpath, filename)
 
 			file_list.append(target_file)
 
+			count += 1
+
+			if count >= 50:
+				break
+
+	print "read in " + str(len(file_list)) + " files"
 	return file_list
 
 def readReview(fileList):
@@ -36,14 +44,16 @@ def readReview(fileList):
 		reviews.append(curReview)
 		reader.close()
 
+	print "read reviews from file list done"
 	return reviews
 
 
-def preprocess(reviews):
+def preprocess(reviews, low_freq_filter = True):
 	import nltk
 	from nltk.tokenize import word_tokenize
 
 	review_tokenized = [[word.lower() for word in word_tokenize(review.decode('utf-8'))] for review in reviews] 
+	print "review tokenize done"
 
 	'''
 	reviews = [line.strip() for line in file(target_file)]
@@ -56,29 +66,34 @@ def preprocess(reviews):
 	review_tokenized = [[word.lower() for word in word_tokenize(review.decode('utf-8'))] for review in reviews]
 	'''
 	#remove stop words
-	#print 'remove stop words'
 	from nltk.corpus import stopwords
 	english_stopwords = stopwords.words('english')
+	print 'remove stop words done'
 
 	review_filterd_stopwords = [[word for word in review if not word in english_stopwords] for review in review_tokenized]
 
 	#remove punctuations
-	#print 'remove punctuations'
 	english_punctuations = [',','.',':',';','?','(',')','&','!','@','#','$','%']
 	review_filtered = [[word for word in review if not word in english_punctuations] for review in review_filterd_stopwords]
+	print 'remove punctuations done'
 
 	#stemming
-	#print 'stemming'
 	from nltk.stem.lancaster import LancasterStemmer
 	st = LancasterStemmer()
 	review_stemmed = [[st.stem(word) for word in review] for review in review_filtered]
+	print 'stemming done'
+
 
 	#remove word whose frequency is 1
-	#print 'remove Freq = 1'
-	all_stems = sum(review_stemmed, [])
-	stems_once = set(stem for stem in set(all_stems) if all_stems.count(stem) == 1)
-	final_review = [[stem for stem in text if stem not in stems_once] for text in review_stemmed]
+	if low_freq_filter:
+		all_stems = sum(review_stemmed, [])
+		stems_once = set(stem for stem in set(all_stems) if all_stems.count(stem) == 1)
+		final_review = [[stem for stem in text if stem not in stems_once] for text in review_stemmed]
+	else:
+		final_review = review_stemmed
 
+	print 'remove low freq done'
+	print "preprocess of reviews done"
 	return final_review
 
 
@@ -95,16 +110,17 @@ def ldaProcessing(file_list):
 
 def train_by_lsi(reviews):
 	from gensim import corpora, models, similarities
-  
-    dictionary = corpora.Dictionary(lib_texts)
-    corpus = [dictionary.doc2bow(text) for text in lib_texts] 
-    tfidf = models.TfidfModel(corpus)
-    corpus_tfidf = tfidf[corpus]
-     
-    lsi = models.LsiModel(corpus_tfidf, id2word=dictionary, num_topics=10)
-    index = similarities.MatrixSimilarity(lsi[corpus])
-     
-    return (index, dictionary, lsi)
+
+	dictionary = corpora.Dictionary(reviews)
+	corpus = [dictionary.doc2bow(text) for text in reviews] 
+	tfidf = models.TfidfModel(corpus)
+	corpus_tfidf = tfidf[corpus]
+
+	lsi = models.LsiModel(corpus_tfidf, id2word=dictionary, num_topics=10)
+	index = similarities.MatrixSimilarity(lsi[corpus])
+
+	print "train by lsi done"
+	return (index, dictionary, lsi)
 
 
 def getSimOfAllReviews(outputpath, fileList, index, dictionary, lsi):
@@ -133,27 +149,29 @@ def getSimOfAllReviews(outputpath, fileList, index, dictionary, lsi):
 		output(outputpath, sims, f, fileList)
 
 
-def output(outputpath, similarity, currentFile, fileList):
-	size = len(similarity)
+def output(outputpath, sim, currentFile, fileList):
+	sort_sims = sorted(enumerate(sim), key=lambda item: item[0])
+	size = len(sort_sims)
 
 	cur_cuisine = currentFile.split('/')[-1].split('.')[0]
 
 	for i in range(size):
-		file_index = similarity[i][0]
+		print sort_sims[i][1]
+		outputsim = str(sort_sims[i][1])
+		file_index = sort_sims[i][0]
 		file_name = fileList[file_index]
 
 		ref_cuisine = file_name.split('/')[-1].split('.')[0]
 
-		outputfile = build_output_file(putputpath, cur_cuisine, ref_cuisine)
+		if ref_cuisine == cur_cuisine:
+			outputsim = str(1.0)
+
+		outputfile = outputpath + '/' + cur_cuisine + '_' + ref_cuisine + '.txt'
 
 		with open(outputfile, 'w') as writer:
-			writer.write(similarity[i][1])
+			writer.write(outputsim)
 
-
-def build_output_file(outputpath, cur_cuisine, ref_cuisine):
-	return outputpath + '/' + cur_cuisine + '_' + ref_cuisine + '.txt'
-
-
+'''
 def lda(K, numfeatures, texts, num_display_words, outputFolder, first_cuisine, second_cuisine, bIDF):
     K_clusters = K
     vectorizer = TfidfVectorizer(max_df=0.5, max_features=numfeatures, min_df=2, stop_words='english', use_idf=bIDF)
@@ -187,13 +205,13 @@ def lda(K, numfeatures, texts, num_display_words, outputFolder, first_cuisine, s
 
     with open ( outputfile, 'w' ) as f:
         f.write('\n'.join(output_text))
+'''
 
-
-def generateHeatmap(idfConfig):
+def generateHeatmap(path, config):
 	import plotly.plotly as py
 	import plotly.graph_objs as go
 
-	cuisines_sim, cuisine_list = get_cuisine_similarity(ldaPath + '/' + idfConfig)
+	cuisines_sim, cuisine_list = get_cuisine_similarity(path)
 	data = []
 
 	for first_cuisine in cuisine_list:
@@ -212,9 +230,9 @@ def generateHeatmap(idfConfig):
 
 
 	raw_data = go.Data([go.Heatmap(z = data, x = cuisine_list, y = cuisine_list, colorscale = 'Viridis')])
-	layout = go.Layout(title = 'cuisine_similarity_' + idfConfig, xaxis = dict(ticks = ''), yaxis = dict(ticks = ''))
+	layout = go.Layout(title = 'similarity_' + config, xaxis = dict(ticks = ''), yaxis = dict(ticks = ''))
 	fig = go.Figure(data = raw_data, layout = layout)
-	url = py.plot(fig, filename = 'cuisine_similarity_' + idfConfig, validate = True)
+	url = py.plot(fig, filename = 'similarity_' + config, validate = True)
 
 
 def get_cuisine_similarity(filepath):
@@ -228,7 +246,7 @@ def get_cuisine_similarity(filepath):
 
 			cuisines = filename.split('.')[0].split('_')
 
-			cuisine_sim[cuisines[0] + cuisines[1]] = getMaxSim(target_file)
+			cuisine_sim[cuisines[0] + cuisines[1]] = getSim(target_file)
 			cuisine_list += [cuisines[0], cuisines[1]]
 
 			print 'similarity of ', cuisines[0], cuisines[1], 'is: ', cuisine_sim[cuisines[0] + cuisines[1]]
@@ -238,21 +256,11 @@ def get_cuisine_similarity(filepath):
 	return cuisine_sim, list(set(cuisine_list))
 
 
-def getMaxSim(file):
+def getSim(file):
 	reader = open(file, 'r')
 	line = reader.readline()
-
-	maxScore = 0.0
-	while line:
-		score = line.split(':')[1]
-
-		if score > maxScore:
-			maxScore = score
-
-		line = reader.readline()
-
 	reader.close()
-	return maxScore
+	return float(line)
 
 
 def main():
@@ -268,12 +276,14 @@ def main():
 
 	getSimOfAllReviews(lsiOutputPath, fileList, index, dictionary, lsi)
 
+	generateHeatmap(lsiOutputPath, 'LSI_TFIDF')
+
 	'''
 	(index, dictionary, lda) = train_by_lda(reviews_processed)
 
 	matchByFile(fileList, index, dictionary, lda)
 
-	generateHeatmap('idf')
+	
 	generateHeatmap('noidf')
 	'''
 
