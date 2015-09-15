@@ -106,6 +106,33 @@ def train_by_lsi(reviews):
     return (index, dictionary, lsi)
 
 
+def getSimOfAllReviews(fileList, index, dictionary, lsi):
+	#go through all reviews and preprocess review
+	#then try to get the similarity between current review and all others
+	for f in fileList:
+		curReview ='' 
+
+		reader = open(f, 'r')
+		line = reader.readline()
+
+		while line:
+			curReview += line
+			line = reader.readline()
+
+		rev = [curReview]
+
+		target_rev = preprocess(rev, low_freq_filter=False)
+  
+		ml_bow = dictionary.doc2bow(target_rev[0]) 
+  
+		sims = index[lsi[ml_bow]]
+
+		output(sims, f, fileList)
+
+
+def output(similarity, currentFile, fileList):
+	pass
+
 def lda(K, numfeatures, texts, num_display_words, outputFolder, first_cuisine, second_cuisine, bIDF):
     K_clusters = K
     vectorizer = TfidfVectorizer(max_df=0.5, max_features=numfeatures, min_df=2, stop_words='english', use_idf=bIDF)
@@ -217,7 +244,12 @@ def main():
 
 	reviews_processed =	preprocess(reviews)
 
-	(index, dictionary, lda) = train_by_lsi(reviews_processed)
+	#all reviews have been processed by lsi model
+	(index, dictionary, lsi) = train_by_lsi(reviews_processed)
+	
+
+	getSimOfAllReviews(fileList, index, dictionary, lsi)
+
 	'''
 	(index, dictionary, lda) = train_by_lda(reviews_processed)
 
