@@ -92,10 +92,18 @@ def ldaProcessing(file_list):
 	return reviews
 
 
-def train_by_lda(reviews):
-	pass
-
-
+def train_by_lsi(reviews):
+	from gensim import corpora, models, similarities
+  
+    dictionary = corpora.Dictionary(lib_texts)
+    corpus = [dictionary.doc2bow(text) for text in lib_texts] 
+    tfidf = models.TfidfModel(corpus)
+    corpus_tfidf = tfidf[corpus]
+     
+    lsi = models.LsiModel(corpus_tfidf, id2word=dictionary, num_topics=10)
+    index = similarities.MatrixSimilarity(lsi[corpus])
+     
+    return (index, dictionary, lsi)
 
 
 def lda(K, numfeatures, texts, num_display_words, outputFolder, first_cuisine, second_cuisine, bIDF):
@@ -208,6 +216,8 @@ def main():
 	reviews = readReview(fileList)
 
 	reviews_processed =	preprocess(reviews)
+
+	(index, dictionary, lda) = train_by_lsi(reviews_processed)
 	'''
 	(index, dictionary, lda) = train_by_lda(reviews_processed)
 
