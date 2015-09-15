@@ -9,6 +9,7 @@ basePath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dat
 categoryPath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/categories'
 ldaPath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/lda'
 lsiOutputPath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/lsi'
+ldaOutputPath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/lda'
 
 def getFiles():
 	import os
@@ -55,16 +56,6 @@ def preprocess(reviews, low_freq_filter = True):
 	review_tokenized = [[word.lower() for word in word_tokenize(review.decode('utf-8'))] for review in reviews] 
 	print "review tokenize done"
 
-	'''
-	reviews = [line.strip() for line in file(target_file)]
-
-	review_lower = [[word for word in review.lower().split()] for review in reviews]
-
-	#separate splitor
-	print 'separate splitor'
-	from nltk.tokenize import word_tokenize
-	review_tokenized = [[word.lower() for word in word_tokenize(review.decode('utf-8'))] for review in reviews]
-	'''
 	#remove stop words
 	from nltk.corpus import stopwords
 	english_stopwords = stopwords.words('english')
@@ -82,7 +73,6 @@ def preprocess(reviews, low_freq_filter = True):
 	st = LancasterStemmer()
 	review_stemmed = [[st.stem(word) for word in review] for review in review_filtered]
 	print 'stemming done'
-
 
 	#remove word whose frequency is 1
 	if low_freq_filter:
@@ -122,8 +112,21 @@ def train_by_lsi(reviews):
 	print "train by lsi done"
 	return (index, dictionary, lsi)
 
+def train_by_lda(reviews):
+	from gensim import corpora, models, similarities
 
-def getSimOfAllReviews(outputpath, fileList, index, dictionary, lsi):
+	dictionary = corpora.Dictionary(reviews)
+	corpus = [dictionary.doc2bow(text) for text in reviews] 
+	tfidf = models.TfidfModel(corpus)
+	corpus_tfidf = tfidf[corpus]
+
+	lda = models.LdaModel(corpus_tfidf, id2word=dictionary, num_topics=10)
+	index = similarities.MatrixSimilarity(lda[corpus])
+
+	print "train by lda done"
+	return (index, dictionary, lda)
+
+def getSimOfAllReviews(outputpath, fileList, index, dictionary, model):
 	#go through all reviews and preprocess review
 	#then try to get the similarity between current review and all others
 	for f in fileList:
@@ -140,11 +143,11 @@ def getSimOfAllReviews(outputpath, fileList, index, dictionary, lsi):
 
 		rev = [curReview]
 
-		target_rev = preprocess(rev, low_freq_filter=False)
+		target_rev = preprocess(rev, low_freq_filter=True)
   
 		ml_bow = dictionary.doc2bow(target_rev[0]) 
   
-		sims = index[lsi[ml_bow]]
+		sims = index[model[ml_bow]]
 
 		output(outputpath, sims, f, fileList)
 
@@ -156,7 +159,6 @@ def output(outputpath, sim, currentFile, fileList):
 	cur_cuisine = currentFile.split('/')[-1].split('.')[0]
 
 	for i in range(size):
-		print sort_sims[i][1]
 		outputsim = str(sort_sims[i][1])
 		file_index = sort_sims[i][0]
 		file_name = fileList[file_index]
@@ -271,21 +273,13 @@ def main():
 	reviews_processed =	preprocess(reviews)
 
 	#all reviews have been processed by lsi model
-	(index, dictionary, lsi) = train_by_lsi(reviews_processed)
-	
-
-	getSimOfAllReviews(lsiOutputPath, fileList, index, dictionary, lsi)
-
+	(lsi_index, lsi_dictionary, lsi) = train_by_lsi(reviews_processed)	
+	getSimOfAllReviews(lsiOutputPath, fileList, lsi_index, lsi_dictionary, lsi)
 	generateHeatmap(lsiOutputPath, 'LSI_TFIDF')
 
-	'''
-	(index, dictionary, lda) = train_by_lda(reviews_processed)
-
-	matchByFile(fileList, index, dictionary, lda)
-
-	
-	generateHeatmap('noidf')
-	'''
+	(lda_index, lda_dictionary, lda) = train_by_lda(reviews_processed)
+	getSimOfAllReviews(ldaOutputPath, fileList, lda_index, lda_dictionary, lda)
+	generateHeatmap(ldaOutputPath, 'LDA_TFIDF')
 
 
 if __name__ == '__main__':
