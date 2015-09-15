@@ -5,9 +5,9 @@ from gensim import matutils
 
 #www.open-open.com/lib/view/open1411355493171.html
 
-basePath = '/home/yfliu/Documents/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/'
-categoryPath = '/home/yfliu/Documents/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/categories'
-ldaPath = '/home/yfliu/Documents/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/lda'
+basePath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/'
+categoryPath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/categories'
+ldaPath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/lda'
 
 def getFiles():
 	file_list = []
@@ -21,7 +21,21 @@ def getFiles():
 	return file_list
 
 def readReview(fileList):
-	pass
+	reviews = []
+
+	for f in fileList:
+		reader = open(f, 'r')
+		line = reader.readline()
+		curReview = []
+
+		while line:
+			curReview.append(line)
+			line = reader.readline()
+
+		reviews.append(curReview)
+		reader.close()
+
+	return reviews
 
 
 def preprocess(target_file):
@@ -190,7 +204,9 @@ def getMaxSim(file):
 def main():
 	fileList = getFiles()
 
+
 	reviews = readReview(fileList)
+	print reviews
 
 	reviews_processed =	preprocess(reviews)
 	(index, dictionary, lda) = train_by_lda(reviews_processed)
@@ -199,6 +215,7 @@ def main():
 
 	generateHeatmap('idf')
 	generateHeatmap('noidf')
+
 
 if __name__ == '__main__':
 	main()
