@@ -26,10 +26,10 @@ def readReview(fileList):
 	for f in fileList:
 		reader = open(f, 'r')
 		line = reader.readline()
-		curReview = []
+		curReview = ''
 
 		while line:
-			curReview.append(line)
+			curReview += line
 			line = reader.readline()
 
 		reviews.append(curReview)
@@ -38,9 +38,13 @@ def readReview(fileList):
 	return reviews
 
 
-def preprocess(target_file):
+def preprocess(reviews):
 	import nltk
+	from nltk.tokenize import word_tokenize
 
+	review_tokenized = [[word.lower() for word in word_tokenize(review.decode('utf-8'))] for review in reviews] 
+
+	'''
 	reviews = [line.strip() for line in file(target_file)]
 
 	review_lower = [[word for word in review.lower().split()] for review in reviews]
@@ -49,10 +53,10 @@ def preprocess(target_file):
 	print 'separate splitor'
 	from nltk.tokenize import word_tokenize
 	review_tokenized = [[word.lower() for word in word_tokenize(review.decode('utf-8'))] for review in reviews]
-
+	'''
 	#remove stop words
 	print 'remove stop words'
-	from nltk.corpus import stop_words
+	from nltk.corpus import stopwords
 	english_stopwords = stopwords.words('english')
 
 	review_filterd_stopwords = [[word for word in review if not word in english_stopwords] for review in review_tokenized]
@@ -61,11 +65,10 @@ def preprocess(target_file):
 	print 'remove punctuations'
 	english_punctuations = [',','.',':',';','?','(',')','&','!','@','#','$','%']
 	review_filtered = [[word for word in review if not word in english_punctuations] for review in review_filterd_stopwords]
-	print review_filtered[0]
 
 	#stemming
 	print 'stemming'
-	from nltk.stem.lancaster import CancasterStemmer
+	from nltk.stem.lancaster import LancasterStemmer
 	st = LancasterStemmer()
 	review_stemmed = [[st.stem(word) for word in review] for review in review_filtered]
 
@@ -88,8 +91,6 @@ def ldaProcessing(file_list):
 
 	return reviews
 
-def preprocess(reviews):
-	pass
 
 def train_by_lda(reviews):
 	pass
@@ -204,17 +205,17 @@ def getMaxSim(file):
 def main():
 	fileList = getFiles()
 
-
 	reviews = readReview(fileList)
-	print reviews
 
 	reviews_processed =	preprocess(reviews)
+	'''
 	(index, dictionary, lda) = train_by_lda(reviews_processed)
 
 	matchByFile(fileList, index, dictionary, lda)
 
 	generateHeatmap('idf')
 	generateHeatmap('noidf')
+	'''
 
 
 if __name__ == '__main__':
