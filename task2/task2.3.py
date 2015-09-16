@@ -5,7 +5,7 @@ from gensim import matutils
 
 #www.open-open.com/lib/view/open1411355493171.html
 
-basePath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/'
+basePath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2'
 categoryPath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/categories'
 ldaPath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/lda'
 lsiOutputPath = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task2/lsi'
@@ -173,46 +173,15 @@ def output(outputpath, sim, currentFile, fileList):
 		with open(outputfile, 'w') as writer:
 			writer.write(outputsim)
 
-'''
-def lda(K, numfeatures, texts, num_display_words, outputFolder, first_cuisine, second_cuisine, bIDF):
-    K_clusters = K
-    vectorizer = TfidfVectorizer(max_df=0.5, max_features=numfeatures, min_df=2, stop_words='english', use_idf=bIDF)
+	return fileSequence
 
-    X = vectorizer.fit_transform(texts)
-    
-    id2words ={}
-    for i,word in enumerate(vectorizer.get_feature_names()):
-        id2words[i] = word
 
-    corpus = matutils.Sparse2Corpus(X,  documents_columns=False)
-
-    if bIDF:
-    	tfidf = models.TfidfModel(corpus)
-    	dataset = tfidf(corpus)
-    else:
-    	dataset = corpus
-
-    lda = models.ldamodel.LdaModel(dataset, num_topics=K_clusters, id2word=id2words)
-        
-    output_text = []
-    for i, item in enumerate(lda.show_topics(num_topics=K_clusters, num_words=num_display_words, formatted=False)):
-        output_text.append("Topic: " + str(i))
-        for weight,term in item:
-            output_text.append( term + " : " + str(weight) )
-
-    if bIDF:
-    	outputfile = outputFolder + '/idf/' + first_cuisine + '_' + second_cuisine + '.txt'
-    else:
-    	outputfile = outputFolder + '/noidf/' + first_cuisine + '_' + second_cuisine + '.txt'
-
-    with open ( outputfile, 'w' ) as f:
-        f.write('\n'.join(output_text))
-'''
-
-def generateSimilarityMap(path, config):
+def generateSimilarityMap(path, cluster_size, config):
 	import plotly.plotly as py
 	import plotly.graph_objs as go
 
+	cuisine_sim = get_cuisine_similarity(path, cluster_size,config)
+	'''
 	cuisines_sim, cuisine_list = get_cuisine_similarity(path)
 	data = []
 
@@ -235,10 +204,10 @@ def generateSimilarityMap(path, config):
 	layout = go.Layout(title = 'similarity_' + config, xaxis = dict(ticks = ''), yaxis = dict(ticks = ''))
 	fig = go.Figure(data = raw_data, layout = layout)
 	url = py.plot(fig, filename = 'similarity_' + config, validate = True)
+	'''
 
-
-def get_cuisine_similarity(filepath):
-	cuisine_list = []
+def get_cuisine_similarity(filepath, cluster_size, config):
+	#cuisine_list = []
 	cuisine_sim = {}
 
 	import os
@@ -248,14 +217,84 @@ def get_cuisine_similarity(filepath):
 
 			cuisines = filename.split('.')[0].split('_')
 
-			cuisine_sim[cuisines[0] + cuisines[1]] = getSim(target_file)
-			cuisine_list += [cuisines[0], cuisines[1]]
+			refCuisine = cuisines[0]
 
-			print 'similarity of ', cuisines[0], cuisines[1], 'is: ', cuisine_sim[cuisines[0] + cuisines[1]]
+			if refCuisine not in cuisine_sim:
+				cuisine_sim[refCuisine] = []
+				cuisine_sim[refCuisine].append(refCuisine)
 
+			similarity = getSim(target_file)
+
+			if similarity > 0.7:
+				cuisine_sim[refCuisine].append(cuisines[1])
+
+			cuisine_sim[refCuisine] = list(set(cuisine_sim[refCuisine]))
+
+			#cuisine_sim[cuisines[0] + cuisines[1]] = getSim(target_file)
+			#cuisine_list += [cuisines[0], cuisines[1]]
+
+			#print 'similarity of ', cuisines[0], cuisines[1], 'is: ', cuisine_sim[cuisines[0] + cuisines[1]]
+
+	clustered_sim = findCluster(cuisine_sim, filepath, cluster_size, config)
 
 	print 'get cuisine similarity done'
-	return cuisine_sim, list(set(cuisine_list))
+	#return cuisine_sim, list(set(cuisine_list))
+	return clustered_sim
+
+
+def findCluster(cuisine_sim, outputpath, cluster_size, config):
+	to_be_deleted = []
+	to_be_updated = {}
+
+	previousSize = -1
+	while True:
+		if previousSize == len(cuisine_sim) or len(cuisine_sim) <= cluster_size:
+			break
+
+		previousSize = len(cuisine_sim)
+		#print "cuisine sim: ", cuisine_sim
+
+		for cuisine in cuisine_sim.keys():
+			if cuisine in to_be_deleted:
+				continue
+
+			similar_cuisines = cuisine_sim[cuisine]
+
+			for cui in similar_cuisines:
+				if cui not in cuisine_sim or cui == cuisine:
+					continue
+
+				to_be_updated[cuisine] = cuisine_sim[cui]
+				to_be_deleted.append(cui)
+
+			to_be_deleted = list(set(to_be_deleted))	
+
+
+		with open(basePath + '/' + config + '_' + str(cluster_size) + '_clusters.txt', 'a') as writer:
+			writer.write("\nto be deleted: \n")
+			writer.write(','.join(to_be_deleted))
+			writer.write("\n\nto be updated: \n") 
+			writer.write('\n'.join(to_be_updated))
+
+		for item in to_be_updated.keys():
+			for val in to_be_updated[item]:
+				if val not in cuisine_sim[item]:
+					cuisine_sim[item].append(val)
+
+		for item in to_be_deleted:
+			del cuisine_sim[item]
+
+		with open(basePath + '/' + config + '_' + str(cluster_size) + '_clusters.txt', 'a') as writer:
+			writer.write("\n\nsim_dict: ")
+			for k,v in cuisine_sim.items():
+				writer.write("\n\tkey: " + k)
+				for val in v:
+					writer.write("\n\t\tval: " + val)
+
+		to_be_deleted = []
+		to_be_updated.clear()
+
+	return cuisine_sim
 
 
 def getSim(file):
@@ -266,22 +305,27 @@ def getSim(file):
 
 
 def main():
-	fileList = getFiles()
+	#fileList = getFiles()
 
-	reviews = readReview(fileList)
+	#reviews = readReview(fileList)
 
-	reviews_processed =	preprocess(reviews)
+	#reviews_processed =	preprocess(reviews)
 
 	#all reviews have been processed by lsi model
-	(lsi_index, lsi_dictionary, lsi) = train_by_lsi(reviews_processed)	
-	getSimOfAllReviews(lsiOutputPath, fileList, lsi_index, lsi_dictionary, lsi)
-	generateSimilarityMap(lsiOutputPath, 'LSI_TFIDF')
-	print "LSI TFIDF similarity done"
+	#(lsi_index, lsi_dictionary, lsi) = train_by_lsi(reviews_processed)	
+	#getSimOfAllReviews(lsiOutputPath, fileList, lsi_index, lsi_dictionary, lsi)
+	#generateSimilarityMap(lsiOutputPath, 'LSI_TFIDF')
+	#print "LSI TFIDF similarity done"
 
-	(lda_index, lda_dictionary, lda) = train_by_lda(reviews_processed)
-	getSimOfAllReviews(ldaOutputPath, fileList, lda_index, lda_dictionary, lda)
-	generateSimilarityMap(ldaOutputPath, 'LDA_TFIDF')
-	print "LDA TFIDF similarity done"
+	#(lda_index, lda_dictionary, lda) = train_by_lda(reviews_processed)
+	#getSimOfAllReviews(ldaOutputPath, fileList, lda_index, lda_dictionary, lda)
+	#generateSimilarityMap(ldaOutputPath, 'LDA_TFIDF')
+	#print "LDA TFIDF similarity done"
+
+
+	generateSimilarityMap(lsiOutputPath, 3, 'LSI_TFIDF')
+	#generateSimilarityMap(lsiOutputPath, 5, 'LSI_TFIDF')
+	generateSimilarityMap(ldaOutputPath, 3, 'LDA_TFIDF')
 
 
 if __name__ == '__main__':
