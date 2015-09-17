@@ -269,12 +269,13 @@ def findCluster(cuisine_sim, outputpath, cluster_size, config):
 
 			to_be_deleted = list(set(to_be_deleted))	
 
-
+		'''
 		with open(basePath + '/' + config + '_' + str(cluster_size) + '_clusters.txt', 'a') as writer:
 			writer.write("\nto be deleted: \n")
 			writer.write(','.join(to_be_deleted))
 			writer.write("\n\nto be updated: \n") 
 			writer.write('\n'.join(to_be_updated))
+		'''
 
 		for item in to_be_updated.keys():
 			for val in to_be_updated[item]:
@@ -284,15 +285,19 @@ def findCluster(cuisine_sim, outputpath, cluster_size, config):
 		for item in to_be_deleted:
 			del cuisine_sim[item]
 
-		with open(basePath + '/' + config + '_' + str(cluster_size) + '_clusters.txt', 'a') as writer:
-			writer.write("\n\nsim_dict: ")
-			for k,v in cuisine_sim.items():
-				writer.write("\n\tkey: " + k)
-				for val in v:
-					writer.write("\n\t\tval: " + val)
-
 		to_be_deleted = []
 		to_be_updated.clear()
+
+
+	with open(basePath + '/' + config + '_' + str(cluster_size) + '_clusters.txt', 'a') as writer:
+		for k,v in cuisine_sim.items():
+			writer.write(k + ':')
+			values = []
+			for val in v:
+				values.append(val)
+				
+			writer.write(','.join(values))
+			writer.write('\n')
 
 	return cuisine_sim
 
