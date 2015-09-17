@@ -180,31 +180,49 @@ def generateSimilarityMap(path, cluster_size, config):
 	import plotly.plotly as py
 	import plotly.graph_objs as go
 
-	cuisine_sim = get_cuisine_similarity(path, cluster_size,config)
-	'''
-	cuisines_sim, cuisine_list = get_cuisine_similarity(path)
+	similarity_cluster = get_cuisine_similarity(path, cluster_size,config)
 	data = []
+	cuisine_list = []
 
-	for first_cuisine in cuisine_list:
-		new_row = []
-		for second_cuisine in cuisine_list:
-			if (first_cuisine + second_cuisine) in cuisines_sim:
-				new_row.append(float(cuisines_sim[first_cuisine + second_cuisine]))
-			elif (second_cuisine + first_cuisine) in cuisines_sim:
-				new_row.append(float(cuisines_sim[second_cuisine + first_cuisine]))
-			elif first_cuisine == second_cuisine:
-				new_row.append(1.0)
-			else:
-				new_row.append(0.0)	
+	for curVals in similarity_cluster.values():
+		intersect = [val for val in curVals if val in cuisine_list]
 
-		data.append(new_row)
+		for v in intersect:
+			cuisine_list.remove(v)
+			curVals.remove(v)
+
+		cuisine_list += intersect
+		cuisine_list += curVals
+
+	for val in cuisine_list:
+		curData = []
+		for ref in cuisine_list:
+			curData.append(read_similarity_data(val, ref, config))
+
+		data.append(curData)
 
 
 	raw_data = go.Data([go.Heatmap(z = data, x = cuisine_list, y = cuisine_list, colorscale = 'Viridis')])
-	layout = go.Layout(title = 'similarity_' + config, xaxis = dict(ticks = ''), yaxis = dict(ticks = ''))
+	layout = go.Layout(title = 'cluster_' + config, xaxis = dict(ticks = ''), yaxis = dict(ticks = ''))
 	fig = go.Figure(data = raw_data, layout = layout)
-	url = py.plot(fig, filename = 'similarity_' + config, validate = True)
-	'''
+	url = py.plot(fig, filename = 'cluster_' + config, validate = True)
+	
+
+def read_similarity_data(cuisine1, cuisine2, config):
+
+	if 'LDA' in config:
+		path = ldaOutputPath
+	if 'LSI' in config:
+		path = lsiOutputPath
+
+	file_name = path + '/' + cuisine1 + '_' + cuisine2 + '.txt'
+
+	similarity = 0.0
+	with open(file_name, 'r') as reader:
+		similarity = float(reader.readline())
+
+	return similarity
+
 
 def get_cuisine_similarity(filepath, cluster_size, config):
 	#cuisine_list = []
@@ -237,7 +255,7 @@ def get_cuisine_similarity(filepath, cluster_size, config):
 
 	clustered_sim = findCluster(cuisine_sim, filepath, cluster_size, config)
 
-	print 'get cuisine similarity done'
+	print 'get cluster similarity done'
 	#return cuisine_sim, list(set(cuisine_list))
 	return clustered_sim
 
