@@ -261,13 +261,14 @@ def get_cuisine_similarity(filepath, cluster_size, config):
 
 
 def findCluster(cuisine_sim, outputpath, cluster_size, config):
-	to_be_deleted = []
-	to_be_updated = {}
 
 	previousSize = -1
 	while True:
 		if previousSize == len(cuisine_sim) or len(cuisine_sim) <= cluster_size:
 			break
+
+		to_be_deleted = []
+		to_be_updated = {}
 
 		previousSize = len(cuisine_sim)
 		#print "cuisine sim: ", cuisine_sim
@@ -282,18 +283,17 @@ def findCluster(cuisine_sim, outputpath, cluster_size, config):
 				if cui not in cuisine_sim or cui == cuisine:
 					continue
 
-				to_be_updated[cuisine] = cuisine_sim[cui]
+				if cuisine not in to_be_updated:
+					to_be_updated[cuisine] = []
+
+				to_be_updated[cuisine] += cuisine_sim[cui]
 				to_be_deleted.append(cui)
 
 			to_be_deleted = list(set(to_be_deleted))	
 
-		'''
-		with open(basePath + '/' + config + '_' + str(cluster_size) + '_clusters.txt', 'a') as writer:
-			writer.write("\nto be deleted: \n")
-			writer.write(','.join(to_be_deleted))
-			writer.write("\n\nto be updated: \n") 
-			writer.write('\n'.join(to_be_updated))
-		'''
+			if cuisine in to_be_updated:
+				to_be_updated[cuisine] = list(set(to_be_updated[cuisine]))
+
 
 		for item in to_be_updated.keys():
 			for val in to_be_updated[item]:
@@ -302,9 +302,6 @@ def findCluster(cuisine_sim, outputpath, cluster_size, config):
 
 		for item in to_be_deleted:
 			del cuisine_sim[item]
-
-		to_be_deleted = []
-		to_be_updated.clear()
 
 
 	with open(basePath + '/' + config + '_' + str(cluster_size) + '_clusters.txt', 'a') as writer:
@@ -346,9 +343,13 @@ def main():
 	#print "LDA TFIDF similarity done"
 
 
-	generateSimilarityMap(lsiOutputPath, 3, 'LSI_TFIDF')
-	#generateSimilarityMap(lsiOutputPath, 5, 'LSI_TFIDF')
-	generateSimilarityMap(ldaOutputPath, 3, 'LDA_TFIDF')
+	#generateSimilarityMap(lsiOutputPath, 3, 'LSI_TFIDF_3_clusters')
+	#generateSimilarityMap(lsiOutputPath, 8, 'LSI_TFIDF_5_clusters')
+	generateSimilarityMap(ldaOutputPath, 3, 'LDA_TFIDF_3_clusters')
+	generateSimilarityMap(ldaOutputPath, 5, 'LDA_TFIDF_5_clusters')
+	generateSimilarityMap(ldaOutputPath, 6, 'LDA_TFIDF_6_clusters')
+	generateSimilarityMap(ldaOutputPath, 8, 'LDA_TFIDF_8_clusters')
+	generateSimilarityMap(ldaOutputPath, 10, 'LDA_TFIDF_10_clusters')
 
 
 if __name__ == '__main__':
