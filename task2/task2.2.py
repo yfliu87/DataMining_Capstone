@@ -173,41 +173,6 @@ def output(outputpath, sim, currentFile, fileList):
 		with open(outputfile, 'w') as writer:
 			writer.write(outputsim)
 
-'''
-def lda(K, numfeatures, texts, num_display_words, outputFolder, first_cuisine, second_cuisine, bIDF):
-    K_clusters = K
-    vectorizer = TfidfVectorizer(max_df=0.5, max_features=numfeatures, min_df=2, stop_words='english', use_idf=bIDF)
-
-    X = vectorizer.fit_transform(texts)
-    
-    id2words ={}
-    for i,word in enumerate(vectorizer.get_feature_names()):
-        id2words[i] = word
-
-    corpus = matutils.Sparse2Corpus(X,  documents_columns=False)
-
-    if bIDF:
-    	tfidf = models.TfidfModel(corpus)
-    	dataset = tfidf(corpus)
-    else:
-    	dataset = corpus
-
-    lda = models.ldamodel.LdaModel(dataset, num_topics=K_clusters, id2word=id2words)
-        
-    output_text = []
-    for i, item in enumerate(lda.show_topics(num_topics=K_clusters, num_words=num_display_words, formatted=False)):
-        output_text.append("Topic: " + str(i))
-        for weight,term in item:
-            output_text.append( term + " : " + str(weight) )
-
-    if bIDF:
-    	outputfile = outputFolder + '/idf/' + first_cuisine + '_' + second_cuisine + '.txt'
-    else:
-    	outputfile = outputFolder + '/noidf/' + first_cuisine + '_' + second_cuisine + '.txt'
-
-    with open ( outputfile, 'w' ) as f:
-        f.write('\n'.join(output_text))
-'''
 
 def generateSimilarityMap(path, config):
 	import plotly.plotly as py
@@ -267,9 +232,7 @@ def getSim(file):
 
 def main():
 	fileList = getFiles()
-
 	reviews = readReview(fileList)
-
 	reviews_processed =	preprocess(reviews)
 
 	#all reviews have been processed by lsi model
