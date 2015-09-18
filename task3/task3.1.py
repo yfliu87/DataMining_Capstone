@@ -5,17 +5,6 @@ business_file_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProjec
 business_review_file_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_review.json'
 manual_annotation_task_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task3/manualAnnotationTask'
 
-'''
-1. build business_type, business_id map
-2. traverse review file:
-	traverse business id:
-		collect all reviews belong to business_id
-
-3. traverse tip file:
-	traverse business id:
-		collect all tips belong to business_id
-
-'''
 
 def get_target_business_type():
 	import os
@@ -87,7 +76,27 @@ def read_review_related_to_business_id(business_category_id_map):
 	return business_id_review_map 
 
 
+def output_category_review_to_disk(business_category_id_map, business_id_review_map):
+	import codecs
+
+	for cat in business_category_id_map:
+		reviews = []
+		business_ids = business_category_id_map[cat]
+
+		for bus_id in business_ids:
+			if bus_id not in business_id_review_map:
+				continue 
+
+			reviews += business_id_review_map[bus_id]
+
+		file_name = base_path + '/categoryReviewMap/' + cat + '_reviews.txt'
+
+		with codecs.open(file_name, 'a', encoding='utf-8') as writer:
+			writer.write(''.join(reviews))
+
+
 if __name__ == '__main__':
 	target_business_type = get_target_business_type()
 	business_category_id_map = build_business_type_id_map(target_business_type)
 	business_id_review_map = read_review_related_to_business_id(business_category_id_map)
+	output_category_review_to_disk(business_category_id_map, business_id_review_map)
