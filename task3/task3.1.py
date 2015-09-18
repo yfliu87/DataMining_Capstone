@@ -51,7 +51,26 @@ def build_business_type_id_map(business_type_list):
 
 	return result
 
+
+def read_review_related_to_business_id(business_category_id_map):
+	reader = open(business_review_file_path, 'r')
+
+	line = reader.readline()
+
+	while line:
+		json_line = json.loads(line)
+		bus_id = json_line['business_id'] 
+
+		if target_business_type(bus_id, business_category_id_map):
+			record_review(business_category_id_map, json_line['text'])
+
+		line = reader.readline()
+
+	reader.close()
+
+	return business_category_id_map
+
 if __name__ == '__main__':
 	target_business_type = get_target_business_type()
 	business_type_id_map = build_business_type_id_map(target_business_type)
-
+	business_category_id_review = read_review_related_to_business_id(business_type_id_map)
