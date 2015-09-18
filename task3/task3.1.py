@@ -1,5 +1,8 @@
-review_file_path = ''
+import json
+
+base_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task3'
 business_file_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_business.json'
+business_review_file_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_review.json'
 manual_annotation_task_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task3/manualAnnotationTask'
 
 '''
@@ -26,7 +29,6 @@ def get_target_business_type():
 
 
 def build_business_type_id_map(business_type_list):
-	import json
 	result = {}
 
 	reader = open(business_file_path, 'r')
@@ -48,18 +50,27 @@ def build_business_type_id_map(business_type_list):
 		line = reader.readline()
 
 	reader.close()
-
 	return result
 
-def target_business_type(current_id, business_category_id_map):
+
+def included_in_target_business_type(current_id, business_category_id_map):
 	for cat in business_category_id_map:
 		if current_id in business_category_id_map[cat]:
 			return True
 
 	return False
 
+
+def record_review(business_id_review_map, bus_id, review):
+	if bus_id not in business_id_review_map:
+		business_id_review_map[bus_id] = []
+
+	business_id_review_map[bus_id].append(review)
+
+
 def read_review_related_to_business_id(business_category_id_map):
 	reader = open(business_review_file_path, 'r')
+	business_id_review_map = {}
 
 	line = reader.readline()
 
@@ -67,16 +78,16 @@ def read_review_related_to_business_id(business_category_id_map):
 		json_line = json.loads(line)
 		bus_id = json_line['business_id'] 
 
-		if target_business_type(bus_id, business_category_id_map):
-			record_review(business_category_id_map, json_line['text'])
+		if included_in_target_business_type(bus_id, business_category_id_map):
+			record_review(business_id_review_map, bus_id, json_line['text'])
 
 		line = reader.readline()
 
 	reader.close()
+	return business_id_review_map 
 
-	return business_category_id_map
 
 if __name__ == '__main__':
 	target_business_type = get_target_business_type()
-	business_type_id_map = build_business_type_id_map(target_business_type)
-	business_category_id_review = read_review_related_to_business_id(business_type_id_map)
+	business_category_id_map = build_business_type_id_map(target_business_type)
+	business_id_review_map = read_review_related_to_business_id(business_category_id_map)
