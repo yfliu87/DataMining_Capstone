@@ -51,6 +51,12 @@ def build_business_type_id_map(business_type_list):
 
 	return result
 
+def target_business_type(current_id, business_category_id_map):
+	for cat in business_category_id_map:
+		if current_id in business_category_id_map[cat]:
+			return True
+
+	return False
 
 def read_review_related_to_business_id(business_category_id_map):
 	reader = open(business_review_file_path, 'r')
