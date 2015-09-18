@@ -1,5 +1,5 @@
 review_file_path = ''
-business_file_path = ''
+business_file_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_business.json'
 manual_annotation_task_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task3/manualAnnotationTask'
 
 '''
@@ -25,6 +25,33 @@ def get_target_business_type():
 	return result
 
 
+def build_business_type_id_map(business_type_list):
+	import json
+	result = {}
+
+	reader = open(business_file_path, 'r')
+	line = reader.readline()
+
+	while line:
+		json_line = json.loads(line)
+		categories = json_line['categories']
+
+		for cat in categories:
+			if cat in business_type_list:
+				business_id = json_line['business_id']
+
+				if cat not in result:
+					result[cat] = set() 
+
+				result[cat].add(business_id)
+
+		line = reader.readline()
+
+	reader.close()
+
+	return result
+
 if __name__ == '__main__':
 	target_business_type = get_target_business_type()
+	business_type_id_map = build_business_type_id_map(target_business_type)
 
