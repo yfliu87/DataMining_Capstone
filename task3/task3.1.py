@@ -120,6 +120,31 @@ def read_file(target_file):
 	reader.close()
 	return review
 
+def preprocess(reviews):
+	import nltk
+	from nltk.tokenize import word_tokenize
+
+	review_tokenized = [[word.lower() for word in word_tokenize(review.decode('utf-8'))] for review in reviews] 
+	print "review tokenize done"
+
+	#remove stop words
+	from nltk.corpus import stopwords
+	english_stopwords = stopwords.words('english')
+	review_filterd_stopwords = [[word for word in review if not word in english_stopwords] for review in review_tokenized]
+	print 'remove stop words done'
+
+	#remove punctuations
+	english_punctuations = [',','.',':',';','?','(',')','&','!','@','#','$','%']
+	review_filtered = [[word for word in review if not word in english_punctuations] for review in review_filterd_stopwords]
+	print 'remove punctuations done'
+
+	#stemming
+	from nltk.stem.lancaster import LancasterStemmer
+	st = LancasterStemmer()
+	review_stemmed = [[st.stem(word) for word in review] for review in review_filtered]
+	print 'stemming done'
+
+	return review_stemmed
 
 
 if __name__ == '__main__':
@@ -130,6 +155,7 @@ if __name__ == '__main__':
 
 	reviews = read_review('Chinese')
 	reviews_processed =	preprocess(reviews)
+
 	(lda_index, lda_dictionary, lda) = train_by_lda(reviews_processed)	
 	validate_dishes(validate_output_file_path, lda_index, lda_dictionary, lda)
 	#getSimOfAllReviews(lsiOutputPath, fileList, lsi_index, lsi_dictionary, lsi)
