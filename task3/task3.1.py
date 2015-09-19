@@ -162,6 +162,61 @@ def train_by_lsi(reviews):
 	return (index, dictionary, lsi)
 
 
+def validate_dishes(target_cuisine, reviews, output_file_path, lsi_index, lsi_dictionary, lsi):
+	for (dirpath, dirnames, filenames) in os.walk(base_path + '/manualAnnotationTask'):
+		for filename in filenames:
+			if filename.split('.')[0] == target_cuisine:
+				target_file = os.path.join(dirpath, filename)
+				output_file = output_file_path + '/' + target_cuisine + '.txt'
+				check_dish(target_file, reviews, output_file, lsi_index, lsi_dictionary, lsi)
+				break
+
+
+def check_dish(target_file, reviews, output_file_path, lsi_index, lsi_dictionary, lsi):
+	result = []
+	reader = open(target_file,'r')
+	line = reader.readline()
+
+	while line:
+		dish = line.split('\t')[0]
+		target_dishes = dish.split()
+		target_text = preprocess(target_dishes)
+
+		ml_dish = target_text[0]
+		ml_bow = lsi_dictionary.doc2bow(ml_dish)
+		ml_lsi = lsi[ml_bow]
+		sims = lsi_index[ml_lsi]
+		sort_sims = sorted(enumerate(sims), key=lambda item: -item[1])
+
+		found_match = False
+		for item in sort_sims:
+			review = reviews[item[0]]
+
+			if dish in review:
+				found_match = True
+				break
+
+		if found_match:
+			result.append((dish, 1))
+		else:
+			result.append((dish, 0))
+
+		line = reader.readline()
+
+	reader.close()
+
+	output_to_disk(output_file_path, result)
+
+
+def output_to_disk(output_file_path, dish_appearance):
+	writer = open(output_file_path, 'a')
+
+	for item in dish_appearance:
+		writer.write('\t'.join([item[0], str(item[1])]))
+		writer.write('\n')
+
+	writer.close()
+
 
 if __name__ == '__main__':
 	'''
@@ -174,5 +229,4 @@ if __name__ == '__main__':
 	reviews_processed =	preprocess(reviews)
 	(lsi_index, lsi_dictionary, lsi) = train_by_lsi(reviews_processed)	
 
-	#getSimOfAllReviews(lsiOutputPath, fileList, lsi_index, lsi_dictionary, lsi)
-	#generateSimilarityMap(lsiOutputPath, 'LSI_TFIDF')
+	validate_dishes('Chinese', reviews, validate_output_file_path, lsi_index, lsi_dictionary, lsi)
