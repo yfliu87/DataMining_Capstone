@@ -147,6 +147,21 @@ def preprocess(reviews):
 	return review_stemmed
 
 
+def train_by_lda(reviews):
+	from gensim import corpora, models, similarities
+
+	dictionary = corpora.Dictionary(reviews)
+	corpus = [dictionary.doc2bow(text) for text in reviews] 
+	tfidf = models.TfidfModel(corpus)
+	corpus_tfidf = tfidf[corpus]
+
+	lda = models.LdaModel(corpus_tfidf, id2word=dictionary, num_topics=10)
+	index = similarities.MatrixSimilarity(lda[corpus])
+
+	print "train by lda done"
+	return (index, dictionary, lda)
+
+
 if __name__ == '__main__':
 	target_business_type = get_target_business_type()
 	business_category_id_map = build_business_type_id_map(target_business_type)
@@ -157,6 +172,6 @@ if __name__ == '__main__':
 	reviews_processed =	preprocess(reviews)
 
 	(lda_index, lda_dictionary, lda) = train_by_lda(reviews_processed)	
-	validate_dishes(validate_output_file_path, lda_index, lda_dictionary, lda)
+	#validate_dishes(validate_output_file_path, lda_index, lda_dictionary, lda)
 	#getSimOfAllReviews(lsiOutputPath, fileList, lsi_index, lsi_dictionary, lsi)
 	#generateSimilarityMap(lsiOutputPath, 'LSI_TFIDF')
