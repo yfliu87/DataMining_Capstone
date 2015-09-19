@@ -1,3 +1,4 @@
+import os
 import json
 
 base_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task3'
@@ -7,7 +8,6 @@ manual_annotation_task_path = '/home/yfliu/DataMining_Workspace/DataMining/Capst
 
 
 def get_target_business_type():
-	import os
 	result = []
 
 	for (dirpath, dirnames, filenames) in os.walk(manual_annotation_task_path):
@@ -95,8 +95,42 @@ def output_category_review_to_disk(business_category_id_map, business_id_review_
 			writer.write(''.join(reviews))
 
 
+def read_review(target_cuisine):
+	reviews = []
+	for (dirpath, dirnames, filenames) in os.walk(base_path + '/categoryReviewMap'):
+		for filename in filenames:
+			if filename.split('_')[0] == target_cuisine:
+				target_file = os.path.join(dirpath, filename)
+				reviews = read_file(target_file)
+				break
+
+	return reviews
+
+def read_file(target_file):
+	review = []
+	reader = open(target_file, 'r')
+	line = reader.readline()
+
+	while line:
+		if line != '\n':
+			review.append(line)
+
+		line = reader.readline()
+
+	reader.close()
+	return review
+
+
+
 if __name__ == '__main__':
 	target_business_type = get_target_business_type()
 	business_category_id_map = build_business_type_id_map(target_business_type)
 	business_id_review_map = read_review_related_to_business_id(business_category_id_map)
 	output_category_review_to_disk(business_category_id_map, business_id_review_map)
+
+	reviews = read_review('Chinese')
+	reviews_processed =	preprocess(reviews)
+	(lda_index, lda_dictionary, lda) = train_by_lda(reviews_processed)	
+	validate_dishes(validate_output_file_path, lda_index, lda_dictionary, lda)
+	#getSimOfAllReviews(lsiOutputPath, fileList, lsi_index, lsi_dictionary, lsi)
+	#generateSimilarityMap(lsiOutputPath, 'LSI_TFIDF')
