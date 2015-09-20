@@ -288,6 +288,34 @@ def check_missing(output_file, labels):
 
 	writer.close()
 
+
+def read_all_label(target_file):
+	label_map = {}
+
+	reader = open(target_file, 'r')
+	line = reader.readline()
+
+	while line:
+		label = line.split('\t')[0]
+		value = line.split('\t')[1].split('\n')[0]
+
+		if label in label_map:
+			if value != label_map[label]:
+				value = raw_input(label)
+
+		label_map[label] = value
+
+		line = reader.readline()
+
+	reader.close()
+
+	return label_map
+
+
+def filter_duplication(target_file):
+	label_map = read_all_label(target_file)
+
+
 if __name__ == '__main__':
 	'''	
 	target_business_type = get_target_business_type()
@@ -298,9 +326,10 @@ if __name__ == '__main__':
 	output_category_review_to_disk(business_category_id_map, business_id_review_map, business_id_tip_map)
 	'''
 
-	labels = read_labels(label_output_folder)
-	validate_label(label_output_folder, 'Chinese.label', labels)	
-	check_missing(label_output_folder + '/' + 'new.txt', labels)
+	#labels = read_labels(label_output_folder)
+	#validate_label(label_output_folder, 'Chinese.label', labels)	
+	#check_missing(label_output_folder + '/' + 'new.txt', labels)
+	filter_duplication(label_output_folder + '/' + 'new.txt')
 	'''
 	reviews = read_review('Chinese')
 	reviews_processed =	preprocess(reviews)
