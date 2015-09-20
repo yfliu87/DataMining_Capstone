@@ -51,18 +51,11 @@ def included_in_target_business_type(current_id, business_category_id_map):
 	return False
 
 
-def record_review(business_id_review_map, bus_id, review):
-	if bus_id not in business_id_review_map:
-		business_id_review_map[bus_id] = []
+def record_info(target_map, bus_id, info):
+	if bus_id not in target_map:
+		target_map[bus_id] = []
 
-	business_id_review_map[bus_id].append(review)
-
-
-def record_tip(business_id_tip_map, bus_id, tip):
-	if bus_id not in business_id_tip_map:
-		business_id_tip_map[bus_id] = []
-
-	business_id_tip_map[bus_id].append(tip)
+	target_map[bus_id].append(info)
 
 
 def read_review_related_to_business_id(business_category_id_map):
@@ -76,7 +69,7 @@ def read_review_related_to_business_id(business_category_id_map):
 		bus_id = json_line['business_id'] 
 
 		if included_in_target_business_type(bus_id, business_category_id_map):
-			record_review(business_id_review_map, bus_id, json_line['text'])
+			record_info(business_id_review_map, bus_id, json_line['text'])
 
 		line = reader.readline()
 
@@ -95,7 +88,7 @@ def read_tip_related_to_business_id(business_category_id_map):
 		bus_id = json_line['business_id'] 
 
 		if included_in_target_business_type(bus_id, business_category_id_map):
-			record_tip(business_id_tip_map, bus_id, json_line['text'])
+			record_info(business_id_tip_map, bus_id, json_line['text'])
 
 		line = reader.readline()
 
