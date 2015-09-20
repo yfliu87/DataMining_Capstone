@@ -229,7 +229,7 @@ def output_to_disk(output_file_path, dish_appearance):
 
 
 def read_labels(file_path):
-	labels = []
+	labels = {} 
 	for (dirpath, dirnames, filenames) in os.walk(file_path):
 		for filename in filenames:
 			if 'auto' in filename:
@@ -239,27 +239,59 @@ def read_labels(file_path):
 				line = reader.readline()
 
 				while line:
-					labels.append(line.split('\t')[0])
+					labels[line.split('\t')[0]] = line.split('\t')[1]
 					line = reader.readline()
 
 				reader.close()
 
 	return labels
 
+
+def validate_label(label_folder, ref_label_file, labels):
+	ref_file = label_folder + '/' + ref_label_file
+
+	reader = open(ref_file, 'r')
+	line = reader.readline()
+
+	writer = open(label_folder + '/' + 'new.txt', 'a')
+
+	while line:
+		label = line.split('\t')[0]
+
+		if label not in labels:
+			line = reader.readline()
+			continue
+
+		label_value = labels[label]
+
+		if label_value != line.split('\t')[1]:
+			writer.write(label + '\t' + str(label_value))
+		else:
+			writer.write(label + '\t' + str(line.split('\t')[1]))
+
+		line = reader.readline()
+
+	reader.close()
+	writer.close()
+
+
 if __name__ == '__main__':
-	
+	'''	
 	target_business_type = get_target_business_type()
 	business_category_id_map = build_business_type_id_map(target_business_type)
 	#business_id_review_map = read_review_related_to_business_id(business_category_id_map)
 	business_id_review_map = {}
 	business_id_tip_map = read_tip_related_to_business_id(business_category_id_map)
 	output_category_review_to_disk(business_category_id_map, business_id_review_map, business_id_tip_map)
+	'''
 
 	labels = read_labels(label_output_folder)
-	
-
+	validate_label(label_output_folder, 'Chinese.label', labels)	
+	#check_missing(label_output_folder + '/' + 'new.txt', labels)
+	'''
 	reviews = read_review('Chinese')
 	reviews_processed =	preprocess(reviews)
 	(lsi_index, lsi_dictionary, lsi) = train_by_lsi(reviews_processed)	
 
 	validate_dishes('Chinese', reviews, validate_output_file_path, lsi_index, lsi_dictionary, lsi)
+	'''
