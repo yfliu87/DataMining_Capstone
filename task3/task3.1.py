@@ -58,10 +58,9 @@ def record_info(target_map, bus_id, info):
 	target_map[bus_id].append(info)
 
 
-def read_review_related_to_business_id(business_category_id_map):
-	reader = open(business_review_file_path, 'r')
-	business_id_review_map = {}
-
+def read_from_file(business_category_id_map, file_path):
+	result_map = {}
+	reader = open(file_path, 'r')
 	line = reader.readline()
 
 	while line:
@@ -69,31 +68,20 @@ def read_review_related_to_business_id(business_category_id_map):
 		bus_id = json_line['business_id'] 
 
 		if included_in_target_business_type(bus_id, business_category_id_map):
-			record_info(business_id_review_map, bus_id, json_line['text'])
+			record_info(result_map, bus_id, json_line['text'])
 
 		line = reader.readline()
 
 	reader.close()
-	return business_id_review_map 
+	return result_map 
+
+
+def read_review_related_to_business_id(business_category_id_map):
+	return read_from_file(business_category_id_map, business_review_file_path)
 
 
 def read_tip_related_to_business_id(business_category_id_map):
-	reader = open(business_tip_file_path, 'r')
-	business_id_tip_map = {}
-
-	line = reader.readline()
-
-	while line:
-		json_line = json.loads(line)
-		bus_id = json_line['business_id'] 
-
-		if included_in_target_business_type(bus_id, business_category_id_map):
-			record_info(business_id_tip_map, bus_id, json_line['text'])
-
-		line = reader.readline()
-
-	reader.close()
-	return business_id_tip_map 
+	return read_from_file(business_category_id_map, business_tip_file_path)
 
 
 def output_category_review_to_disk(business_category_id_map, business_id_review_map, business_id_tip_map):
