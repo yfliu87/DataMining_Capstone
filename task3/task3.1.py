@@ -312,9 +312,19 @@ def read_all_label(target_file):
 	return label_map
 
 
+def output_by_value(label_map):
+	writer = open(label_output_folder + '/' + 'final.txt', 'a')
+	sorted_map = sorted(label_map.items(), lambda x,y: cmp(x[1], y[1]), reverse=True)
+
+	for item in sorted_map:
+		writer.write(item[0] + '\t' + item[1] + '\n')
+
+	writer.close()
+
+
 def filter_duplication(target_file):
 	label_map = read_all_label(target_file)
-
+	output_by_value(label_map)
 
 if __name__ == '__main__':
 	'''	
