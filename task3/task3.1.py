@@ -275,6 +275,19 @@ def validate_label(label_folder, ref_label_file, labels):
 	writer.close()
 
 
+def check_missing(output_file, labels):
+	writer = open(output_file, 'a')
+
+	for k, v in labels.items():
+		answer = raw_input(k)
+
+		if answer != 'y':
+			continue
+		
+		writer.write(k + '\t' + v)
+
+	writer.close()
+
 if __name__ == '__main__':
 	'''	
 	target_business_type = get_target_business_type()
@@ -287,7 +300,7 @@ if __name__ == '__main__':
 
 	labels = read_labels(label_output_folder)
 	validate_label(label_output_folder, 'Chinese.label', labels)	
-	#check_missing(label_output_folder + '/' + 'new.txt', labels)
+	check_missing(label_output_folder + '/' + 'new.txt', labels)
 	'''
 	reviews = read_review('Chinese')
 	reviews_processed =	preprocess(reviews)
