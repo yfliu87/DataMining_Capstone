@@ -7,7 +7,7 @@ business_review_file_path = '/home/yfliu/DataMining_Workspace/DataMining/Capston
 business_tip_file_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_tip.json'
 manual_annotation_task_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task3/manualAnnotationTask'
 validate_output_file_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task3/validateOutput'
-
+label_output_folder = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task3/task3.1_output'
 def get_target_business_type():
 	result = []
 
@@ -99,7 +99,7 @@ def output_category_review_to_disk(business_category_id_map, business_id_review_
 				reviews += business_id_tip_map[bus_id]
 
 
-		file_name = base_path + '/categoryReviewMap/' + cat + '_tip_reviews.txt'
+		file_name = base_path + '/categoryReviewMap/' + cat + '_tips.txt'
 
 		with codecs.open(file_name, 'a', encoding='utf-8') as writer:
 			writer.write(''.join(reviews))
@@ -228,17 +228,38 @@ def output_to_disk(output_file_path, dish_appearance):
 	writer.close()
 
 
+def read_labels(file_path):
+	labels = []
+	for (dirpath, dirnames, filenames) in os.walk(file_path):
+		for filename in filenames:
+			if 'auto' in filename:
+				target_file = os.path.join(dirpath, filename)
+
+				reader = open(target_file, 'r')
+				line = reader.readline()
+
+				while line:
+					labels.append(line.split('\t')[0])
+					line = reader.readline()
+
+				reader.close()
+
+	return labels
+
 if __name__ == '__main__':
+	
 	target_business_type = get_target_business_type()
 	business_category_id_map = build_business_type_id_map(target_business_type)
-	business_id_review_map = read_review_related_to_business_id(business_category_id_map)
+	#business_id_review_map = read_review_related_to_business_id(business_category_id_map)
+	business_id_review_map = {}
 	business_id_tip_map = read_tip_related_to_business_id(business_category_id_map)
 	output_category_review_to_disk(business_category_id_map, business_id_review_map, business_id_tip_map)
+
+	labels = read_labels(label_output_folder)
 	
-	'''
+
 	reviews = read_review('Chinese')
 	reviews_processed =	preprocess(reviews)
 	(lsi_index, lsi_dictionary, lsi) = train_by_lsi(reviews_processed)	
 
 	validate_dishes('Chinese', reviews, validate_output_file_path, lsi_index, lsi_dictionary, lsi)
-	'''
