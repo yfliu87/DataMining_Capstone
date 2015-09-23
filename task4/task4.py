@@ -104,8 +104,34 @@ def build_dish_star_map(dishes, restaurant_reviews):
 	return dish_star_map
 
 
+def calculate(dish_star_map):
+	dish_statistics = {}
+
+	for dish in dish_star_map.keys():
+		stars = dish_star_map[dish]
+
+		average_star = 0.0
+		occurance = 0
+		total_star = 0
+
+		for star in stars:
+			star_num = int(star)
+			current_occurance = len(dish_star_map[dish][star])
+			total_star += star_num * current_occurance
+			occurance += current_occurance
+
+		if occurance == 0:
+			continue
+
+		average_star = float(total_star/occurance)
+		dish_statistics[dish] = (occurance, average_star)
+
+
+	return dish_statistics
+
 if __name__ == '__main__':
 	chinese_restaurants = build_business_type_restaurant_id_map("Chinese")
 	dishes = read_chinese_dish_from_file(chinese_dish_file)
 	restaurant_reviews = build_restaurant_id_review_map(chinese_restaurants)
 	dish_star_map = build_dish_star_map(dishes, restaurant_reviews)
+	dish_statistics = calculate(dish_star_map)
