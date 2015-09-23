@@ -2,7 +2,8 @@ import codecs
 
 business_file_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_business.json'
 chinese_dish_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/student_dn_annotations.txt'
-review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_10000_review.json'
+review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_review.json'
+dish_statistic_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/dish_statistics.txt'
 
 def build_business_type_restaurant_id_map(target_type):
 	import json
@@ -44,6 +45,7 @@ def read_chinese_dish_from_file(dish_file):
 	reader.close()
 
 	return list(dishes)
+
 
 def build_restaurant_id_review_map(chinese_restaurants):
 	import json
@@ -129,9 +131,23 @@ def calculate(dish_star_map):
 
 	return dish_statistics
 
+
+def output_to_disk(dish_statistic_file, dish_statistics):
+	writer = codecs.open(dish_statistic_file, 'a', 'utf-8')
+
+	for dish in dish_statistics:
+		occurance = dish_statistics[dish][0]
+		average_star = dish_statistics[dish][1]
+
+		writer.write(dish + '\t' + str(occurance) + '\t' + str(average_star) + '\n')
+
+	writer.close()
+
+
 if __name__ == '__main__':
 	chinese_restaurants = build_business_type_restaurant_id_map("Chinese")
 	dishes = read_chinese_dish_from_file(chinese_dish_file)
 	restaurant_reviews = build_restaurant_id_review_map(chinese_restaurants)
 	dish_star_map = build_dish_star_map(dishes, restaurant_reviews)
 	dish_statistics = calculate(dish_star_map)
+	output_to_disk(dish_statistic_file, dish_statistics)
