@@ -1,3 +1,5 @@
+import codecs
+
 business_file_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_business.json'
 chinese_dish_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/student_dn_annotations.txt'
 review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_10000_review.json'
@@ -8,7 +10,7 @@ def build_business_type_restaurant_id_map(target_type):
 	result = {}
 	result[target_type] = [] 
 
-	reader = open(business_file_path, 'r')
+	reader = codecs.open(business_file_path, 'r', 'utf-8')
 	line = reader.readline()
 
 	while line:
@@ -30,7 +32,7 @@ def build_business_type_restaurant_id_map(target_type):
 def read_chinese_dish_from_file(dish_file):
 	dishes = set() 
 
-	reader = open(dish_file, 'r')
+	reader = codecs.open(dish_file, 'r', 'utf-8')
 	line = reader.readline()
 
 	while line:
@@ -47,7 +49,7 @@ def build_restaurant_id_review_map(chinese_restaurants):
 	import json
 
 	target_map = {}
-	reader = open(review_file, 'r')
+	reader = codecs.open(review_file, 'r', 'utf-8')
 	line = reader.readline()
 
 	while line:
@@ -76,7 +78,34 @@ def build_restaurant_id_review_map(chinese_restaurants):
 	return target_map
 
 
+def build_dish_star_map(dishes, restaurant_reviews):
+	dish_star_map = {}
+
+	for dish in dishes:
+		dish_star_map[dish] = {}
+
+	for dish in dishes:
+		for bus_id in restaurant_reviews:
+			stars = restaurant_reviews[bus_id]
+
+			for star in stars:
+				reviews = restaurant_reviews[bus_id][star]
+
+				for review in reviews:
+					date = review[0]
+					content = review[1]
+
+					if dish in content:
+						if star not in dish_star_map[dish]:
+							dish_star_map[dish][star] = []
+
+						dish_star_map[dish][star].append((date))
+
+	return dish_star_map
+
+
 if __name__ == '__main__':
 	chinese_restaurants = build_business_type_restaurant_id_map("Chinese")
 	dishes = read_chinese_dish_from_file(chinese_dish_file)
 	restaurant_reviews = build_restaurant_id_review_map(chinese_restaurants)
+	dish_star_map = build_dish_star_map(dishes, restaurant_reviews)
