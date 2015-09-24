@@ -4,7 +4,8 @@ business_file_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProjec
 chinese_dish_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/student_dn_annotations.txt'
 review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_review.json'
 dish_statistic_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/dish_statistics.txt'
-graph_data_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/wonton_double_axis_data.tsv'
+graph_data_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/dumpling_double_axis_data.tsv'
+all_dish_occurance_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/all_dish_occurance_data.tsv'
 
 def build_business_type_restaurant_id_map(target_type):
 	import json
@@ -172,8 +173,9 @@ def calculate_average(date_star_occurance_map):
 
 	writer.close()
 
+
 def build_date_star_map(dish_star_map):
-	star_review_detail = dish_star_map['wonton']
+	star_review_detail = dish_star_map['dumplings']
 
 	date_star_occurance_map = {}
 
@@ -189,6 +191,31 @@ def build_date_star_map(dish_star_map):
 	return date_star_occurance_map
 
 
+def arrange_data_for_all_dish_occurance(dish_star_map):
+	import collections
+
+	dish_occurance_map = {}
+
+	for dish in dish_star_map.keys():
+		occurance = 0
+
+		for star in dish_star_map[dish]:
+			occurance += len(dish_star_map[dish][star])
+
+		dish_occurance_map[dish] = occurance 
+
+	sorted_map = collections.OrderedDict(sorted(dish_occurance_map.items(), key=lambda d:d[1], reverse=True))
+
+	writer = open(all_dish_occurance_file, 'a')
+	writer.write('dish' + '\t' + 'occurance' + '\n')
+
+	for dish, occurance in sorted_map.items():
+		writer.write(dish.encode('utf-8') + '\t' + str(occurance) + '\n')
+
+	writer.close()
+
+
+
 if __name__ == '__main__':
 	chinese_restaurants = build_business_type_restaurant_id_map("Chinese")
 	dishes = read_chinese_dish_from_file(chinese_dish_file)
@@ -198,3 +225,4 @@ if __name__ == '__main__':
 	#output_to_disk(dish_statistic_file, dish_statistics)
 
 	arrange_data_for_double_axis(dish_star_map)
+	arrange_data_for_all_dish_occurance(dish_star_map)
