@@ -4,7 +4,7 @@ business_file_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProjec
 chinese_dish_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/student_dn_annotations.txt'
 review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_review.json'
 dish_statistic_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/dish_statistics.txt'
-graph_data_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/dumpling_double_axis_data.tsv'
+double_axis_data_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/dumpling_double_axis_data.tsv'
 all_dish_occurance_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/all_dish_occurance_data.tsv'
 
 def build_business_type_restaurant_id_map(target_type):
@@ -153,23 +153,33 @@ def arrange_data_for_double_axis(dish_star_map):
 
 def calculate_average(date_star_occurance_map):
 	import collections
+	
+	writer = open(double_axis_data_file, 'a')
+	sorted_map = collections.OrderedDict(sorted(date_star_occurance_map.items(), key=lambda k:k[0])) 
 
-	result = [] 
-	sorted_map = collections.OrderedDict(sorted(date_star_occurance_map.items())) 
+	for year in sorted_map.keys():
+		result = [] 
+		all_star = 0
+		total_occurence = 0
 
-	for date in sorted_map.keys():
-		occurance = len(sorted_map[date])
-		total_star = sum(sorted_map[date])
-		average_star = float(total_star/occurance)
+		writer.write('\n' + year + '\n')
 
-		result.append(date + '\t' + str(occurance) + '\t' + str(average_star))
+		reviews_of_all_month = collections.OrderedDict(sorted(sorted_map[year].items(), key=lambda k:k[0]))
+		for month in reviews_of_all_month.keys():
+			reviews = reviews_of_all_month[month]
 
-	writer = open(graph_data_file, 'a')
-	writer.write('\t'.join(['date', 'occurance', 'average_star']))
-	writer.write('\n')
+			total_star = sum(reviews)
+			occurence = len(reviews)
 
-	for item in result:
-		writer.write(item + '\n')
+			average_star = float('%.2f'%(total_star/occurence))
+
+			result.append(month + '\t' + str(occurence) + '\t' + str(average_star))
+
+			all_star += total_star
+			total_occurence += occurence
+
+		writer.write('\n'.join(result))
+		writer.write('\noccurence: ' + str(total_occurence) + '\t' + 'avg.star: ' + str(float('%.2f'%(all_star/total_occurence))))
 
 	writer.close()
 
@@ -181,12 +191,16 @@ def build_date_star_map(dish_star_map):
 
 	for star in star_review_detail:
 		for date in star_review_detail[star]:
-			year_month = date.split('-')[0] + '-' + date.split('-')[1]
+			year = date.split('-')[0]
+			month = date.split('-')[1]
 
-			if year_month not in date_star_occurance_map:
-				date_star_occurance_map[year_month] = []
+			if year not in date_star_occurance_map:
+				date_star_occurance_map[year] = {}
 
-			date_star_occurance_map[year_month].append(star)
+			if month not in date_star_occurance_map[year]:
+				date_star_occurance_map[year][month] = []
+
+			date_star_occurance_map[year][month].append(float(star))
 
 	return date_star_occurance_map
 
