@@ -1,0 +1,224 @@
+hash browns	1
+thai curry	1
+fast food restaurant	1
+green tea	1
+iced tea	1
+spare ribs	1
+comfort food	1
+egg roll	1
+shark fin	1
+peking duck	1
+salad bar	1
+bitter melon	1
+tom yum	1
+chop suey	1
+bobo brazil	1
+soda fountain	1
+chinese noodles	1
+oolong tea	1
+duck sauce	1
+bubble tea	1
+refried beans	1
+soy milk	1
+standard chinese	1
+bone marrow	1
+light rail	1
+casa grande	1
+bean curd	1
+gold coast	1
+hainanese chicken rice	1
+food truck	1
+rice noodle	1
+chinese food	1
+saving grace	1
+fast food	1
+ice cream	1
+noodle soup	1
+jasmine rice	1
+fried fish	1
+dim sum	1
+passion fruit	1
+condensed milk	1
+chicken fried	1
+double check	1
+fried rice	1
+mashed potatoes	1
+fish tank	1
+tomato sauce	1
+chili pepper	1
+japanese food	1
+chinese american	1
+sesame seed	1
+chinese sausage	1
+guilty pleasure	1
+white sauce	1
+chinese restaurants	1
+dried shrimp	1
+diet coke	1
+shaved ice	1
+fried egg	1
+main course	1
+americanized chinese food	1
+corn starch	1
+sticky rice	1
+stir fry	1
+xo sauce	1
+hot sauce	1
+chili sauce	1
+rice noodles	1
+credit card	1
+thai cuisine	1
+pork ribs	1
+fish ball	1
+chow mein	1
+fried chicken	1
+foie gras	1
+fortune cookie	1
+green onions	1
+white pepper	1
+glutinous rice	1
+scrambled eggs	1
+iceberg lettuce	1
+shrimp paste	1
+brown rice	1
+winter melon	1
+street food	1
+green bean	1
+california roll	1
+language barrier	1
+kung pao chicken	1
+dungeness crab	1
+fried dough	1
+hoisin sauce	1
+fast casual	1
+dive bar	1
+taco bell	1
+chinese cuisine	1
+cream cheese	1
+sea bass	1
+hot pot	1
+king crab	1
+pulled pork	1
+roti canai	1
+pf chang	1
+egg white	1
+asian cuisine	1
+lotus root	1
+guy fieri	1
+white rice	1
+jasmine tea	1
+frog legs	1
+french fries	1
+liquor license	1
+filet mignon	1
+steamed rice	1
+rice cake	1
+sweet potato	1
+chicken soup	1
+sugar cane	1
+mu shu pork	1
+star anise	1
+peanut sauce	1
+stir fried	1
+fish sauce	1
+green beans	1
+pork belly	1
+panda express	1
+beef tongue	1
+red chili	1
+oyster sauce	1
+gluten free	1
+spring roll	1
+black bean	1
+miso soup	1
+food court	1
+mexican food	1
+brown sauce	1
+coconut milk	1
+chicken wings	1
+bok choy	1
+thai chinese	1
+general chicken	1
+coca cola	1
+black pepper	1
+san gabriel valley	1
+duck soup	1
+napa cabbage	1
+hot dog	1
+char siu	1
+sweet and sour sauce	1
+soy sauce	1
+sesame seeds	1
+deep fried	1
+shark fin soup	1
+peanut butter	1
+prime rib	1
+rice paper	1
+green onion	1
+rice noodle rolls	0
+soup and their	0
+bland food	0
+the orange	0
+shrimp pad thai	0
+american style	0
+rice with shrimp	0
+the shrimp chow mein	0
+gourmet food	0
+lunch specials	0
+chicken and broccoli	0
+clean for	0
+beef and chicken	0
+rib eye bao	0
+definitely hits	0
+rice porridge	0
+take out chinese	0
+moo shu pork	0
+their egg foo	0
+kung pao	0
+yang chow	0
+papas fritas	0
+good chinese	0
+sit down meal	0
+high end	0
+kau yuk	0
+spare ribs in	0
+very nice and friendly	0
+wok fried	0
+the awesome	0
+with lobster sauce	0
+ordered general tso's chicken	0
+short ribs	0
+spicy oil	0
+speaks chinese	0
+thai and chinese	0
+crisp and fresh	0
+surprisingly good	0
+it was pretty busy	0
+jimmy chung's	0
+finely chopped	0
+variety of dishes	0
+with black pepper sauce	0
+dragon noodle co	0
+over priced for	0
+my all time favorite	0
+firecracker chicken	0
+ho fun	0
+the ying yang	0
+favorite chinese food in	0
+service good	0
+one of a kind	0
+the chicken and vegetables	0
+the wall chinese food	0
+pepper beef and	0
+noodle soups	0
+a horrible experience	0
+the deliciousness	0
+chinese restaurant and the	0
+pineapple chicken	0
+authentic chinese food	0
+not fast food	0
+roast pork	0
+not frozen	0
+the wor won ton	0
+dim sum selection	0
+fried rice with	0
