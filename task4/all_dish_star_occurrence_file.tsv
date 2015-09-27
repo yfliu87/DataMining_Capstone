@@ -1,0 +1,2085 @@
+dish	star 1	star 2	star 3	star 4	star 5rice	star 1: 1416	star 2: 1698	star 3: 3136	star 4: 5343	star 5: 3468
+chicken	star 1: 1001	star 2: 1122	star 3: 1708	star 4: 3241	star 5: 2263
+beef	star 1: 398	star 2: 484	star 3: 983	star 4: 1959	star 5: 1255
+pork	star 1: 328	star 2: 434	star 3: 885	star 4: 1704	star 5: 1036
+shrimp	star 1: 344	star 2: 443	star 3: 821	star 4: 1519	star 5: 937
+oca	star 1: 320	star 2: 440	star 3: 827	star 4: 1446	star 5: 905
+fried rice	star 1: 381	star 2: 417	star 3: 714	star 4: 1265	star 5: 886
+meat	star 1: 357	star 2: 387	star 3: 663	star 4: 1150	star 5: 736
+asti	star 1: 246	star 2: 243	star 3: 357	star 4: 797	star 5: 772
+salt	star 1: 229	star 2: 351	star 3: 474	star 4: 748	star 5: 386
+dim sum	star 1: 148	star 2: 230	star 3: 442	star 4: 778	star 5: 301
+buffet	star 1: 278	star 2: 248	star 3: 456	star 4: 603	star 5: 300
+egg roll	star 1: 188	star 2: 225	star 3: 325	star 4: 633	star 5: 373
+wonton	star 1: 129	star 2: 182	star 3: 333	star 4: 581	star 5: 381
+dumplings	star 1: 99	star 2: 166	star 3: 310	star 4: 637	star 5: 357
+orange chicken	star 1: 121	star 2: 135	star 3: 219	star 4: 385	star 5: 330
+seafood	star 1: 92	star 2: 112	star 3: 252	star 4: 455	star 5: 272
+broccoli	star 1: 101	star 2: 151	star 3: 259	star 4: 415	star 5: 233
+tuna	star 1: 165	star 2: 218	star 3: 259	star 4: 344	star 5: 163
+garlic	star 1: 64	star 2: 99	star 3: 190	star 4: 461	star 5: 317
+chinese food	star 1: 120	star 2: 104	star 3: 209	star 4: 375	star 5: 277
+onion	star 1: 96	star 2: 119	star 3: 207	star 4: 408	star 5: 209
+noodle soup	star 1: 61	star 2: 103	star 3: 248	star 4: 399	star 5: 221
+beans	star 1: 50	star 2: 83	star 3: 138	star 4: 385	star 5: 275
+mushroom	star 1: 64	star 2: 83	star 3: 158	star 4: 341	star 5: 218
+spring roll	star 1: 62	star 2: 93	star 3: 181	star 4: 312	star 5: 213
+toma	star 1: 181	star 2: 129	star 3: 168	star 4: 212	star 5: 154
+bra	star 1: 65	star 2: 81	star 3: 161	star 4: 279	star 5: 213
+asino	star 1: 61	star 2: 83	star 3: 206	star 4: 303	star 5: 143
+chow mein	star 1: 89	star 2: 118	star 3: 159	star 4: 231	star 5: 161
+cookie	star 1: 83	star 2: 65	star 3: 125	star 4: 227	star 5: 182
+soy sauce	star 1: 116	star 2: 127	star 3: 153	star 4: 189	star 5: 94
+cheese	star 1: 68	star 2: 95	star 3: 132	star 4: 235	star 5: 148
+gur	star 1: 126	star 2: 106	star 3: 143	star 4: 188	star 5: 111
+nuts	star 1: 61	star 2: 74	star 3: 126	star 4: 238	star 5: 135
+fast food	star 1: 57	star 2: 70	star 3: 184	star 4: 205	star 5: 114
+dal	star 1: 62	star 2: 73	star 3: 121	star 4: 197	star 5: 160
+hot and sour soup	star 1: 58	star 2: 69	star 3: 113	star 4: 214	star 5: 130
+mushrooms	star 1: 37	star 2: 53	star 3: 107	star 4: 239	star 5: 133
+lemon	star 1: 51	star 2: 64	star 3: 92	star 4: 200	star 5: 155
+white rice	star 1: 88	star 2: 77	star 3: 109	star 4: 179	star 5: 107
+honey	star 1: 35	star 2: 47	star 3: 124	star 4: 199	star 5: 145
+lo mein	star 1: 63	star 2: 63	star 3: 103	star 4: 214	star 5: 105
+steak	star 1: 52	star 2: 54	star 3: 120	star 4: 186	star 5: 125
+black bean	star 1: 27	star 2: 39	star 3: 89	star 4: 225	star 5: 156
+lobster	star 1: 41	star 2: 46	star 3: 103	star 4: 191	star 5: 140
+wonton soup	star 1: 40	star 2: 64	star 3: 118	star 4: 177	star 5: 120
+won ton	star 1: 43	star 2: 53	star 3: 111	star 4: 170	star 5: 79
+brown rice	star 1: 25	star 2: 48	star 3: 100	star 4: 181	star 5: 94
+strip mall	star 1: 19	star 2: 37	star 3: 81	star 4: 190	star 5: 116
+ice cream	star 1: 35	star 2: 34	star 3: 80	star 4: 155	star 5: 134
+rice noodle	star 1: 21	star 2: 40	star 3: 105	star 4: 157	star 5: 84
+the orange chicken	star 1: 43	star 2: 43	star 3: 79	star 4: 143	star 5: 98
+deep fried	star 1: 33	star 2: 55	star 3: 87	star 4: 158	star 5: 66
+salt and pepper	star 1: 26	star 2: 30	star 3: 66	star 4: 146	star 5: 120
+sesame chicken	star 1: 41	star 2: 59	star 3: 67	star 4: 106	star 5: 108
+green onion	star 1: 27	star 2: 32	star 3: 72	star 4: 153	star 5: 77
+fried chicken	star 1: 35	star 2: 38	star 3: 84	star 4: 130	star 5: 73
+green bean	star 1: 20	star 2: 27	star 3: 51	star 4: 145	star 5: 103
+menta	star 1: 23	star 2: 28	star 3: 66	star 4: 113	star 5: 116
+cucumber	star 1: 19	star 2: 24	star 3: 63	star 4: 127	star 5: 110
+calamari	star 1: 25	star 2: 38	star 3: 66	star 4: 136	star 5: 76
+pork belly	star 1: 4	star 2: 26	star 3: 56	star 4: 133	star 5: 119
+pici	star 1: 20	star 2: 31	star 3: 56	star 4: 141	star 5: 88
+dipping sauce	star 1: 13	star 2: 25	star 3: 59	star 4: 143	star 5: 92
+pork chop	star 1: 16	star 2: 17	star 3: 71	star 4: 146	star 5: 82
+lamb	star 1: 17	star 2: 21	star 3: 46	star 4: 145	star 5: 100
+chicken wings	star 1: 22	star 2: 28	star 3: 65	star 4: 113	star 5: 91
+ada	star 1: 46	star 2: 39	star 3: 66	star 4: 102	star 5: 62
+green beans	star 1: 18	star 2: 27	star 3: 46	star 4: 129	star 5: 86
+mongolian beef	star 1: 29	star 2: 28	star 3: 59	star 4: 109	star 5: 81
+fortune cookie	star 1: 56	star 2: 34	star 3: 68	star 4: 87	star 5: 57
+hot pot	star 1: 17	star 2: 26	star 3: 49	star 4: 130	star 5: 80
+dried	star 1: 60	star 2: 45	star 3: 53	star 4: 94	star 5: 49
+cream cheese	star 1: 40	star 2: 44	star 3: 58	star 4: 97	star 5: 55
+peas	star 1: 29	star 2: 55	star 3: 43	star 4: 100	star 5: 58
+chicken fried	star 1: 32	star 2: 29	star 3: 46	star 4: 96	star 5: 79
+rice noodles	star 1: 12	star 2: 22	star 3: 67	star 4: 108	star 5: 63
+sandwich	star 1: 19	star 2: 30	star 3: 65	star 4: 91	star 5: 60
+squid	star 1: 12	star 2: 22	star 3: 51	star 4: 112	star 5: 63
+stir fry	star 1: 26	star 2: 30	star 3: 45	star 4: 89	star 5: 64
+sage	star 1: 21	star 2: 28	star 3: 50	star 4: 93	star 5: 56
+sea bass	star 1: 7	star 2: 14	star 3: 29	star 4: 98	star 5: 97
+steamed rice	star 1: 36	star 2: 24	star 3: 64	star 4: 85	star 5: 34
+salmon	star 1: 23	star 2: 24	star 3: 50	star 4: 95	star 5: 48
+garlic sauce	star 1: 15	star 2: 21	star 3: 41	star 4: 97	star 5: 65
+iced tea	star 1: 16	star 2: 24	star 3: 52	star 4: 94	star 5: 47
+chili sauce	star 1: 17	star 2: 14	star 3: 51	star 4: 100	star 5: 51
+black beans	star 1: 9	star 2: 13	star 3: 30	star 4: 102	star 5: 76
+credit card	star 1: 67	star 2: 30	star 3: 45	star 4: 57	star 5: 21
+bok choy	star 1: 9	star 2: 21	star 3: 40	star 4: 97	star 5: 50
+kung pao chicken	star 1: 25	star 2: 26	star 3: 42	star 4: 80	star 5: 44
+sweet and sour sauce	star 1: 31	star 2: 35	star 3: 35	star 4: 75	star 5: 39
+green tea	star 1: 11	star 2: 17	star 3: 41	star 4: 70	star 5: 75
+basil	star 1: 8	star 2: 15	star 3: 32	star 4: 84	star 5: 66
+sweet and sour pork	star 1: 17	star 2: 24	star 3: 45	star 4: 70	star 5: 48
+pizza	star 1: 33	star 2: 30	star 3: 47	star 4: 61	star 5: 32
+main course	star 1: 23	star 2: 29	star 3: 25	star 4: 75	star 5: 49
+burrito	star 1: 13	star 2: 12	star 3: 34	star 4: 80	star 5: 58
+sticky rice	star 1: 6	star 2: 16	star 3: 33	star 4: 86	star 5: 53
+congee	star 1: 9	star 2: 18	star 3: 45	star 4: 78	star 5: 43
+pork chops	star 1: 7	star 2: 12	star 3: 37	star 4: 79	star 5: 56
+stir fried	star 1: 10	star 2: 19	star 3: 38	star 4: 85	star 5: 37
+riso	star 1: 24	star 2: 22	star 3: 38	star 4: 52	star 5: 44
+green onions	star 1: 13	star 2: 18	star 3: 32	star 4: 72	star 5: 44
+hot sauce	star 1: 19	star 2: 31	star 3: 41	star 4: 59	star 5: 25
+beef chow fun	star 1: 11	star 2: 16	star 3: 35	star 4: 73	star 5: 40
+brown sauce	star 1: 24	star 2: 22	star 3: 30	star 4: 64	star 5: 30
+comfort food	star 1: 2	star 2: 13	star 3: 36	star 4: 76	star 5: 42
+roti	star 1: 4	star 2: 9	star 3: 27	star 4: 66	star 5: 63
+spare ribs	star 1: 12	star 2: 16	star 3: 39	star 4: 62	star 5: 38
+sushi rolls	star 1: 10	star 2: 12	star 3: 35	star 4: 69	star 5: 39
+wonton noodle	star 1: 13	star 2: 21	star 3: 44	star 4: 60	star 5: 27
+tripe	star 1: 10	star 2: 14	star 3: 40	star 4: 72	star 5: 27
+potatoes	star 1: 10	star 2: 11	star 3: 38	star 4: 61	star 5: 40
+dimsum	star 1: 14	star 2: 16	star 3: 49	star 4: 57	star 5: 24
+spinach	star 1: 7	star 2: 10	star 3: 31	star 4: 69	star 5: 41
+honey walnut	star 1: 14	star 2: 8	star 3: 34	star 4: 59	star 5: 40
+panda express	star 1: 36	star 2: 27	star 3: 29	star 4: 37	star 5: 26
+fish tank	star 1: 19	star 2: 20	star 3: 41	star 4: 50	star 5: 24
+bell pepper	star 1: 11	star 2: 33	star 3: 31	star 4: 53	star 5: 26
+egg foo young	star 1: 24	star 2: 10	star 3: 29	star 4: 41	star 5: 50
+chile	star 1: 11	star 2: 19	star 3: 23	star 4: 60	star 5: 38
+short rib	star 1: 3	star 2: 16	star 3: 20	star 4: 55	star 5: 54
+pita	star 1: 22	star 2: 11	star 3: 23	star 4: 42	star 5: 49
+cashew chicken	star 1: 19	star 2: 30	star 3: 30	star 4: 34	star 5: 32
+bacon	star 1: 10	star 2: 13	star 3: 31	star 4: 52	star 5: 33
+oyster sauce	star 1: 11	star 2: 13	star 3: 31	star 4: 59	star 5: 23
+black pepper	star 1: 12	star 2: 14	star 3: 27	star 4: 43	star 5: 41
+vermicelli	star 1: 3	star 2: 11	star 3: 25	star 4: 72	star 5: 25
+food court	star 1: 32	star 2: 24	star 3: 40	star 4: 24	star 5: 15
+salsa	star 1: 11	star 2: 25	star 3: 33	star 4: 40	star 5: 19
+peanut sauce	star 1: 10	star 2: 8	star 3: 28	star 4: 54	star 5: 27
+pears	star 1: 21	star 2: 21	star 3: 26	star 4: 37	star 5: 20
+filet	star 1: 4	star 2: 11	star 3: 19	star 4: 43	star 5: 41
+shaved ice	star 1: 1	star 2: 4	star 3: 11	star 4: 37	star 5: 64
+bean curd	star 1: 7	star 2: 10	star 3: 27	star 4: 51	star 5: 21
+food poisoning	star 1: 81	star 2: 17	star 3: 6	star 4: 8	star 5: 1
+mint	star 1: 8	star 2: 3	star 3: 15	star 4: 48	star 5: 38
+language barrier	star 1: 17	star 2: 15	star 3: 23	star 4: 29	star 5: 23
+condensed milk	star 2: 3	star 3: 15	star 4: 30	star 5: 59
+fried egg	star 1: 5	star 2: 13	star 3: 21	star 4: 39	star 5: 24
+miso soup	star 1: 10	star 2: 13	star 3: 24	star 4: 34	star 5: 19
+rice cake	star 1: 5	star 2: 7	star 3: 18	star 4: 40	star 5: 29
+asparagus	star 2: 12	star 3: 13	star 4: 45	star 5: 29
+bell peppers	star 1: 8	star 2: 17	star 3: 23	star 4: 33	star 5: 17
+mele	star 1: 18	star 2: 6	star 3: 17	star 4: 44	star 5: 12
+meatball	star 1: 11	star 2: 9	star 3: 22	star 4: 36	star 5: 13
+pere	star 1: 7	star 2: 9	star 3: 16	star 4: 38	star 5: 19
+guacamole	star 1: 12	star 2: 18	star 3: 20	star 4: 25	star 5: 13
+green pepper	star 1: 10	star 2: 7	star 3: 19	star 4: 34	star 5: 18
+fish sauce	star 1: 13	star 2: 8	star 3: 27	star 4: 25	star 5: 13
+chili pepper	star 1: 5	star 2: 9	star 3: 18	star 4: 31	star 5: 22
+gluten free	star 1: 4	star 2: 4	star 3: 17	star 4: 23	star 5: 36
+fish ball	star 1: 3	star 2: 7	star 3: 9	star 4: 40	star 5: 23
+fruits	star 1: 8	star 2: 4	star 3: 17	star 4: 34	star 5: 16
+jade chicken	star 1: 4	star 2: 6	star 3: 10	star 4: 32	star 5: 26
+fried fish	star 1: 7	star 2: 10	star 3: 15	star 4: 29	star 5: 16
+with black bean sauce	star 1: 6	star 2: 1	star 3: 16	star 4: 31	star 5: 23
+of garlic	star 1: 5	star 2: 11	star 3: 11	star 4: 32	star 5: 17
+coconut milk	star 1: 4	star 2: 4	star 3: 14	star 4: 25	star 5: 28
+chinese buffet	star 1: 13	star 2: 6	star 3: 20	star 4: 23	star 5: 12
+red pepper	star 1: 8	star 2: 10	star 3: 18	star 4: 26	star 5: 11
+date night	star 1: 1	star 2: 3	star 3: 14	star 4: 29	star 5: 25
+char siu	star 1: 4	star 2: 8	star 3: 17	star 4: 36	star 5: 7
+mussels	star 1: 3	star 2: 6	star 3: 15	star 4: 37	star 5: 10
+red chili	star 1: 4	star 2: 8	star 3: 13	star 4: 29	star 5: 17
+hoisin sauce	star 1: 4	star 2: 10	star 3: 10	star 4: 28	star 5: 19
+truffle	star 2: 4	star 3: 9	star 4: 27	star 5: 31
+soy milk	star 1: 10	star 2: 7	star 3: 12	star 4: 24	star 5: 16
+sesame seed	star 1: 5	star 2: 6	star 3: 19	star 4: 26	star 5: 12
+pasta	star 1: 7	star 2: 10	star 3: 16	star 4: 25	star 5: 10
+peking duck	star 1: 1	star 2: 4	star 3: 15	star 4: 25	star 5: 22
+salad bar	star 1: 6	star 2: 7	star 3: 17	star 4: 31	star 5: 5
+pork ribs	star 1: 6	star 2: 8	star 3: 13	star 4: 25	star 5: 14
+zucchini	star 1: 6	star 2: 9	star 3: 14	star 4: 24	star 5: 12
+sweet potato	star 1: 1	star 2: 5	star 3: 14	star 4: 27	star 5: 17
+duck sauce	star 1: 9	star 2: 4	star 3: 11	star 4: 21	star 5: 17
+hong kong	star 1: 4	star 2: 6	star 3: 10	star 4: 18	star 5: 23
+mu shu	star 1: 6	star 3: 10	star 4: 31	star 5: 13
+refried beans	star 1: 5	star 2: 9	star 3: 5	star 4: 20	star 5: 20
+pepper steak	star 1: 3	star 2: 4	star 3: 16	star 4: 20	star 5: 16
+spaghetti	star 1: 16	star 2: 9	star 3: 12	star 4: 14	star 5: 8
+credit cards	star 1: 7	star 2: 5	star 3: 18	star 4: 22	star 5: 6
+sesame seeds	star 1: 5	star 2: 5	star 3: 17	star 4: 21	star 5: 10
+chicken soup	star 1: 8	star 2: 11	star 3: 10	star 4: 15	star 5: 11
+chop suey	star 1: 7	star 2: 5	star 3: 10	star 4: 22	star 5: 11
+chicken rice	star 1: 3	star 2: 12	star 3: 8	star 4: 17	star 5: 15
+tom yum	star 1: 4	star 2: 6	star 3: 7	star 4: 26	star 5: 12
+soft drink	star 1: 5	star 2: 7	star 3: 17	star 4: 20	star 5: 6
+bay area	star 1: 4	star 2: 10	star 3: 8	star 4: 15	star 5: 17
+general tso's chicken	star 1: 7	star 2: 6	star 3: 9	star 4: 18	star 5: 13
+strawberries	star 1: 4	star 2: 3	star 3: 3	star 4: 25	star 5: 18
+sesame oil	star 1: 5	star 2: 7	star 3: 10	star 4: 22	star 5: 8
+octopus	star 1: 4	star 2: 4	star 3: 15	star 4: 18	star 5: 10
+beef broccoli	star 1: 3	star 2: 11	star 3: 10	star 4: 19	star 5: 8
+asian cuisine	star 1: 1	star 2: 5	star 3: 17	star 4: 18	star 5: 10
+saving grace	star 1: 12	star 2: 27	star 3: 8	star 4: 3
+shark fin	star 1: 5	star 2: 10	star 3: 9	star 4: 16	star 5: 8
+cash register	star 1: 8	star 2: 12	star 3: 10	star 4: 13	star 5: 5
+mapo tofu	star 1: 3	star 2: 6	star 3: 11	star 4: 20	star 5: 8
+peanut butter	star 1: 8	star 2: 4	star 3: 5	star 4: 26	star 5: 5
+lo mien	star 1: 8	star 2: 8	star 3: 4	star 4: 16	star 5: 11
+prime rib	star 1: 6	star 2: 8	star 3: 8	star 4: 19	star 5: 6
+chips and salsa	star 1: 8	star 2: 12	star 3: 4	star 4: 16	star 5: 6
+kobe beef	star 1: 1	star 2: 1	star 3: 4	star 4: 22	star 5: 17
+frog legs	star 1: 1	star 2: 3	star 3: 15	star 4: 17	star 5: 9
+jasmine tea	star 1: 3	star 2: 5	star 3: 7	star 4: 20	star 5: 9
+chocolate cake	star 1: 1	star 2: 5	star 3: 5	star 4: 19	star 5: 13
+braised pork	star 1: 1	star 2: 4	star 3: 8	star 4: 21	star 5: 9
+almond chicken	star 1: 8	star 2: 4	star 3: 10	star 4: 12	star 5: 7
+corn starch	star 1: 8	star 2: 13	star 3: 6	star 4: 9	star 5: 5
+mixed vegetable	star 1: 8	star 2: 4	star 3: 12	star 4: 10	star 5: 7
+acqui	star 1: 2	star 2: 4	star 3: 4	star 4: 21	star 5: 9
+foie gras	star 1: 1	star 3: 7	star 4: 16	star 5: 16
+great taste	star 1: 1	star 2: 3	star 3: 1	star 4: 17	star 5: 17
+ribeye	star 3: 7	star 4: 14	star 5: 18
+napa cabbage	star 2: 4	star 3: 5	star 4: 22	star 5: 8
+chicken skewer	star 1: 2	star 2: 6	star 3: 10	star 4: 12	star 5: 9
+food truck	star 1: 1	star 2: 1	star 3: 5	star 4: 13	star 5: 19
+red rice	star 1: 3	star 2: 4	star 3: 10	star 4: 17	star 5: 4
+red peppers	star 1: 3	star 2: 3	star 3: 8	star 4: 15	star 5: 9
+vada	star 1: 6	star 2: 3	star 3: 10	star 4: 7	star 5: 11
+mexican food	star 1: 5	star 2: 7	star 3: 8	star 4: 10	star 5: 7
+margaritas	star 1: 1	star 2: 5	star 3: 7	star 4: 17	star 5: 7
+twice cooked pork	star 1: 1	star 2: 3	star 3: 3	star 4: 14	star 5: 15
+filet mignon	star 1: 1	star 2: 3	star 3: 5	star 4: 11	star 5: 15
+soft drinks	star 1: 2	star 2: 6	star 3: 10	star 4: 12	star 5: 4
+soft serve	star 1: 4	star 2: 8	star 3: 11	star 4: 7	star 5: 4
+hot dog	star 1: 7	star 2: 8	star 3: 7	star 4: 12
+apples	star 1: 2	star 2: 4	star 3: 9	star 4: 12	star 5: 6
+hot n sour soup	star 1: 2	star 2: 4	star 3: 1	star 4: 17	star 5: 8
+street food	star 1: 2	star 2: 2	star 3: 6	star 4: 17	star 5: 5
+elba	star 1: 7	star 2: 2	star 3: 6	star 4: 12	star 5: 5
+white sauce	star 1: 2	star 2: 5	star 3: 4	star 4: 15	star 5: 6
+the dimsum	star 1: 1	star 2: 5	star 3: 8	star 4: 11	star 5: 6
+sweet soy	star 1: 2	star 2: 4	star 3: 6	star 4: 12	star 5: 7
+general chicken	star 1: 5	star 2: 5	star 3: 9	star 4: 6	star 5: 6
+bitter melon	star 2: 1	star 3: 6	star 4: 11	star 5: 13
+rice paper	star 1: 5	star 2: 4	star 3: 7	star 4: 7	star 5: 8
+egg white	star 1: 5	star 2: 3	star 3: 2	star 4: 16	star 5: 5
+mashed potato	star 1: 2	star 2: 2	star 3: 11	star 4: 10	star 5: 6
+food allergies	star 1: 2	star 2: 2	star 3: 9	star 4: 9	star 5: 8
+french fries	star 1: 5	star 3: 8	star 4: 12	star 5: 5
+mashed potatoes	star 1: 2	star 2: 2	star 3: 10	star 4: 9	star 5: 6
+sea salt	star 2: 2	star 3: 1	star 4: 13	star 5: 13
+litti	star 1: 3	star 2: 2	star 3: 7	star 4: 14	star 5: 3
+the stir fry	star 1: 2	star 2: 4	star 3: 2	star 4: 12	star 5: 9
+california roll	star 1: 3	star 2: 5	star 3: 5	star 4: 9	star 5: 6
+guilty pleasure	star 1: 2	star 2: 3	star 3: 6	star 4: 11	star 5: 6
+soda fountain	star 1: 4	star 2: 2	star 3: 6	star 4: 11	star 5: 5
+lard	star 1: 3	star 2: 6	star 3: 6	star 4: 5	star 5: 8
+tap water	star 1: 7	star 2: 6	star 3: 6	star 4: 3	star 5: 6
+pf chang	star 1: 5	star 2: 2	star 3: 6	star 4: 6	star 5: 8
+beef tongue	star 2: 2	star 3: 6	star 4: 10	star 5: 8
+bubble tea	star 1: 2	star 2: 1	star 3: 6	star 4: 11	star 5: 6
+chorizo	star 2: 4	star 3: 6	star 4: 11	star 5: 5
+red onion	star 1: 1	star 2: 2	star 3: 2	star 4: 13	star 5: 8
+king crab	star 1: 1	star 2: 3	star 3: 7	star 4: 7	star 5: 8
+bone marrow	star 2: 2	star 3: 3	star 4: 8	star 5: 13
+double check	star 1: 11	star 2: 2	star 3: 6	star 4: 4	star 5: 3
+bachelorette party	star 1: 1	star 2: 2	star 3: 4	star 4: 8	star 5: 11
+passion fruit	star 3: 3	star 4: 15	star 5: 8
+diet coke	star 1: 4	star 2: 2	star 3: 9	star 4: 7	star 5: 4
+onion rings	star 1: 3	star 2: 5	star 3: 7	star 4: 7	star 5: 3
+beef tenderloin	star 3: 1	star 4: 20	star 5: 4
+jasmine rice	star 1: 2	star 2: 5	star 3: 5	star 4: 8	star 5: 5
+hash browns	star 1: 2	star 2: 3	star 3: 5	star 4: 11	star 5: 4
+pork chop rice	star 2: 2	star 3: 9	star 4: 10	star 5: 3
+dive bar	star 1: 2	star 2: 3	star 3: 7	star 4: 7	star 5: 5
+lazy susan	star 1: 2	star 2: 2	star 3: 3	star 4: 13	star 5: 4
+fondue	star 2: 2	star 3: 3	star 4: 12	star 5: 7
+dumplings the	star 2: 2	star 3: 6	star 4: 10	star 5: 6
+fried dough	star 1: 2	star 2: 3	star 3: 8	star 4: 6	star 5: 5
+star anise	star 1: 3	star 3: 3	star 4: 13	star 5: 5
+iceberg lettuce	star 1: 4	star 2: 10	star 3: 4	star 4: 4	star 5: 2
+mu shu pork	star 1: 2	star 3: 3	star 4: 15	star 5: 3
+pulled pork	star 2: 2	star 3: 3	star 4: 7	star 5: 11
+scrambled eggs	star 1: 5	star 2: 2	star 3: 8	star 4: 4	star 5: 4
+chinese sausage	star 2: 2	star 3: 4	star 4: 11	star 5: 6
+penda	star 2: 3	star 3: 7	star 4: 10	star 5: 3
+creme brule	star 1: 2	star 2: 2	star 3: 4	star 4: 11	star 5: 4
+debit card	star 1: 9	star 2: 5	star 3: 4	star 4: 4	star 5: 1
+light rail	star 2: 1	star 3: 6	star 4: 7	star 5: 8
+lotus root	star 2: 2	star 3: 2	star 4: 8	star 5: 10
+dried shrimp	star 2: 1	star 3: 4	star 4: 13	star 5: 4
+wonton strips	star 2: 6	star 3: 3	star 4: 9	star 5: 4
+food chain	star 1: 2	star 2: 2	star 3: 7	star 4: 10	star 5: 1
+chocolate mousse	star 2: 2	star 3: 3	star 4: 12	star 5: 5
+standard chinese	star 1: 2	star 2: 3	star 3: 6	star 4: 10	star 5: 1
+sushi samba	star 1: 2	star 2: 1	star 3: 5	star 4: 6	star 5: 8
+roti canai	star 2: 2	star 3: 3	star 4: 9	star 5: 8
+salad dressing	star 1: 2	star 2: 1	star 3: 3	star 4: 10	star 5: 6
+shrimp paste	star 1: 1	star 2: 3	star 3: 6	star 4: 10	star 5: 1
+ravioli	star 1: 1	star 3: 3	star 4: 11	star 5: 6
+creme brulee	star 1: 2	star 2: 2	star 3: 3	star 4: 10	star 5: 4
+deep fried shrimp	star 2: 3	star 3: 6	star 4: 9	star 5: 3
+chinese cuisine	star 1: 1	star 2: 3	star 3: 3	star 4: 8	star 5: 5
+air conditioning	star 1: 2	star 2: 5	star 3: 3	star 4: 8	star 5: 2
+duck soup	star 1: 3	star 2: 3	star 3: 2	star 4: 7	star 5: 5
+red wine	star 2: 2	star 3: 7	star 4: 7	star 5: 4
+sugar cane	star 1: 1	star 2: 2	star 3: 3	star 4: 10	star 5: 4
+shark fin soup	star 1: 4	star 2: 4	star 3: 3	star 4: 7	star 5: 2
+beef rice	star 1: 3	star 2: 3	star 3: 5	star 4: 7	star 5: 1
+home run	star 1: 1	star 2: 1	star 3: 2	star 4: 9	star 5: 6
+vanilla ice	star 3: 2	star 4: 10	star 5: 7
+pickles	star 1: 2	star 2: 1	star 3: 1	star 4: 12	star 5: 3
+rush hour	star 2: 2	star 3: 3	star 4: 10	star 5: 4
+tomato sauce	star 1: 2	star 2: 4	star 3: 3	star 4: 7	star 5: 3
+frozen food	star 1: 7	star 2: 6	star 3: 4	star 4: 1
+veal	star 1: 6	star 2: 3	star 3: 3	star 4: 3	star 5: 3
+winter melon	star 2: 4	star 3: 2	star 4: 7	star 5: 5
+powdered sugar	star 2: 1	star 3: 2	star 4: 3	star 5: 12
+white pepper	star 2: 2	star 3: 5	star 4: 6	star 5: 5
+white wine	star 2: 1	star 3: 4	star 4: 9	star 5: 3
+prix fixe	star 2: 5	star 3: 4	star 4: 7	star 5: 1
+hockey puck	star 1: 1	star 2: 2	star 3: 8	star 4: 5	star 5: 1
+coconut chicken	star 1: 6	star 2: 3	star 3: 2	star 4: 5	star 5: 1
+vanilla ice cream	star 3: 2	star 4: 9	star 5: 6
+corn tortilla	star 1: 1	star 2: 4	star 4: 8	star 5: 4
+great wall	star 1: 2	star 4: 8	star 5: 7
+mixed drink	star 1: 3	star 2: 1	star 3: 2	star 4: 8	star 5: 3
+glutinous rice	star 1: 1	star 2: 2	star 3: 8	star 4: 3	star 5: 3
+xo sauce	star 1: 1	star 2: 2	star 4: 6	star 5: 8
+goose	star 1: 1	star 2: 3	star 3: 1	star 4: 4	star 5: 7
+lobster tail	star 1: 1	star 3: 7	star 4: 6	star 5: 2
+food critic	star 1: 3	star 2: 1	star 4: 8	star 5: 4
+fresh air	star 3: 3	star 4: 10	star 5: 2
+linguine	star 1: 2	star 3: 2	star 4: 7	star 5: 4
+thai curry	star 1: 1	star 2: 1	star 3: 4	star 4: 5	star 5: 4
+hot plate	star 1: 4	star 2: 2	star 3: 3	star 5: 6
+bottled water	star 1: 3	star 2: 5	star 3: 2	star 4: 3	star 5: 2
+chocolate chip	star 1: 2	star 4: 7	star 5: 6
+melted cheese	star 1: 1	star 2: 3	star 4: 8	star 5: 3
+lamb chops	star 1: 2	star 2: 2	star 3: 2	star 4: 4	star 5: 5
+fast casual	star 1: 1	star 2: 1	star 3: 9	star 4: 2	star 5: 2
+shrimp soup	star 2: 1	star 3: 1	star 4: 6	star 5: 6
+tourist trap	star 1: 5	star 2: 2	star 3: 2	star 4: 4	star 5: 1
+olive	star 1: 4	star 2: 4	star 3: 1	star 4: 4	star 5: 1
+identity crisis	star 2: 4	star 3: 4	star 4: 5	star 5: 1
+key lime	star 1: 1	star 2: 1	star 4: 7	star 5: 5
+pork blood	star 3: 4	star 4: 8	star 5: 2
+rock hard	star 1: 7	star 3: 2	star 4: 3	star 5: 2
+oolong tea	star 1: 1	star 3: 2	star 4: 6	star 5: 5
+century egg	star 2: 2	star 3: 4	star 4: 5	star 5: 3
+alba	star 1: 2	star 2: 4	star 4: 7	star 5: 1
+sin city	star 1: 1	star 2: 1	star 3: 3	star 4: 6	star 5: 3
+eggplants	star 2: 1	star 3: 3	star 4: 5	star 5: 5
+beans and rice	star 2: 1	star 3: 2	star 4: 6	star 5: 4
+mozzarella	star 2: 1	star 3: 1	star 4: 8	star 5: 3
+red bean soup	star 1: 1	star 3: 1	star 4: 5	star 5: 6
+puri	star 1: 1	star 3: 3	star 4: 4	star 5: 5
+taco bell	star 1: 4	star 2: 3	star 3: 2	star 4: 3	star 5: 1
+small salad	star 1: 1	star 3: 2	star 4: 8	star 5: 2
+macaroni	star 1: 1	star 2: 4	star 3: 2	star 4: 3	star 5: 3
+tiramisu	star 2: 2	star 3: 1	star 4: 9	star 5: 1
+boba milk	star 1: 1	star 2: 1	star 3: 4	star 4: 3	star 5: 4
+clay pots	star 1: 1	star 3: 1	star 4: 6	star 5: 5
+fine dining restaurant	star 1: 2	star 2: 1	star 3: 1	star 4: 4	star 5: 5
+carnitas tacos	star 1: 1	star 2: 1	star 3: 4	star 4: 4	star 5: 3
+mai tai	star 3: 3	star 4: 6	star 5: 3
+poached egg	star 3: 4	star 4: 5	star 5: 3
+enchilada	star 1: 2	star 2: 3	star 3: 1	star 4: 5	star 5: 1
+style dim	star 1: 1	star 2: 1	star 3: 3	star 4: 4	star 5: 3
+shopping mall	star 1: 2	star 2: 1	star 3: 1	star 4: 5	star 5: 3
+whipped cream	star 2: 1	star 3: 2	star 4: 4	star 5: 5
+french toast	star 1: 2	star 2: 2	star 3: 5	star 4: 1	star 5: 2
+gold coast	star 1: 1	star 2: 1	star 4: 10
+carrot cake	star 2: 1	star 3: 2	star 4: 4	star 5: 5
+the fried rice and the	star 2: 1	star 3: 3	star 4: 5	star 5: 3
+americanized chinese food	star 1: 1	star 2: 1	star 3: 1	star 4: 5	star 5: 4
+regular noodles	star 1: 2	star 3: 1	star 4: 3	star 5: 6
+gelato	star 2: 2	star 3: 2	star 4: 3	star 5: 5
+parsley	star 1: 1	star 2: 1	star 3: 4	star 4: 3	star 5: 2
+roast beef	star 1: 1	star 2: 1	star 3: 1	star 4: 5	star 5: 3
+security guard	star 1: 4	star 3: 3	star 4: 1	star 5: 3
+pork and veggies	star 2: 2	star 3: 1	star 4: 4	star 5: 4
+hot dogs	star 1: 3	star 2: 1	star 3: 2	star 4: 5
+pine nuts	star 1: 2	star 3: 5	star 4: 4
+family owned business	star 1: 1	star 3: 2	star 4: 4	star 5: 4
+mole sauce	star 2: 5	star 3: 3	star 4: 3
+banana leaf	star 2: 1	star 3: 3	star 4: 3	star 5: 4
+low carb	star 3: 2	star 4: 3	star 5: 6
+white chocolate	star 3: 3	star 4: 4	star 5: 4
+green salad	star 1: 1	star 3: 1	star 4: 8	star 5: 1
+rocket	star 1: 2	star 2: 3	star 3: 2	star 4: 3	star 5: 1
+fruit salad	star 2: 1	star 3: 1	star 4: 6	star 5: 3
+amarone	star 1: 1	star 2: 1	star 3: 6	star 4: 1	star 5: 1
+kabob	star 3: 3	star 4: 3	star 5: 4
+eggs benedict	star 1: 1	star 3: 1	star 4: 3	star 5: 5
+cast iron	star 1: 2	star 2: 1	star 3: 2	star 4: 2	star 5: 3
+flat bread	star 1: 1	star 4: 7	star 5: 2
+bachelor party	star 1: 1	star 2: 1	star 3: 2	star 4: 4	star 5: 2
+carne	star 2: 2	star 3: 2	star 4: 3	star 5: 3
+waiting staff	star 1: 1	star 2: 3	star 3: 2	star 4: 1	star 5: 3
+pastor	star 3: 3	star 4: 5	star 5: 2
+blood orange	star 1: 1	star 2: 2	star 3: 2	star 4: 4	star 5: 1
+flank steak	star 1: 1	star 2: 1	star 3: 2	star 4: 5
+apple pie	star 1: 4	star 2: 1	star 4: 3	star 5: 1
+baked potato	star 1: 1	star 2: 4	star 3: 2	star 4: 2
+pinni	star 1: 1	star 3: 2	star 4: 4	star 5: 2
+the chicken skewer	star 1: 1	star 2: 1	star 3: 1	star 4: 4	star 5: 2
+kabobs	star 3: 2	star 4: 3	star 5: 4
+sardine	star 2: 3	star 3: 1	star 4: 3	star 5: 2
+pesto	star 4: 4	star 5: 5
+sour cream	star 2: 1	star 3: 2	star 4: 3	star 5: 3
+sweet corn	star 1: 1	star 2: 1	star 3: 3	star 4: 4
+fast food chain	star 1: 1	star 2: 1	star 3: 3	star 4: 4
+cheddar cheese	star 1: 2	star 2: 1	star 3: 2	star 4: 2	star 5: 2
+red snapper	star 3: 3	star 4: 3	star 5: 3
+celebrity chef	star 1: 1	star 2: 2	star 3: 1	star 4: 5
+the refried beans	star 1: 1	star 2: 4	star 4: 2	star 5: 2
+more frequently	star 1: 1	star 3: 1	star 4: 7
+tsao's chicken	star 1: 1	star 2: 2	star 3: 1	star 4: 2	star 5: 3
+kick ass	star 1: 2	star 2: 3	star 3: 1	star 5: 2
+enchiladas	star 1: 2	star 2: 1	star 3: 1	star 4: 3	star 5: 1
+chili powder	star 3: 1	star 4: 6	star 5: 1
+self service	star 3: 1	star 4: 7
+ground beef	star 1: 1	star 3: 3	star 4: 1	star 5: 3
+beef carpaccio	star 3: 1	star 4: 3	star 5: 4
+house music	star 2: 1	star 4: 6	star 5: 1
+high roller	star 2: 3	star 4: 3	star 5: 2
+red velvet cake	star 4: 5	star 5: 3
+carne asada	star 2: 1	star 3: 2	star 4: 2	star 5: 3
+hard boiled egg	star 1: 1	star 2: 1	star 4: 5	star 5: 1
+snails	star 1: 2	star 2: 1	star 3: 1	star 4: 4
+potato chip	star 1: 2	star 2: 1	star 3: 3	star 5: 2
+dungeness crab	star 1: 1	star 3: 3	star 4: 3	star 5: 1
+sausages	star 1: 1	star 2: 1	star 3: 2	star 4: 2	star 5: 2
+birthday girl	star 1: 1	star 2: 1	star 3: 1	star 4: 4	star 5: 1
+punch card	star 1: 1	star 2: 1	star 3: 1	star 4: 2	star 5: 3
+penne	star 1: 1	star 2: 2	star 3: 3	star 4: 2
+egg yolk	star 1: 1	star 3: 2	star 4: 2	star 5: 2
+tuna tartare	star 3: 3	star 4: 2	star 5: 2
+jerk fried rice and black	star 2: 1	star 4: 4	star 5: 2
+chinese noodles	star 1: 1	star 2: 1	star 3: 1	star 4: 1	star 5: 3
+pepperoni	star 2: 2	star 3: 2	star 4: 1	star 5: 2
+olives	star 1: 1	star 2: 2	star 3: 1	star 4: 2	star 5: 1
+parmesan	star 1: 2	star 2: 1	star 3: 1	star 4: 2	star 5: 1
+cauliflower	star 2: 1	star 3: 1	star 4: 4	star 5: 1
+bari	star 2: 1	star 3: 3	star 4: 2	star 5: 1
+cotton candy	star 4: 4	star 5: 3
+cuttlefish	star 2: 1	star 4: 6
+al pastor	star 3: 3	star 4: 3	star 5: 1
+romaine lettuce	star 1: 3	star 2: 2	star 4: 2
+fettuccine	star 3: 2	star 4: 4	star 5: 1
+buffalo wings	star 2: 1	star 4: 2	star 5: 3
+inferno	star 3: 3	star 4: 1	star 5: 2
+chocolate syrup	star 4: 6
+won ton and	star 2: 1	star 3: 2	star 4: 3
+pot roast	star 1: 1	star 2: 2	star 4: 2	star 5: 1
+half chicken	star 2: 2	star 3: 2	star 4: 1	star 5: 1
+tortilla chips	star 3: 3	star 4: 2	star 5: 1
+movie theater	star 1: 1	star 3: 1	star 4: 2	star 5: 2
+spicy salsa	star 3: 3	star 4: 1	star 5: 2
+japanese food	star 2: 2	star 3: 1	star 4: 1	star 5: 2
+anchovies	star 2: 1	star 4: 4	star 5: 1
+san francisco	star 3: 1	star 4: 3	star 5: 2
+bobo brazil	star 3: 1	star 4: 1	star 5: 4
+french bread	star 3: 2	star 4: 3	star 5: 1
+smoked salmon	star 2: 1	star 3: 3	star 4: 2
+arugula	star 3: 2	star 4: 4
+dandan noodles	star 2: 1	star 3: 1	star 4: 3	star 5: 1
+grilled octopus	star 1: 1	star 4: 1	star 5: 4
+spinach salad	star 2: 1	star 4: 1	star 5: 3
+crispy kau	star 4: 3	star 5: 2
+die hard	star 1: 1	star 2: 1	star 3: 1	star 4: 2
+lemon juice	star 3: 2	star 4: 2	star 5: 1
+fennel	star 3: 1	star 4: 1	star 5: 3
+hip hop	star 1: 1	star 2: 1	star 4: 2	star 5: 1
+dim sim	star 2: 2	star 3: 1	star 4: 2
+alici	star 1: 1	star 2: 2	star 4: 1	star 5: 1
+rice pudding	star 3: 2	star 4: 1	star 5: 2
+panna cotta	star 4: 3	star 5: 2
+absolutely fabulous	star 4: 2	star 5: 3
+cantonese cuisine	star 3: 2	star 4: 1	star 5: 2
+white bread	star 3: 2	star 4: 1	star 5: 2
+bloody mary	star 3: 2	star 4: 1	star 5: 2
+junk food	star 1: 1	star 4: 4
+coca cola	star 3: 2	star 4: 3
+finger food	star 2: 1	star 4: 1	star 5: 3
+service oriented	star 1: 2	star 2: 1	star 4: 1	star 5: 1
+fine print	star 1: 1	star 2: 1	star 3: 1	star 4: 1	star 5: 1
+heart attack	star 2: 1	star 3: 1	star 4: 3
+ginger beef	star 3: 1	star 4: 2	star 5: 2
+the beef rice	star 2: 1	star 3: 2	star 4: 2
+meat tender	star 2: 1	star 3: 1	star 4: 3
+corn dog	star 3: 1	star 4: 4
+los angeles	star 3: 2	star 4: 2	star 5: 1
+fountain hills	star 1: 1	star 4: 2	star 5: 2
+chicken breasts	star 3: 3	star 4: 1	star 5: 1
+sweet pea	star 3: 2	star 4: 2	star 5: 1
+neo tokyo	star 3: 1	star 4: 2	star 5: 2
+health food	star 3: 2	star 4: 3
+speck	star 1: 2	star 2: 1	star 3: 1
+xiaolongbao	star 1: 1	star 3: 1	star 4: 2
+idli	star 2: 1	star 3: 1	star 4: 2
+cong you bing	star 1: 1	star 4: 2	star 5: 1
+grilled vegetables	star 3: 1	star 4: 1	star 5: 2
+cream dessert	star 2: 1	star 3: 1	star 4: 1	star 5: 1
+root beer	star 4: 2	star 5: 2
+blue cheese	star 4: 3	star 5: 1
+smoked ham	star 3: 1	star 4: 3
+timo	star 1: 1	star 2: 1	star 4: 1	star 5: 1
+spring training	star 4: 1	star 5: 3
+kebab	star 1: 1	star 3: 1	star 5: 2
+chinese american	star 2: 1	star 4: 1	star 5: 2
+baozi	star 2: 1	star 4: 3
+cottage cheese	star 3: 1	star 4: 2	star 5: 1
+mantou	star 2: 1	star 4: 3
+customer experience	star 1: 3	star 5: 1
+naan	star 3: 3	star 4: 1
+ginger ale	star 1: 1	star 2: 1	star 4: 1	star 5: 1
+freshly squeezed	star 3: 1	star 4: 1	star 5: 2
+assembly line	star 2: 1	star 3: 2	star 5: 1
+lamb tender	star 5: 4
+duck confit	star 3: 1	star 5: 3
+monte carlo	star 2: 1	star 3: 1	star 4: 1	star 5: 1
+pork loin	star 2: 1	star 4: 3
+skirt steak	star 4: 4
+hot chocolate	star 2: 1	star 4: 2	star 5: 1
+garden salad	star 1: 1	star 3: 1	star 5: 2
+classic rock	star 4: 3	star 5: 1
+the gai lan	star 4: 3	star 5: 1
+risotto	star 1: 1	star 3: 1	star 4: 1	star 5: 1
+potato chips	star 1: 1	star 3: 1	star 5: 2
+big night	star 1: 1	star 3: 1	star 5: 2
+stained glass	star 1: 1	star 3: 2	star 4: 1
+tomato soup	star 2: 1	star 3: 1	star 4: 1	star 5: 1
+gazpacho	star 1: 1	star 2: 1	star 3: 2
+chocolate glaze	star 2: 1	star 4: 2	star 5: 1
+love happy	star 3: 1	star 4: 2	star 5: 1
+downtown phoenix	star 3: 1	star 4: 2
+butter chicken	star 4: 2	star 5: 1
+camaron	star 2: 1	star 3: 2
+provolone	star 3: 2	star 5: 1
+youtiao	star 2: 1	star 3: 1	star 5: 1
+strudel	star 4: 1	star 5: 2
+tin foil	star 1: 1	star 4: 1	star 5: 1
+steak medium	star 1: 1	star 2: 1	star 4: 1
+thai cuisine	star 4: 1	star 5: 2
+key lime pie	star 4: 2	star 5: 1
+free range	star 4: 1	star 5: 2
+goat cheese	star 2: 1	star 3: 1	star 5: 1
+hainanese chicken rice	star 2: 1	star 5: 2
+clam chowder	star 4: 2	star 5: 1
+cirque du soleil	star 3: 1	star 5: 2
+and a lemon	star 4: 2	star 5: 1
+rice chicken	star 3: 1	star 4: 1	star 5: 1
+white mushrooms	star 3: 1	star 4: 1	star 5: 1
+balsamic vinegar	star 1: 1	star 2: 1	star 5: 1
+vindaloo	star 1: 1	star 4: 2
+lasagna	star 3: 1	star 4: 1	star 5: 1
+flautas	star 2: 1	star 4: 2
+san gabriel	star 2: 1	star 4: 2
+lactose intolerant	star 5: 3
+olive garden	star 1: 2	star 2: 1
+black rice	star 1: 1	star 4: 2
+pizza hut	star 1: 1	star 2: 1	star 5: 1
+orange county	star 1: 1	star 3: 2
+mac and cheese	star 2: 1	star 4: 1	star 5: 1
+growing pains	star 1: 1	star 3: 2
+potato salad	star 4: 2	star 5: 1
+puffed rice	star 3: 1	star 4: 1	star 5: 1
+samosa	star 4: 1	star 5: 2
+cherry blossom	star 5: 3
+mahi mahi	star 3: 1	star 4: 2
+bread crumbs	star 3: 1	star 4: 1	star 5: 1
+water feature	star 2: 1	star 3: 1	star 4: 1
+tea egg	star 4: 3
+mandalay bay	star 1: 1	star 3: 2
+small tacos	star 1: 1	star 2: 1	star 3: 1
+bread pudding	star 1: 1	star 4: 2
+flip flops	star 4: 2
+mexican cuisine	star 4: 1	star 5: 1
+lake mead	star 1: 1	star 5: 1
+patra	star 3: 1	star 5: 1
+milk chocolate	star 3: 1	star 5: 1
+long island	star 3: 1	star 5: 1
+canadian bacon	star 1: 1	star 5: 1
+in n out	star 4: 2
+grilled tomato	star 5: 2
+cantonese restaurant	star 4: 1	star 5: 1
+sweet roll	star 2: 1	star 3: 1
+taco has	star 3: 1	star 4: 1
+cheesecake factory	star 3: 2
+pita bread	star 1: 1	star 4: 1
+the mongolian beef and the	star 2: 1	star 4: 1
+trotte	star 4: 2
+sun city	star 4: 2
+art deco	star 3: 1	star 4: 1
+peda	star 1: 1	star 2: 1
+grilled lamb	star 4: 1	star 5: 1
+ice cream sandwich	star 4: 2
+butternut squash	star 4: 1	star 5: 1
+graham cracker	star 3: 1	star 5: 1
+momo	star 4: 1	star 5: 1
+casa grande	star 4: 1	star 5: 1
+deep fried fish	star 4: 1	star 5: 1
+hard rock	star 4: 1	star 5: 1
+frou frou	star 4: 1	star 5: 1
+el pollo loco	star 1: 1	star 2: 1
+amuse bouche	star 5: 2
+chicken fried steak	star 4: 1	star 5: 1
+san gabriel valley	star 4: 2
+bow tie	star 3: 1	star 4: 1
+white trash	star 3: 2
+sea scallops	star 4: 2
+mascarpone	star 3: 1	star 4: 1
+shaobing	star 2: 1	star 3: 1
+khar	star 2: 1	star 3: 1
+corned beef	star 2: 1	star 4: 1
+lobster bisque	star 4: 2
+olive tapenade	star 2: 1	star 4: 1
+super bowl	star 2: 1	star 4: 1
+dress code	star 4: 2
+bowl of salsa	star 2: 1	star 3: 1
+valet parking	star 4: 2
+cool spot	star 3: 2
+great white	star 4: 2
+shiro	star 4: 1	star 5: 1
+caesar salad	star 3: 1	star 4: 1
+falafel	star 3: 2
+cave creek	star 5: 2
+kitchen sink	star 3: 1	star 4: 1
+christmas eve	star 2: 2
+baba	star 3: 1	star 5: 1
+upma	star 3: 1	star 4: 1
+cream pie	star 4: 1	star 5: 1
+swap meet	star 3: 1	star 5: 1
+salami	star 3: 1	star 4: 1
+game hen	star 4: 1	star 5: 1
+planet hollywood	star 4: 2
+sunday brunch	star 4: 1	star 5: 1
+salisbury steak	star 4: 2
+steak and chicken	star 4: 2
+ricotta	star 2: 1	star 5: 1
+malaysian cuisine	star 2: 1	star 5: 1
+breadsticks	star 3: 1	star 4: 1
+granita	star 5: 2
+clam sauce	star 4: 1
+chinese culture	star 3: 1
+shish kabob	star 5: 1
+pound cake	star 1: 1
+lazy sunday	star 5: 1
+sports game	star 5: 1
+braised abalone	star 5: 1
+thyme	star 2: 1
+rosemary	star 2: 1
+lentil soup	star 5: 1
+tomatoes and onions	star 4: 1
+italian sausage	star 3: 1
+circus circus	star 3: 1
+spanish rice	star 4: 1
+goulash	star 4: 1
+mole chicken	star 3: 1
+olive oil	star 4: 1
+and pickles	star 4: 1
+dried fruit	star 4: 1
+pea puree	star 5: 1
+monday night	star 4: 1
+chinese chicken salad	star 5: 1
+lamian	star 5: 1
+barfi	star 1: 1
+cornish hen	star 2: 1
+gnocchi	star 4: 1
+bay leaves	star 4: 1
+baby food	star 1: 1
+yui shan	star 5: 1
+their garlic sauce	star 2: 1
+bridal shower	star 2: 1
+god forbid	star 2: 1
+prosecco	star 4: 1
+southern california	star 1: 1
+slow food	star 4: 1
+deer valley	star 1: 1
+crispy kau chee	star 4: 1
+wine tasting	star 2: 1
+brussels sprout	star 5: 1
+wild rice	star 4: 1
+basmati rice	star 4: 1
+jiaozi	star 3: 1
+malga	star 4: 1
+asian american	star 4: 1
+lamb shank	star 2: 1
+lentils	star 4: 1
+middle eastern	star 5: 1
+united states	star 3: 1
+monterey park	star 3: 1
+stir frying	star 3: 1
+carne asada tacos	star 4: 1
+new york style chinese	star 3: 1
+lasagne	star 5: 1
+american cheese	star 1: 1
+couscous	star 3: 1
+chicken garlic	star 5: 1
+soy egg	star 4: 1
+bolognese sauce	star 5: 1
+del taco	star 1: 1
+molecular gastronomy	star 3: 1
+guotie	star 4: 1
+mint tea	star 3: 1
+frutti	star 3: 1
+indian cuisine	star 5: 1
+bruschetta	star 5: 1
+sea urchin	star 4: 1
+strawberry shortcake	star 4: 1
+designated driver	star 3: 1
+halo halo	star 4: 1
+garlic dip	star 4: 1
+marinara sauce	star 3: 1
+chick peas	star 3: 1
+rock candy	star 5: 1
+polenta	star 4: 1
+sauerkraut	star 4: 1
+chickpeas	star 5: 1
+ghari	star 5: 1
+pappardelle	star 5: 1
+biryani	star 3: 1
+swordfish	star 4: 1
+guanciale	star 4: 1
+kool aid	star 3: 1
+tater tots	star 4: 1
+english muffin	star 3: 1
+caramelized onions	star 4: 1
+middle east	star 5: 1
+oregano	star 1: 1
+cheese pie	star 3: 1
+white cut chicken	star 1: 1
+veggie burger	star 1: 1
+home fries	star 4: 1
+sopa	star 5: 1
+diners drive ins and dives	star 4: 1
+short rib tacos	star 5: 1
+profiterole	star 5: 1
+ciabatta	star 4: 1
+humble pie	star 5: 1
+porcini mushrooms	star 4: 1
+fish fry	star 5: 1
+chicken fajitas	star 4: 1
+huevos rancheros	star 2: 1
+capers	star 5: 1
+kanji	star 1: 1
+gyro fries
+bucatini
+biscuit tortoni
+capperi
+pressed beef cartilage seasoned with onions
+pignoletto
+mason jar
+pancetta
+stuffed grape
+scallops sea
+truffle roasted
+tartare tuna
+miele
+sichuan hotpot
+appam
+chingri bhape
+fries gyro
+gheela pitha
+alu pitika
+rice and peas
+kesar petha
+farinata
+culatello
+orzo
+risotto con agoni
+cartoccio di pesce spada
+soppressata
+kharoli
+soave
+chaulai saab
+kalathappam
+table wine
+demi glace
+dal fry with tadka
+rosemary and onion focaccia
+kesari
+val di chiana
+chef boyardee
+phirni
+risotto allo zafferano con petto danatra
+tajine
+crocchè
+pizza oregano and garlic
+latteria
+nasello al forno
+schiacciata
+vitello
+kuzhakkattai
+bucatini coi fungh
+pansotti alla genovese
+loskora
+mathura ke pede
+mushrooms and sausages
+formai de mut dellalta valle brembana
+nero d'avola
+hummus plate
+klotznnudl
+orate al forno
+strozzapreti
+a type of huge ravioli
+cavolfiore
+risotto alla milanese
+masor koni
+cappon magro
+cotechino friulano or musèt
+alici sardine anguilla marinate
+pasta al pesto
+banana tiramisu
+khandvi
+lai haq maas
+akki rotti
+charred eggplant
+dabeli
+dean martin
+borlotti beans
+pepata di cozze
+wedding cake
+pesce spada
+bel paese
+pezzetti di cavallo
+bisi bele bath
+azteca soup
+tandoor bread
+sun prairie
+panjeeri
+dudhi no halwo
+riso alla toscana
+meat gyro
+crostoli, crostui
+carne pizzaiola
+skee ball
+trofie al sugo di noci
+primo sale
+paneer tikka
+la bamba
+kabob lula
+cacciatore
+benne dosa
+shankarpali
+molasses bbq
+daal puri
+panino
+stracchino
+rosso di montefalco
+gud papdi
+chingri malai curry
+keerai masiyal
+black and green olives
+mother india
+pizzette e salatini
+scampi lentil
+prosciutto di parma
+namak para
+puttu
+bardolino
+pesce alla pizzaiola
+ajo blanco
+latterino fritto
+valpolicella
+bread tapenade
+lacryma cristi
+ariselu
+varuval
+rosgulla
+tzatziki
+rongi
+spaghetti alla carbonara
+flattened rice
+sheermal
+sattu ki roti
+spinaci
+neer dosa
+insalata caprese
+trippa
+cotoletta alla milanese
+obbattu
+guy fieri
+rice lamb
+curried braised rabbit stew
+scansano
+rice koobideh
+cicoria
+rat pack
+bone in ribeye
+cheera doi
+crotonese
+margherita pizza
+piselli
+patate e cozze
+soonvali
+involtini di pesce
+jersey shore
+pakhala
+tazzelenghe
+and grape juice[9]
+acciughe fritte in pastella
+spiedini di anguilla
+ragù alla salsiccia
+orata arrosto
+ditalini
+aglio
+amriti with rabdi
+sierra nevada
+rumali roti
+undhiyu
+crescenza
+bread onion
+hando guri
+pani pitha
+tagliarini
+wolfgang puck
+half baked
+las vegas strip
+cream pistachios
+rocchetta
+chicken shwarma
+jeera aloo
+carpaccio beef
+rajma
+pita fries
+colli etruria centrale
+seppie
+mamma mia
+tortilla flat
+liptauer
+pansotti
+sauce tzatziki
+bonarda
+khakhra
+acquadella fritta
+poha
+pestat
+scuete fumade
+tomatoes onions
+pasta e fagioli
+ros omelette
+filet koobideh
+stella artois
+murgh musallam
+stracciatella
+seppie con i piselli
+solopaca
+gatta curry
+squid chickpeas
+risotto al barolo
+feta cheese
+spiedini di alici
+san francisco bay
+wheat upma
+macedonia
+hummus
+shrimp lentil
+crab beignets
+pizza margherita
+risotto ai quattro sapori
+chongqing specify deep-fried chicken
+puran poli
+halwakadoo
+pane casareccio
+herbed feta dip
+methi saag
+chhenagaja
+gajar ka halwa
+oltrepò pavese
+thengai sadam
+kadai paneer
+tikona
+bajri no rotlo
+khorisa
+small fruits
+neccio
+musèt
+chhenapoda
+masor tenga
+sugo al pomodoro
+prosciutto flat
+mushroom risotto
+bajji
+pani puri
+dal makhani
+cash money
+indian omelette
+aloo shimla mirch
+ed hardy
+frittura mista di pesce
+raschera
+casu modde
+risotto mushroom
+chikkolee
+prosciutto figs
+pesce spada alla siciliana
+koldil chicken
+spaghetti con la bottarga
+el paso
+riso al nero di seppia
+pandoro
+lonza
+angel wings
+sevai lunch
+hand made corn tortillas
+tortiera di cozze
+taleggio
+riso con i porcini
+gavi
+focaccia
+cured pork jowl
+friulano
+crostui
+tortelloni alla zucca
+sformato di riso dolce
+amritsari fish
+shangri la
+finocchio
+laddu
+soup tomato
+parrina
+sakkara pongal
+englishs olives
+gyro
+panzarotti
+pane carasau
+pane pugliese
+acqua pazza
+pesce al cartoccio
+agrodolce
+franciacorta
+pale ale
+sunga pitha
+presnitz
+abbacchio brodettato
+taurasi
+pitha
+ghooghra
+san gimignano
+pizza mozzarella and anchovy
+tahini spread
+dahi puri
+payokh
+katha meetha petha
+ou tenga maas
+octopus squid
+cholafali
+seppioline in umido
+thayir sadam
+olive spread
+kinnathappam
+peperoni
+steak tartare
+panettone
+hari mutter ka nimona
+kosambari
+jhal-mu?i
+pea pureesweet
+marrubini
+chicken pasta
+tonno
+basilico
+putizza and pinza
+crocche
+mexican flag
+without salt
+persian stew
+cacioricotta
+dum aloo
+botargo
+jolada rotti
+olives dish
+pinzillacchere
+sanna
+conchiglie
+tiella di riso
+totano imbottito
+phulka
+dum aaloo
+tagliatelle alla boscaiola
+sour cream and guacamole
+panelle di ceci
+burrini
+rice meat
+eliche
+asparagi bianchi e verdi
+dhup pitha
+caciocavallo
+farro
+wrap parsley
+salted cod
+mad men
+carignano
+gajar matar aloo
+calamintha nepeta
+newport beach
+biscotti
+cjarsons
+montescudaio
+bombil fry
+rose water
+muffuletta
+calamaretti fritti
+keerai poriyal
+pizza quattro formaggi
+chimichanga
+belly dancer
+bharwaan baigan
+mushroom do pyaza
+khaman
+muri naaru
+pizza capricciosa
+sweet pethas
+sev mamra
+parma ham
+gianduiotto and gianduia
+pinoli
+murukku
+arancini
+pestât
+peperoni imbottiti
+currivepillai sadam
+stuffed calamari in tomato sauce
+risotto alla zucca
+bistecca fiorentina
+ciabusco ciabusco
+abbacchio alla cacciatora
+cannolo siciliano
+home made chips
+grand canal
+the chicken kabob was
+pakora
+pita jungle
+pignolo
+chicken tikka
+saltimbocca alla romana
+shahi tukra
+anarsa
+sarde ripiene
+biga
+crauti
+capperi and anchovy
+bora sawul
+fiore sardo
+barbera
+rigatoni al forno con salsa aurora
+cut mirchi bajji
+baba ghanoush
+ramatori subji
+colli tortonesi
+india gate
+kuzhambu
+goulash or gulash
+sajjige
+laapsi
+piacentinu
+carpaccio di pesce
+falerno del massico
+bhatoora
+bucatini all amatriciana
+yui shan chicken
+salsiccia cruda
+marille
+moroccan tea
+kulcha
+murena fritta
+grine sauce
+risotto al cavolfiore
+neapolitan pizza
+rosetta
+hulatang
+tiramisu banana
+hurum
+figs prosciutto
+pav bhaji
+rye bread
+mosaranna
+calamari in zimino
+spaghetti alla chitarra
+cold pizza
+pakwan
+kaara kozhambu
+magaj
+brodo
+lenticchie
+bozza pratese
+cilantro jalape
+panipuri
+bigoli
+shrimp fra diavolo
+tapenade green
+methi na gota
+speck friulano di sauris
+prosciutto affumicato
+sardine marinate
+sabudana khichadi
+verdure in pinzimonio
+chevdo
+anguilla marinate
+masor petu
+olive tree
+cacciucco
+taftan
+tapenade bread
+dongpo braised pork
+pecorino di fossa
+triple sec
+refosco dal peduncolo rosso
+asparagi bianchi e verdi asparagus
+italian margarita
+salad lettuce
+flat breads
+lukhmi
+pita falafel
+e fagioli
+anguilla
+navrattan korma
+chicken shawerma
+pinot noir
+piccoli frutti
+agghiotta di pesce spada
+laddoo
+donna fugata
+mahi mahi fish
+pane di genzano
+aloo baingan masala
+pollo asada
+moddizzosu
+stoccafisso alla ligure
+mexican street tacos
+cake boss
+pollo asado
+hummus dip
+tacos al pastor
+gobhi matar
+pollo alla cacciatora
+karela bharta
+bhoonja
+lagana
+asida
+tonnarelli
+banana chips
+orvieto
+mishti chholar dal
+ciceri e tria
+lauki ki subji
+ritz carlton
+cozze fritte alla viareggina
+bagna càuda
+monte re
+pesce a scabecciu
+moong dal ka halwa
+pooran-poli
+radicchio
+falafel sandwich
+salsiccia
+ramandolo
+sausages including salsiccia cruda
+pomodori col riso
+acquadella o latterino fritto
+nocce
+stuffed pizza
+naked city
+prosciutto and melon
+sous vide
+bagna cauda
+conegliano veneto
+locha
+sagrantino
+peter piper
+kadhi pakoda
+linguini with clam sauce
+mario batali
+el segundo
+cipolla
+cuban sandwich
+poriyal
+hummus falafel
+carciofi alla romana
+sarde sfiziose panate
+queen creek
+pizza quattro stagioni
+lula shish
+bucatini coi funghi
+flatbread olives
+grechetto
+feta salad
+koottu
+slattato
+olives carpaccio
+extra virgin olive oil
+kachori
+colline lucchesi
+prosciutto di san daniele
+konir dom
+bhajji
+pongal
+torta caprese
+zabaglione
+artichokes
+fragguno
+filatieddi
+ragusano
+avial
+shrimp enchiladas
+olives pita
+sohan papdi
+trote
+sutarfeni
+stelline
+deep dish
+boreto
+greco di tufo
+risotto ai gamberoni
+butternut ravioli
+carne asada taco's
+tortano
+baccalà
+caprino
+minestrone
+great dane
+chakodi
+paratha
+italian beef
+cassata siciliana
+fra diavolo
+valdobbiadene
+cappelletti
+carbonara spaghetti
+spaghetti alla carrettiera
+tomato and mozzarella pizza
+casecc
+caponata
+warm pita bread
+ragi rotti
+goli bajje
+baccala
+tagliatelle ai funghi
+festoni
+spaghetti siracusani
+pizzoccheri
+parotta
+moussaka
+beef ground
+baccalà fritto
+la scala
+yogurt cucumber
+pane rustico
+stuffed food
+crostini
+trebbiano d'abruzzo
+luna rossa
+italian wine
+los olivos
+boscaiola
+gordon ramsay
+val di cornia
+sevai
+burger truffle
+kothamali sadam
+zhajiangmian
+florentine beefsteak
+strucchi or struki
+risotto alla sbirraglia
+fried small mozzarellas
+mushrooms pizza
+risotto with saffron
+zongzi
+yogurt dip
+maccu
+fruit with pastry
+bitto
+fritto misto di pesce
+olio e peperoncino
+punugulu
+apache junction
+aloo gobi
+patate
+sabzi
+gila bend
+sloppy joe
+falafel wrap
+puzzone di moena
+strolghino
+pizza marinara
+gluten free pizza
+kabob ground
+tagliatelle
+vegetable biryani
+leaves stuffed
+batata vada
+strangozzi
+march madness
+beer bar
+red bull
+moscardini lessati alla genovese
+valle di arbia
+kabob beef
+fusilli
+pindi chana
+mohanthal
+cream based
+mortadella
+baati
+pane di altamura
+seppie col nero alla veneziana
+sammy hagar
+falafel hummus
+tagliatelle al ragu
+dogfish shark
+paccheri
+aloo ki tikki
+dolma
+mushroom matar
+lazio
+bavette
+prosciutto
+middle eastern cuisine
+big star
+colli euganei
+dhebra
+koshambri
+chiacchiere
+cable car
+chicken shawarma
+mysore pak
+butternut tortelli
+tandoori chicken
+tagliatelle al pomodoro
+tagliatelle al ragù
+paradise valley
+with or without tomato.
+colomba pasquale
+spaghetti indiavolati
+baba ghanouj
+ribolla gialla
+paneer tikka masala
+handwo
+aloo methi
+ricotta sausage
+orecchiette
+tagliatelle ai carciofi
+south india
+peperonata
+jose cuervo
+olive green
+pani tenga
+buridda
+ragi mudhe
+tenga doi
+fruit preserves made with vinegar
+ravioli butternut
+prezzemolo
+palappam
+ghever
+olives tapenade
+malpua
+cannelloni al ragu
+gnocchi di semolino
+castelmagno
+olive bread
+van buren
+pizza pugliese
+pumpkin cake
+bhaji
+ficattola
+lumache
+tom colicchio
+mary sue
+tomato grilled
+pattor
+salvia
+the ground beef
+gyro greek
+cannelloni
+pea mezzaluna
+trippa alla romana
+nebbiolo
+cannelloni al ragù
+pollo supremo
+aceto dolce
+cozze ripiene
+italian cuisine
+pub crawl
+butter basil
+el hefe
+prawn malai curry
+machher jhol
+carciofi
+dobos of trieste
+bhelpuri
+nocciolini di canzo
+greek food
+pastiera
+makka poha
+sparkling wine
+montepulciano d'abruzzo
+golden raisins
+tiramisù
+marzotica
+speck alto adige pgi
+anisette
+spaghetti alla puttanesca
+tartufo
+sev tameta
+risi e bisi
+desert inn
+negroamaro
+puli sadam
+ricotta salata
+robiola
+sardele in saor
+thalipeeth
+pista petha
+prosciutto cotto
+mozzarella and onions
+farfalle
+spiedini ai frutti di mare
+spaghetti al nero di seppia
+kofta
+crauti sauerkraut
+scallops risotto
+horioh maas
+ligurian pesto
+south indian
+calzone
+koldil duck
+sarde arraganate
+cotoletta alla petroniana
+maasor tenga
+ciriola
+preserved in vinegar or
+shakarpara
+golden nugget
+crostoli
+santa monica
+pizza ai frutti di mare
+ragù alla bolognese
+chana masala
+insalata di riso
+chapathi
+bilahi maas
+trottole
+langhe
+hummus pita
+ponganalu
+mirchi bajji
+gulab jamun
+formai de mut dell'alta valle brembana
+frida kahlo
+sicilian snail soup
+ennai kathirikkai
+coffee bean
+pita feta
+fonduta
+artichokes and anchovy pizza
+keri no ras
+tortellini
+pizza siciliana
+palak paneer
+steak florentine
+garganelli
+sausage ricotta
+kanafeh
+rogan josh
+vezione verro
+cake chocolate
+the indian sampler
+scampi gratinati
+calamari ripieni
+alambre
+rasmalai
+frutti di bosco
+penne all'arrabbiata
+zucchine
+riso valdostano
+thai chinese
+tommy bahama
+carpaccio polenta
+gattinara
+linguine with clam sauce
+polpettine di mare
+focaccia al rosmarino
+pizza with mushroom and sausage
+bucatini alla sorrentina
+burrata
+porcaloca
+shrimp saganaki
+basil butter
+tabouli
+zoes feta
+ciaccino
+arbi masala
+tortilla soup
+namkeen
+penne all arrabbiata
+flatbread pizza
+butternut tortellini
+funghi
+pasta butternut
+frank sinatra
+brodetto di arselle
+beef lula
+po boy
+tiella di riso, patate e cozze
+montasio
+rajma chaval
+spaghetti aglio olio e peperoncino
+bouillabaisse
+malapua
+snow fungus soup
+barolo
+a greek salad
+sfogliatelle
+halvasan
+pizzelle
+agliata
+falafel pita
+aloo matar
+minestra di ceci
+violino valtell
+pimenton sauce
+mozzarelline fritte
+caprese
+formadi frânt e formadi salât
+acciughe
+kombdi vade
+gay bar
+limone
+luchi
+home depot
+til pitha
+paruppu sadam
+melanzane
+jalebi
+formadi frânt e formadi salat
+pesaha appam
+burger fries
+ossobuco
+chorafali
+masala dosa
+merguez
+asparagi
+fontina
+maltagliati
+casatiello
+ghebar or ghevar
+basil onion
+vegetable jalfrezi
+grumello
+grana padano
+brown butter
+casiello
+stigghiola
+mount everest
+chicory
+beach house
+albana
+crop circle
+valcalepio
+mexico city
+squacquerone
+ziti
+crescentina
+spaghetti all' aglio
+risotto allo zafferano con petto d'anatra
+speck friulano
+kulfi falooda
+pizza delivery
+pignolata
+aloo paratha
+fritata di bianchetti
+bikaneri bhujia
+pohe
+hazelnut chocolates or spread
+chaat
+octopus chickpeas
+pane toscano
+pathiri
+rigatoni
+speck alto adige
+pizza ai funghi e salsiccia
+amatriciana
+sachima
+capicollo
+greek yogurt labneh
+strucoli or strudel
+grancevola alla veneziana
+fasolada
+persian rice
+koshimbir
+bistecca alla fiorentina
+hors d'oeuvres
+dhokla
+masala puri
+trofie al pesto
+hospitality industry
+dessert wine
+moroccan couscous
+gutturnio
+casècc
+golden corral
+lardo
+pizza funghi e salsiccia
+boreto alla graisana
+of the hummus
+spinach pie
+tabor
+pitigliano
+grand marnier
+torgiano
+sciusceddu
+pita hummus
+valdinievole
+fig flatbread
+modak
+ceci
+gulash
+san daniele ham
+braised pork shoulder
+mexican american
+turkish coffee
+alloro
+namakpara
+ricotta rifatta
+cooked ham
+wine bottle
+coppia ferrarese
+spumante brut
+anguilla marinata
+cucumber yogurt
+air-dried salted beef
+chapati
+sbroscia bolsenese
+agghiotta di lumache
+origano
+agnolotti
+carne al piatto
+sakinalu
+impanata di pesce spada
+greek salad
+murazzano
+acquacotta
+french bean aloo
+cotechino modena
+arnold palmer
+nandu omelette
+haq maas
+copra paak
+shukto
+poornalu
+royal beef
+chicken razala
+saganaki
+minestra di pasta con pesce
+bharwein karela
+osso buco
+ai frutti di mare
+pecorino friulano
+quartirolo
+kansar
+sarde a beccafico
+sooji halwa
+sauce garlic
+salad feta
+taralli
+buddha's delight
+leche shake
+idiappam
+wine cooler
+rucola
+ginestrata
+semifreddo
+risotto saltato
+cappellini
+alain ducasse
+ovada
+prosciutto crudo
+chianti
+nipozzano
+doodhpak
+goja
+marinated eel
+dessert chocolate
+tortelloni ricotta and spinach
+squid octopus
+risotto con la lüganega
+capesante alla veneziana
+strascinati
+ricotta ravioli
+eggplant dip
+carbonara
+vin santo
+baccala fritto
+cocoa powder
+chole bhatura
+chole bhature
+litti chokha
+sarson da saag
+manda pitha
+asiago
+stoccafisso alla genovese
+breads olive
+small garden fruits
+truffle mashed
+irish bar
+lamb rice
+mt everest
+marzolino
+pesarattu
+monte veronese
+amritsari kulcha
+cevapcici
+rosmarino
+penia
+ciarduna
+gubana
+crocetta of caltanissetta
+risotto indivia e fiori di zucca
+mishti doi
+gyros
+trofie
+chen wok
+testarolo
+panforte
+grissini torinesi
+ragu alla salsiccia
+peperoncino
+spaghetti all aglio olio e peperoncino
+chakri
+ciabusco
+sformato al basilico
+tagliatelle al sugo di lepre
+mutton biryani
+prosciutto e melone
+kali dal
+coq au vin
+tumazzu
+babà
+gobhi paratha
+uppittu
+tonno sottolio
+buccellato
+minestra di fagioli
+chicken kabob
+emeril lagasse
+ghugni
+rice salad
+pizza ai quattro formaggi
+mgm grand
+pesce spada arrosto in salmoriglio
+tex mex
+malloreddus
+sassella
+nervetti
+bresaola
+glazed chicken lavosh pizza
+branzino al sale
+shrikhand
+shahi paneer
+gyro meat
+seppie ripiene
+basundi
+pizza romana
+perciatelli
+california pizza kitchen
+dahi vada
+bhindi masala
+scamorza
+tonno sott'olio
+lauki ke kofte
+mangalore bajji
+service stars
+pinzimonio
+olive and anchovy
+sogliole alla mugnaia
+cotechino friulano
+giuncata
+risotto alla milanese or risotto with saffron
+belly dancing
+cozze alla tarantina
+wheat pita
+bharwaan tinde
+papadum
+dulce de leche shake
+squash ravioli
+carema riserva
+chili parotha
+octopus grilled
+filetti di baccalà
+maria maria
+lambrusco
+prickly pear
+keerai sadam
+squash pasta
+bag of tortilla chips
+moroccan pastry
+taj mahal
+aloo tikki
+singhada halwa
+prosciutto flatbread
+pecorino sardo
+the polenta
+monferrato
+blind pig
+riso tonnato
+feta fries
+kumol sawul
+vino nobile di montepulciano
+tiella di riso patate e cozze
+bucatini all'amatriciana
+colli apuani
+aceto balsamico
+sabudana vada
+paneer butter masala
+yelumincham sadam
+acciughe in carpione
+sukhdi
+verduzzo friulano
+kheer
+gajar halwo
+patatas bravas
+business casual
+olive spreads
+rigatoni con la pajata
+olives entrees
+south asian
+zuppa di pesce
+pecorino romano
+sangiovese
+makki di roti
+filetti di baccala
+swiss chard
+bonda
+filetti di orata al cartoccio
+emmer
+barg koobideh
+chick fil a
+cannelloni ai carciofi
+house made mozzarella
+photo booth
+cotechino friulano or muset
+standard italian
+piadina
+south indian cuisine
+veg kolhapuri
+pizza express
+bengena pitika
+risotto di seppie alla veneziana
+kos kootu
+salame
+fagioli
+pizza alla napoletana
+misi roti
+watermelon panzanella
+aglianico del taburno
+mooncake
+vada pav
+paglia e fieno
+samose
+kati roll
+brie and apple
+saffron rice
+tacconi
+rice basmati
+maccheroni
+vadai
+missultin e polenta
+chicken tikka masala
+dal bhatti
+gorgonzola pizza
+muthiya
+risotto al gorgonzola
+carnitas bowl
+flatbread prosciutto
+ciccillo
+aam papad
+risotto alla marinara
+crespelle
+khichdi
+pantua
+custoza
+ricotta affumicata
+new york style pizza
+puri bhaji
+utappam
+gobi manchurian
+baccala alla vicentina
+grilled halloumi
+lemon basil shrimp and pasta
+cookie dessert
+payasam
+aappam
+schiopettino
+rasya muthia
+la favorita
+mentuccia
+squash tortelli
+daal dhokli
+campi flegrei
+bolgheri
+sev khamani
+zuppa inglese
+chicago style pizza
+gavvalu
+baingan bharta
+offelle
+dosa
+food kabobs
+michetta
+four cheese pizza
+pootharekulu
+sunga pork
+tikka masala
+alici marinate
+kabob rice
+crostata
+sardinian pasta
+pablo picasso
+italian american
+butirro
+torta bertolina
+enchiladas and tacos
+green chile sauce
+aloo baingan
+papri chaat
+sarde grigliate
+upmaa
+chitranna
+fiano di avellino
+panzanella
+trebbiano
+triglie alla livornese
+risotto con scamorza e champagne
+riso e indivia
+spanakopita
+pashti
+scampi a zuppetta
+double ka meetha
+cetrioli
+shondesh
+tzatziki sauce
+medicine man
+mediterranean cuisine
+amti
+uttapam
+rava dosa
+parmigiano reggiano
+bhakri
+the chicken shawarma and
+marsala
+baba ganoush
+mek bqad
+rice kabob
+truffle cheese
+daal baati churma
+trenette
+sarde con origano e pane
+tapenade olives
+lilva kachori
+fragole
+palak daal
+sambar
+ilish bhape
+sauvignon blanc
+braciole
+keerai kootu
+sarva pindi
+bhatura
+canestrato pugliese
+coda alla vaccinara
+ragu alla bolognese
+kori rotti
+grignolino
+fettucine alfredo
+montalcino
+mac n' cheese
+tigella
+the chicken shawarma
+juvar no rotlo
+gorgonzola
+garmugia
+baccalà alla vicentina
+struffoli
+maddur vada
+monte cristo
+mascarpone guanciale mashed potatoes
