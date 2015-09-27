@@ -6,7 +6,7 @@ review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_
 dish_statistic_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/dish_statistics.txt'
 double_axis_data_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/dumpling_double_axis_data.tsv'
 all_dish_occurance_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/all_dish_occurance_data.tsv'
-
+all_dish_star_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/all_dish_star_data.tsv'
 def build_business_type_restaurant_id_map(target_type):
 	import json
 
@@ -229,6 +229,36 @@ def arrange_data_for_all_dish_occurance(dish_star_map):
 	writer.close()
 
 
+def arrange_data_for_all_dish_avgStar(dish_star_map):
+	import collections
+
+	dish_avgStar_map = {}
+
+	for dish in dish_star_map.keys():
+		dish_star = 0.0
+		dish_occurrence = 0
+
+		for star in dish_star_map[dish]:
+			current_Occurrence = len(dish_star_map[dish][star])
+			dish_occurrence += current_Occurrence
+			dish_star += int(star) * current_Occurrence
+
+		if dish_occurrence == 0:
+			continue
+
+		dish_avgStar_map[dish] = float('%.2f'%(dish_star/dish_occurrence))
+
+	sorted_map = collections.OrderedDict(sorted(dish_avgStar_map.items(), key=lambda d:d[1], reverse=True))
+
+	writer = open(all_dish_star_file, 'a')
+	writer.write('dish' + '\t' + 'Avg.Star' + '\n')
+
+	for dish, star in sorted_map.items():
+		writer.write(dish.encode('utf-8') + '\t' + str(star) + '\n')
+
+	writer.close()
+
+
 
 if __name__ == '__main__':
 	chinese_restaurants = build_business_type_restaurant_id_map("Chinese")
@@ -238,5 +268,6 @@ if __name__ == '__main__':
 	#dish_statistics = calculate(dish_star_map)
 	#output_to_disk(dish_statistic_file, dish_statistics)
 
-	arrange_data_for_double_axis(dish_star_map)
-	arrange_data_for_all_dish_occurance(dish_star_map)
+	#arrange_data_for_double_axis(dish_star_map)
+	#arrange_data_for_all_dish_occurance(dish_star_map)
+	arrange_data_for_all_dish_avgStar(dish_star_map)
