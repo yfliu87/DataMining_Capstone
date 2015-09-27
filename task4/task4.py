@@ -6,7 +6,10 @@ review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_
 dish_statistic_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/dish_statistics.txt'
 double_axis_data_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/dumpling_double_axis_data.tsv'
 all_dish_occurance_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/all_dish_occurance_data.tsv'
+all_dish_star_occurrence_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/all_dish_star_occurrence_file.tsv'
 all_dish_star_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/all_dish_star_data.tsv'
+all_dish_star_sorted_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/all_dish_star_sorted_data.tsv'
+
 def build_business_type_restaurant_id_map(target_type):
 	import json
 
@@ -209,32 +212,52 @@ def arrange_data_for_all_dish_occurance(dish_star_map):
 	import collections
 
 	dish_occurance_map = {}
+	dish_star_occurance_map = {}
 
 	for dish in dish_star_map.keys():
 		occurance = 0
+		dish_star_occurance_map[dish] = {}
 
 		for star in dish_star_map[dish]:
-			occurance += len(dish_star_map[dish][star])
+			size = len(dish_star_map[dish][star])
+			dish_star_occurance_map[dish][star] = size
+			occurance += size
 
 		dish_occurance_map[dish] = occurance 
 
-	sorted_map = collections.OrderedDict(sorted(dish_occurance_map.items(), key=lambda d:d[1], reverse=True))
+	sorted_dish_occurrence_map = collections.OrderedDict(sorted(dish_occurance_map.items(), key=lambda d:d[1], reverse=True))
+	sorted_dish_star_occurrence_map = collections.OrderedDict(sorted(dish_star_occurance_map.items(), key=lambda d:d[1], reverse=True))
 
 	writer = open(all_dish_occurance_file, 'a')
 	writer.write('dish' + '\t' + 'occurance' + '\n')
 
-	for dish, occurance in sorted_map.items():
+	for dish, occurance in sorted_dish_occurrence_map.items():
 		writer.write(dish.encode('utf-8') + '\t' + str(occurance) + '\n')
 
 	writer.close()
 
+	writer = open(all_dish_star_occurrence_file, 'a')
+	writer.write('dish' + '\t' + 'star 1' + '\t' + 'star 2' + '\t' + 'star 3' + '\t' + 'star 4' + '\t' + 'star 5')
 
-def arrange_data_for_all_dish_avgStar(dish_star_map):
+	for dish in sorted_dish_occurrence_map.keys():
+		message = ''
+
+		for star in sorted_dish_star_occurrence_map[dish]:
+			message += '\t' + 'star ' + str(star) + ': ' + str(sorted_dish_star_occurrence_map[dish][star])
+
+		writer.write(dish.encode('utf-8') + message + '\n')
+
+	writer.close()
+
+	return sorted_dish_occurrence_map.keys()
+
+def arrange_data_for_all_dish_avgStar(dish_star_map, sorted_dish_list):
 	import collections
 
 	dish_avgStar_map = {}
 
-	for dish in dish_star_map.keys():
+	for dish in sorted_dish_list:
+	#for dish in dish_star_map.keys():
 		dish_star = 0.0
 		dish_occurrence = 0
 
@@ -244,9 +267,9 @@ def arrange_data_for_all_dish_avgStar(dish_star_map):
 			dish_star += int(star) * current_Occurrence
 
 		if dish_occurrence == 0:
-			continue
-
-		dish_avgStar_map[dish] = float('%.2f'%(dish_star/dish_occurrence))
+			dish_avgStar_map[dish] = 0.0
+		else:
+			dish_avgStar_map[dish] = float('%.2f'%(dish_star/dish_occurrence))
 
 	sorted_map = collections.OrderedDict(sorted(dish_avgStar_map.items(), key=lambda d:d[1], reverse=True))
 
@@ -255,6 +278,14 @@ def arrange_data_for_all_dish_avgStar(dish_star_map):
 
 	for dish, star in sorted_map.items():
 		writer.write(dish.encode('utf-8') + '\t' + str(star) + '\n')
+
+	writer.close()
+
+	writer = open(all_dish_star_sorted_file, 'a')
+	writer.write('dish' + '\t' + 'Avg.Star' + '\n')
+
+	for dish in sorted_dish_list:
+		writer.write(dish.encode('utf-8') + '\t' + str(dish_avgStar_map[dish]) + '\n')
 
 	writer.close()
 
@@ -269,5 +300,5 @@ if __name__ == '__main__':
 	#output_to_disk(dish_statistic_file, dish_statistics)
 
 	#arrange_data_for_double_axis(dish_star_map)
-	#arrange_data_for_all_dish_occurance(dish_star_map)
-	arrange_data_for_all_dish_avgStar(dish_star_map)
+	sorted_dish_list = arrange_data_for_all_dish_occurance(dish_star_map)
+	arrange_data_for_all_dish_avgStar(dish_star_map, sorted_dish_list)
