@@ -5,7 +5,11 @@ import codecs
 
 business_file_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_business.json'
 review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_review.json'
+chinese_dish_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/student_dn_annotations.txt'
 
+'''
+map: {business_id: (restaurant_name, address)}
+'''
 def build_business_type_restaurant_id_map(target_type):
 	import json
 
@@ -67,6 +71,24 @@ def build_restaurant_id_review_map(chinese_restaurants):
 	return target_map
 
 
+def read_chinese_dish_from_file(dish_file):
+	dishes = set() 
+
+	reader = codecs.open(dish_file, 'r', 'utf-8')
+	line = reader.readline()
+
+	while line:
+		if line != '':
+			dishes.add(line.replace('\n', ''))
+
+		line = reader.readline()
+
+	reader.close()
+
+	return list(dishes)
+
+
 if __name__ == '__main__':
 	chinese_restaurants = build_business_type_restaurant_id_map("Chinese")
 	restaurant_reviews = build_restaurant_id_review_map(chinese_restaurants)
+	dishes = read_chinese_dish_from_file(chinese_dish_file)
