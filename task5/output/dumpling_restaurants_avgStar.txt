@@ -1,0 +1,315 @@
+restaurant	address	review occur	avg Star
+Mr Chao's Asian Bistro	AZ 85048,4232 E Chandler Blvd Ste 4 Phoenix	2	5.0
+Empire Bistro	AZ 85212,7641 E Guadalupe Rd Mesa	1	5.0
+Rainbow Arch Restaurant	Edinburgh EH3 8BJ,8-16a Morrison Street West End	1	5.0
+China One	NV 89138,11710 W Charleston Blvd Ste 140 Summerlin Las Vegas	1	5.0
+Grace Garden	AZ 85234,4331 E Baseline Rd Gilbert	1	5.0
+Dragon Bowl	AZ 85024,814 E Union Hills Dr Ste C-14 Phoenix	1	5.0
+Chang Jiang Restaurant	WI 53711,5710 Raymond Rd Meadowood Madison	1	5.0
+Miu's Cuisine	AZ 85281,2314 E Apache Blvd Tempe	1	5.0
+Cool Jade Chinese Restaurant	Edinburgh EH12 7AU,3-4 Downie Terrace	1	5.0
+Great Wok	AZ 85044,3646 E Ray Rd Ste 12 Phoenix	1	5.0
+New Asian Star	AZ 85353,2755 S 99th Ave Ste 102 Tolleson	1	5.0
+Empress Court	NV 89109,3570 Las Vegas Blvd The Strip Las Vegas	1	5.0
+Satay Thai Bistro & Bar	NV 89169,3900 Paradise Rd Ste N Eastside Las Vegas	3	5.0
+Abacus Inn Chinese Restaurant-Arrowhead	AZ 85308,20329 N 59th Ave Glendale	1	5.0
+Autumn Court Chinese Restaurant	AZ 85018,3752 E Indian School Rd Phoenix	1	5.0
+Main Moon Chinese Restaurant	WI 53558,4850 Larson Beach Rd Mc Farland	1	5.0
+Wokee Express	AZ 85234,745 N Gilbert Rd Ste 112 Gilbert	1	5.0
+Mister Wong	AZ 85029,10627 N 19th Ave Phoenix	2	5.0
+Tien Wong Hot Pot	AZ 85224,2330 N Alma School Rd Ste 118 Chandler	3	5.0
+Beijing Chinese Cuisine	NV 89123,9255 S Eastern Ave Ste 330-4 Southeast Las Vegas	2	5.0
+Yin's Chinese Resturant	AZ 85015,1950 W Indian School Road Phoenix	1	5.0
+Cameron Chinese Seafood Restaurant	ON N2G 3N2,21-19 Cameron St Kitchener	1	5.0
+Thai Style Noodle House 2	NV 89148,5135 S Fort Apache Ave Ste 125 Spring Valley Las Vegas	1	5.0
+Panda Garden	WI 53590,922 Windsor St Sun Prairie	2	5.0
+Magic Wok	WI 53704,2044 Atwood Ave Schenk - Atwood Madison	1	5.0
+Veggie House	NV 89146,5115 Spring Mountain Rd Ste 203 Chinatown Las Vegas	3	5.0
+Chen's Chinese Bistro	AZ 85218,5341 S Superstition Mountain Dr Gold Canyon	1	5.0
+Hao	AZ 85268,11849 N Saguaro Blvd Fountain Hills	1	5.0
+Simi's Cafe	AZ 85234,2401 E Baseline Rd Ste 118 Gilbert	2	5.0
+Asian Island	AZ 85260,14870 N Northsight Blvd Ste 103 Scottsdale	1	5.0
+Mu Shu Asian Grill	AZ 85015,1502 W Thomas Rd Phoenix	1	5.0
+Szechuan Cuisine	AZ 85226,5865 W Ray Rd Chandler	2	5.0
+Great Wall Chinese Restaurant	AZ 85118,6832 S Kings Ranch Rd Ste 1 Gold Canyon	1	5.0
+Mah Jong	NV 89103,Rio Hotel and Casino 3700 W Flamingo Rd Las Vegas	1	5.0
+Great Bao	NV 89103,Las Vegas	1	5.0
+Lotus Garden	AZ 85120,183 W Apache Trl Ste 104 Apache Junction	2	5.0
+Leung Yue Hot Pot	ON N2G 2P1,1508 King St. E Kitchener	1	5.0
+P F Chang's China Bistro	AZ 85085,2420 W Happy Valley Rd Norterra Phoenix	1	5.0
+Bobo China	NV 89117,8465 W Sahara Ave Westside Las Vegas	1	5.0
+Baidu China Bistro	NV 89139,7625 S Rainbow Blvd Ste 100 Southwest Las Vegas	2	5.0
+Sun Asian Kitchen	AZ 85073,2070 E Baseline Rd Ste D112 Phoenix	3	4.67
+Szechwan Palace	AZ 85224,2386 N Alma School Rd Chandler	6	4.67
+Asian Cafe Express	AZ 85201,1911 W Main St Ste 3 Mesa	11	4.55
+Joyful Chinese Dining	AZ 85258,9699 N Hayden Rd Scottsdale	2	4.5
+Shangri-La Chinese	AZ 85029,2855 W Cactus Rd Phoenix	2	4.5
+Chef Ben Sushi & Asian Express	AZ 85395,13824 W McDowell Rd Goodyear	2	4.5
+P F Chang's China Bistro	AZ 85254,Kierland Commons 7132 E Greenway Pkwy Scottsdale	2	4.5
+VIP	WI 53719,6718-6722 Odana Rd Madison	2	4.5
+China Chef	AZ 85240,85 W Combs Rd Ste 110 Queen Creek	2	4.5
+China Wok	AZ 85257,2334 N Scottsdale Rd Scottsdale	2	4.5
+Double 10	WI 53705,3306 A University Ave Madison	7	4.43
+Beijing Noodle Cafe	NV 89121,4130 S Sandhill Rd Eastside Las Vegas	22	4.41
+Hao Bao	AZ,Phoenix	21	4.38
+SUSHISAMBA Las Vegas	NV 89109,The Palazzo 3327 Las Vegas Blvd S The Strip Las Vegas	13	4.38
+Asian BBQ & Noodles	NV 89146,3400 S Jones Blvd Ste 5C Chinatown Las Vegas	14	4.36
+Pho Kim Long	NV 89102,4029 Spring Mountain Rd Chinatown Las Vegas	3	4.33
+Dragon Palace	AZ 85032,13825 N 32nd St Phoenix	3	4.33
+Stack Dim Sum Bar	Edinburgh EH6 8RG,42 Dalmeny Street Leith	4	4.25
+Fu Restaurant	NV 89169,4455 Paradise Rd Eastside Las Vegas	4	4.25
+Grace and Healthy Premium Dumplings	ON N2L 6J3,150 University Avenue W Waterloo	12	4.25
+Orient House	WI 53715,626 S Park St Greenbush Madison	5	4.2
+Flaming Wok	WI 53704,4237 Lien Rd Ste H Mayfair Park Madison	5	4.2
+Szechwan Palace	Ste 108
+Phoenix,Cofco Chinese Cultural Center 668 N 44th St	7	4.14
+Chou's Kitchen	AZ 85224,910 N Alma School Rd Chandler	67	4.13
+China Magic Noodle House	AZ 85224,2015 N Dobson Rd Chandler	48	4.12
+Three Villages Restaurant	NV 89103,5115 W Spring Mountain Rd Chinatown Las Vegas	38	4.05
+Great Wall Cuisine	AZ 85017,5057 N 35th Ave Phoenix	24	4.0
+Tottie's Asian Fusion	AZ 85253,6204 N Scottsdale Rd Ste 106 Paradise Valley	1	4.0
+Pei Wei Asian Diner	AZ 85260,8700 E. Raintree Dr. Scottsdale	1	4.0
+Szechwan Garden	AZ 85226,5055 W Ray Rd Ste 1 Chandler	1	4.0
+Crazy Buffet	AZ 85281,7720 S Priest Dr Tempe	1	4.0
+Tasty House Chinese Restaurant	AZ 85023,1512 W Bell Rd Ste 7 Phoenix	1	4.0
+Diamond Chinese Restaurant	NV 89109,3449 Industrial Rd Las Vegas	1	4.0
+Tao Yuan Chinese Restaurant	AZ 85205,4419 E Main St Ste 117 Mesa	1	4.0
+Chopstix	NV 89123,2381 E Windmill Ln Southeast Las Vegas	1	4.0
+Crystal Palace Restaurant	ON N2J 1N8,10 King St S Waterloo	1	4.0
+Fortunes	NV 89103,4321 W Flamingo Rd Inside the Palms Casino Resort Las Vegas	1	4.0
+Happy Valley's Congee & Bar	ON N2L,140 University Avenue W Waterloo	1	4.0
+Golden Dragon Chinese Cuisine	NV 89103,6120 W Tropicana Ave Las Vegas	2	4.0
+Pearl Wok To Go	NV 89117,8550 W Charleston Blvd Ste 100 Westside Las Vegas	1	4.0
+Dragon House	NV 89103,4180 S Jones Blvd Ste 1-2 Las Vegas	2	4.0
+Buffet at Asia	NV 89119,4090 S Eastern Ave Eastside Las Vegas	1	4.0
+Happiness	Edinburgh EH8 9PY,34 W Preston Street Newington	1	4.0
+The Clever Koi	AZ 85012,4236 N Central Ave Phoenix	36	4.0
+Long Life Vege Restaurant	NV 89121,4130 S Sandhill Rd Ste A4 Eastside Las Vegas	1	4.0
+Yao Fine Chinese Cuisine	AZ 85295,2487 S Gilbert Rd Ste 102 Gilbert	1	4.0
+China A GoGo	NV 89113,7435 S Durango Dr Ste 105 Southwest Las Vegas	2	4.0
+QQ Asian Buffet	WI 53704,1291 N Sherman Ave Madison	1	4.0
+Jade Star	AZ 85351,10050 W Bell Rd Ste 8 Sun City	1	4.0
+Golden Canyon Oriental	AZ 85202,1133 S Dobson Rd Mesa	1	4.0
+Hsin Cafe	AZ 85004,120 E Taylor St Ste 150 Phoenix	1	4.0
+Pho Chandler	AZ 85248,4055 S Arizona Ave Ste 8 Chandler	1	4.0
+Pei Wei Asian Diner	AZ 85255,20851 N Scottsdale Rd. Suite 105 Scottsdale	1	4.0
+Beijing Express	AZ 85283,219 E Baseline Rd Ste H-2 Tempe	1	4.0
+Noodle Exchange	NV 89103,Gold Coast 4000 W Flamingo Rd Las Vegas	1	4.0
+Dumpling King	NV 89146,5740 Spring Mountain Rd Chinatown Las Vegas	5	4.0
+Grand China Restaurant	WI 53562,2608 Allen Blvd Middleton	1	4.0
+Hot Wok Mr Cook	AZ 85284,655 W Warner Rd Ste 117 Tempe	1	4.0
+Blossom Asian Cuisine	AZ 85353,8350 W Lower Buckeye Rd Ste 106 Tolleson	1	4.0
+Tom's Red Pepper	WI 53562,1019 N Gammon Rd Middleton	1	4.0
+China Wok	WI 53704,1724 Fordem Ave Madison	4	4.0
+Jade At the Palazzo	NV 89109,3339 Las Vegas Blvd S The Strip Las Vegas	2	4.0
+Hong Kong Gourmet Buffet	AZ 85048,4909 E Chandler Blvd Phoenix	1	4.0
+Wing Hing	AZ 85381,7420 W Cactus Rd Peoria	1	4.0
+Beijing Chinese Cuisine	AZ 85395,14270 W Indian School Rd Ste C1 Goodyear	1	4.0
+Chop Chop Wok	NV 89108,6812 W Cheyenne Ave Northwest Las Vegas	1	4.0
+Imperial Garden Chinese Restaurant	WI 53704,4214 E Washington Ave Norman Acres Madison	1	4.0
+Beijing Garden Chinese	AZ 85008,668 N 44th ST Ste 112 Phoenix	1	4.0
+China Tango	NV 89074,1500 N Green Valley Pkwy Henderson	1	4.0
+World Noodle	NV 89102,4355 Spring Mountain Rd Ste 101 Chinatown Las Vegas	3	4.0
+Super Dragon	AZ 85020,1212 E Northern Ave Phoenix	1	4.0
+China City Super Buffet	AZ 85374,18885 N Reems Rd Ste 101 Surprise	1	4.0
+A & K Chinese Restaurant	NV 89146,5600 Spring Mountain Rd Ste B Chinatown Las Vegas	1	4.0
+Bangkok 9 Thai-Chinese Food	NV 89014,663 N Stephanie St Henderson	2	4.0
+Pei Wei Asian Diner	NV 89014,1311 W Sunset Rd Suite 120 Henderson	1	4.0
+Koji Restaurant	NV 89103,4500 W Tropicana Ave Las Vegas	1	4.0
+Pei Wei Asian Diner	AZ 85283,1825 Guadalupe Suite F-112 Tempe	1	4.0
+P F Chang's China Bistro	NV 89145,1095 S Rampart Blvd Westside Las Vegas	6	4.0
+Little Peking	AZ 85028,10608 N 32nd St Phoenix	1	4.0
+Good China Restaurant	AZ 85382,9180 W Union Hills Dr Peoria	1	4.0
+Nee House Chinese Restaurant	AZ 85032,13843 N Tatum Blvd Ste 15 Phoenix	1	4.0
+HK Star	NV 89146,3400 S Jones Blvd Ste # 15 Chinatown Las Vegas	3	4.0
+Chen Wok Express	AZ 85021,8115 N 19th Ave Phoenix	1	4.0
+China Joe's	NV 89015,720 S Boulder Hwy Henderson	1	4.0
+Dong Ting Spring	NV 89103,4850 W Flamingo Rd Ste 34-34 Las Vegas	1	4.0
+China Gourmet	NV 89117,9002 W Sahara Ave Ste A Westside Las Vegas	1	4.0
+Iron Chef	AZ 85242,23706 S Power Rd Queen Creek	2	4.0
+Asian Kitchen	WI 53703,449 State St Capitol Madison	1	4.0
+China One West	WI 53719,518 Grand Canyon Dr Madison	1	4.0
+China One	NV 89149,7080 N Durango Dr Ste 130 Centennial Las Vegas	1	4.0
+Pei Wei Asian Diner	AZ 85022,267 E Bell Rd. Suite 1 Phoenix	1	4.0
+Yan's Chinese Food #2	AZ 85037,9140 W Thomas Rd Ste B103 Phoenix	1	4.0
+Qwik Chinese	AZ 85258,7353 N Via Paseo Del Sur Ste 490 Scottsdale	2	4.0
+House of Mei	WI 53590,120 E Main St Sun Prairie	1	4.0
+Gourmet Wok	NV 89145,7638 Westcliff Dr Westside Las Vegas	1	4.0
+New Asian Kitchen	AZ 85053,4231 W Bell Road Phoenix	1	4.0
+China Star	WI 53717,515 Junction Rd Junction Ridge Madison	1	4.0
+Lotus Garden Cuisine	NV 89118,6435 S Rainbow Blvd Spring Valley Las Vegas	1	4.0
+Kong  Fu Gyoza	AZ 85202,66 S Dobson Rd Mesa	2	4.0
+Yum Yum HK Diner	Edinburgh EH8 9EF,13 W Richmond St Newington	1	4.0
+8 fortune Chinese cuisine	AZ 85381,13686 N 75th Ave Peoria	1	4.0
+Wing Sing Inn	Edinburgh EH11 1BP,147 Dundee St	1	4.0
+Long Jin Chinese Cuisine	NV 89103,4825 S Rainbow Blvd Ste 204-205 Spring Valley Las Vegas	3	4.0
+Wendy's Noodle Cafe	NV 89146,3401 S Jones Blvd Chinatown Las Vegas	25	3.96
+Hakkasan Restaurant	NV 89109,MGM Grand 3799 Las Vegas Blvd S The Strip Las Vegas	11	3.91
+China King	AZ 85224,1050 W Ray Rd Chandler	21	3.86
+Pearl	NV 89109,MGM Grand Hotel and Casino 3799 Las Vegas Blvd S Eastside Las Vegas	13	3.85
+P F Chang's China Bistro	AZ 85281,740 South Mill Ave Ste 140 Tempe	6	3.83
+Cafe Ga Hyang	AZ 85302,4362 W. Olive Ave Glendale	6	3.83
+Fat Choy	NV 89104,Eureka Casino 595 E Sahara Ave Eastside Las Vegas	5	3.8
+Henry's Taiwan Kitchen	AZ 85282,119 E Southern Ave Tempe	9	3.78
+Jasmine	NV 89109,Bellagio Resort &Casino 3600 S Las Vegas Blvd The Strip Las Vegas	13	3.77
+DumplingHaus	WI 53705,702 N Midvale Blvd Madison	62	3.76
+Noodle Pot	NV 89102,4215 Spring Mountain Rd Ste B112 Chinatown Las Vegas	28	3.75
+New Asia Fast Food	ON N2J 2Z4,402 King Street N Waterloo	4	3.75
+Little Buddha Restaurant & Sushi Bar	NV 89103,The Palms Casino Resort 4321 W Flamingo  Rd Las Vegas	8	3.75
+Buffet Asia	NV 89146,2380 S Rainbow Blvd Westside Las Vegas	4	3.75
+Chop Chop Leith	Edinburgh EH6 6LX,76 Commercial Street Leith	11	3.73
+C-Fu Gourmet Restaurant	AZ 85224,2051 W Warner Rd Ste 13 Chandler	11	3.73
+Phoenix Palace	AZ 85224,2075 N Dobson Rd Chandler	25	3.72
+Noodle Palace	NV 89146,5115 Spring Mountain Rd Ste 203 Chinatown Las Vegas	7	3.71
+China Mama Restaurant	NV 89136,3420 S Jones Blvd Chinatown Las Vegas	67	3.69
+China Chili	AZ 85012,302 E Flower St Phoenix	3	3.67
+P F Chang's China Bistro	NV 89012,The District 101 S Green Valley Pkwy Anthem Henderson	6	3.67
+Yi Mei Champion Taiwan Deli	NV 89146,3435 S Jones Blvd Chinatown Las Vegas	12	3.67
+Beijing Restaurant	AZ 85286,2040 S Alma School Rd Ste 13 Chandler	6	3.67
+Wong's Place	AZ 85283,1825 E Baseline Rd. Tempe	3	3.67
+Orchids Garden Chinese Restaurant	NV 89146,5485 W Sahara Ave Westside Las Vegas	52	3.65
+Ping Pang Pong	NV 89103,4000 W Flamingo Rd 4000 W Flamingo Rd Las Vegas	20	3.65
+Noodle Asia	NV 89109,The Venetian 3355 Las Vegas Blvd S The Strip Las Vegas	16	3.62
+Wah Kee Wonton Noodle	WI 53703,600 Williamson St Ste E Williamson - Marquette Madison	8	3.62
+Blossom	NV 89109,Aria Resort and Casino 3735 Las Vegas Blvd S The Strip Las Vegas	5	3.6
+Fat Dumpling	NV 89109,3959 W Spring Mountain Rd Chinatown Las Vegas	44	3.59
+Mekong Palace	AZ 85202,66 S Dobson Rd Ste 120 Mesa	12	3.58
+Umami Ramen & Dumpling Bar	WI 53703,923 Williamson St Williamson - Marquette Madison	90	3.58
+Golden Buddha	AZ 85008,668 N 44th St Phoenix	18	3.56
+Chop Chop	Edinburgh EH3 8DT,248 Morrison Street West End	19	3.53
+Cathay House Restaurant	NV 89146,5300 Spring Mountain Rd Ste 107 Chinatown Las Vegas	19	3.53
+Bund Shanghai	NV 89103,3545 S Decatur Blvd Ste A Chinatown Las Vegas	23	3.52
+Buffet @ Asia	NV 89183,9901 Eastern Ave Ste 110 Southeast Las Vegas	4	3.5
+Hot Wok Chinese Restaurant	AZ 85225,1050 E Ray Rd Chandler	2	3.5
+New York Chinese Restaurant	NV 89134,9430 W Lake Mead Blvd Ste 1 Summerlin Las Vegas	2	3.5
+Wahsun Chinese Restaurant	AZ 85021,8056 N 19th Ave Phoenix	2	3.5
+Green Tea Chinese And Japanese Cuisine	AZ 85206,1239 S Higley Rd Mesa	2	3.5
+Big Wong Restaurant	NV 89146,5040 Spring Mountain Rd Chinatown Las Vegas	2	3.5
+Mr. Beijing	NV 89119,730 E Flamingo Rd Ste 8 Eastside Las Vegas	2	3.5
+P F Chang's China Bistro	NV 89109,4165 S Paradise Rd Eastside Las Vegas	4	3.5
+Saigon Saigon	Edinburgh EH2 2AZ,14 S St Andrew St New Town	6	3.5
+Red House	AZ 85258,8902 E Via Linda 100 Scottsdale	2	3.5
+P F Chang's China Bistro	NV 89109,Planet Hollywood Resort & Casino 3667 Las Vegas Blvd The Strip Las Vegas	10	3.5
+Red Mansion	NV 89101,Downtown Grand Casino and Hotel 206 N 3rd St Las Vegas	2	3.5
+Spicy City	NV 89102,4215 Spring Mountain Rd B205 Westside Las Vegas	2	3.5
+Deer Garden Signature	AZ 85202,66 S Dobson Rd Ste 107 Mesa	2	3.5
+Red 8	NV 89109,3131 Las Vegas Blvd S The Strip Las Vegas	30	3.5
+Happy Wok	WI 53713,2409 W Broadway Monona	2	3.5
+Desert Jade	AZ 85018,3215 E Indian School Rd Phoenix	2	3.5
+Chang's Hong Kong Cuisine	NV 89103,4670 S Decatur Blvd Las Vegas	33	3.45
+Ichiban Sichuan	WI 53715,610 S Park St Greenbush Madison	5	3.4
+Cafe Noodle & Chinese Barbeque	NV 89102,4355 Spring Mountain Rd Chinatown Las Vegas	5	3.4
+Little Dumpling	NV 89012,180 S Stephanie St Henderson	5	3.4
+Jade Palace	AZ 85255,23623 N Scottsdale Rd Scottsdale	3	3.33
+Ginseng 3	NV 89109,3535 Las Vegas Blvd The Strip Las Vegas	6	3.33
+Fugu	WI 53703,411 W Gilman St Capitol Madison	3	3.33
+Yangtse Chinese Bistro	AZ 85224,1940 W Chandler Blvd Chandler	3	3.33
+China Chan Restaurant	AZ 85051,10227 N Metro Pkwy E Phoenix	4	3.25
+Joyful House Chinese Cuisine	NV 89102,4601 Spring Mountain Rd Chinatown Las Vegas	4	3.25
+Lao Ching Hing	AZ 85008,Cofco Chinese Cultural Ctr 668 N 44th St Phoenix	9	3.22
+Pan Asian	NV 89117,2980 S Durango Dr Ste 101 Westside Las Vegas	5	3.2
+Noodles	NV 89109,Bellagio Resort &Casino 3600 S Las Vegas Blvd The Strip Las Vegas	38	3.18
+1900 Asian Cuisine	NV 89146,5115 Spring Mountain Rd Ste 103 Chinatown Las Vegas	17	3.18
+China Poblano	NV 89109,3708 Las Vegas Blvd S The Strip Las Vegas	53	3.17
+Zine Noodles Dim Sum	NV 89109,The Palazzo 3325 Las Vegas Blvd S The Strip Las Vegas	21	3.14
+China Grill	NV 89119,Mandalay Bay Hotel and Casino 3950 Las Vegas Blvd S The Strip Las Vegas	16	3.12
+East Ocean Dim Sum & Seafood Restaurant	NV 89123,9570 S Eastern Ave Southeast Henderson	12	3.08
+Sam Woo BBQ Restaurant	NV 89102,4215 Spring Mountain Rd Ste B101 Chinatown Las Vegas	2	3.0
+Asian House	WI 53714,1 Dempsey Rd Ste 3 Eastmorland Madison	1	3.0
+China Pearl Chinese Restaurant	AZ 85234,3861 E Baseline Rd Gilbert	1	3.0
+Asia Lee Chinese Restaurant	AZ 85008,5030 E McDowell Rd Phoenix	5	3.0
+Li's Bowl	AZ 85041,6260 S 35th Ave Phoenix	1	3.0
+New China Super Buffet	AZ 85023,601 W Bell Rd Phoenix	2	3.0
+Canton Dragon	AZ 85258,10190 N 90th St Scottsdale	2	3.0
+Jasmine Express	NV 89031,5546 Camino Al Norte North Las Vegas	1	3.0
+Hong Kong Express	AZ 85008,668 N 44th St Phoenix	2	3.0
+Chop and Wok Gourmet Chinese	AZ 85254,7136 E Shea Blvd Scottsdale	1	3.0
+Thai House Restaurant	NV 89123,9850 S Maryland Pkwy Ste 17 Southeast Las Vegas	1	3.0
+Hong Kong Wok	WI 53705,702 N Midvale Blvd Ste 120 Madison	1	3.0
+Chef Chiang	AZ 85226,4929 W Chandler Blvd Ste 3 Chandler	1	3.0
+Pick Up Stix	NV 89108,2101 N Rainbow Blvd Las Vegas	1	3.0
+Jimmy Woo's	AZ 85251,4233 N Scottsdale Rd Scottsdale	6	3.0
+Lucky Sushi & Chinese Restaurant	AZ 85222,1350 E Florence Blvd Casa Grande	1	3.0
+Little Dumpling Chinese & Thai Cuisine	NV 89131,6572 N Decatur Blvd Ste 120 Las Vegas	3	3.0
+Szechuan Express	AZ 85202,1116 S Dobson Rd Ste  132 Mesa	2	3.0
+Mr Hunan	AZ 85281,960 W University Dr Ste 116 Tempe	2	3.0
+Dragon Noodle Co.	NV 89109,Monte Carlo Resort & Casino 3770 Las Vegas Blvd S The Strip Las Vegas	2	3.0
+New York Chinese Restaurant	NV 89052,655 S Green Valley Pkwy Ste 140 Henderson	3	3.0
+KJ Kitchen	NV 89146,5960 Spring Mountain Rd Chinatown Las Vegas	1	3.0
+Golden Gate Chinese Restaurant	AZ 85202,2640 W Baseline Rd Mesa	1	3.0
+Little Dumpling	NV 89131,6430 Sky Pointe Dr Centennial Las Vegas	1	3.0
+Hong Fu Noodle	Edinburgh EH1 3BG,3-7 Waterloo Pl	2	3.0
+Flamingo Palace	AZ 85022,350 E Bell Rd Ste 3 Phoenix	3	3.0
+Hong Kong Kitchen	AZ 85222,314 E Florence Blvd Casa Grande	1	3.0
+Little Dumpling	NV 89147,9340 W Flamingo Rd Spring Valley Las Vegas	1	3.0
+New Shanghai Restaurant	NV 89102,4215 Spring Mountain Road #B205 Chinatown Las Vegas	3	3.0
+E-Z Buffet	AZ 85032,3202 E Greenway Rd Phoenix	1	3.0
+Pan Asia Sushi Chinese Fusion	AZ 85042,2485 E Baseline Rd Ste 157 Phoenix	1	3.0
+Hue Thai	NV 89146,5115 Spring Mountain Rd Ste 223 Chinatown Las Vegas	1	3.0
+1 Eastern Super Buffet	AZ 85209,1901 S Signal Butte Rd Ste 101 Mesa	1	3.0
+Li's Asian	AZ 85284,7650 S  McClintock Dr Ste 112 Tempe	1	3.0
+Wok & Wine	Edinburgh EH2 1LH,57a Frederick Street New Town	1	3.0
+Chopstix Express	NV 89102,2625 S Decatur Blvd Westside Las Vegas	1	3.0
+Chin Chin Chinese Restaurant	NV 89109,New York New York Hotel 3790 Las Vegas Blvd S Eastside Las Vegas	12	3.0
+Shanghai Club	AZ 85086,3434 W Anthem Way Ste 118 Anthem	2	3.0
+World Buffet	AZ 85345,8914 N 91st Ave Ste 130 Peoria	1	3.0
+Beijing Noodle No. 9	NV 89109,Caesars Palace 3570 Las Vegas Blvd S The Strip Las Vegas	54	2.94
+Noodle Shop	NV 89109,Mandalay Bay Resort & Casino 3950 S Las Vegas Boulevard The Strip Las Vegas	11	2.91
+P F Chang's China Bistro	AZ 85251,7135 E Camelback Rd Ste 101 The Waterfront Scottsdale	8	2.88
+Jade Palace	AZ 85260,9160 E Shea Blvd Ste 101 Scottsdale	4	2.75
+Red Dragon Chinese Food	AZ 85224,2160 N Alma School Rd Chandler	3	2.67
+Harbor Palace Seafood Restaurant	NV 89102,4275 Spring Mountain Rd Chinatown Las Vegas	3	2.67
+Harbor Palace	NV 89102,4275 Spring Mountain Rd Chinatown Las Vegas	15	2.6
+Little Macau	NV 89102,3939 Spring Mountain Rd Chinatown Las Vegas	2	2.5
+Yunnan Garden	NV 89103,3934 Schiff Dr Chinatown Las Vegas	2	2.5
+New York Chinese Restaurant	NV 89147,3555 S Fort Apache Rd Spring Valley Las Vegas	2	2.5
+Yummy Yummy Chinese Restaurant	AZ 85257,2765 N Scottsdale Rd Ste 105 Scottsdale	2	2.5
+Krazy Buffet	NV 89117,8095 W Sahara Ave Westside Las Vegas	2	2.5
+Flo's	AZ 85254,16495 N Scottsdale Rd Scottsdale	2	2.5
+New York Wok	AZ 85304,5026 W Cactus Rd Glendale	2	2.5
+Fate 905	AZ 85004,905 N 4th St Phoenix	2	2.5
+Hibachi Grill & Supreme Buffet	AZ 85033,2929 N 75th Ave Phoenix	2	2.5
+Tai's Asian Bistro	WI 53719,638 S Whitney Way Madison	3	2.33
+China Way Restaurant	AZ 85224,3021 N  Alma School Rd Chandler	3	2.33
+Dim Sum Cafe	NV 89147,3700 S Hualapai Way Ste 101 South Summerlin Las Vegas	12	2.33
+Chino Bandido	AZ 85023,15414 N 19th Ave Ste K Phoenix	1	2.0
+P F Chang's China Bistro	WI 53562,2237 Deming Way Middleton	1	2.0
+Ports O Call Buffet	NV 89103,4000 W Flamingo Rd Las Vegas	1	2.0
+Golden Phoenix Chinese Restaurant	AZ 85016,6048 N 16th St Phoenix	2	2.0
+Peter Wong Chinese Restaurant	AZ 85015,1534 W Camelback Rd Phoenix	1	2.0
+Tasty Asian Kitchen	AZ 85340,5115 N Dysart Rd Litchfield Park	1	2.0
+Cathay House	NV 89103,4321 West Flamingo Rd Las Vegas	1	2.0
+Great Wall	AZ 85139,20928 N John Wayne Pkwy Ste C1 Maricopa	1	2.0
+Orient Express	WI 53562,1901 Cayuga St Middleton	1	2.0
+Emperor's Garden	NV 89102,4215 Spring Mountain Rd Ste B203 Chinatown Las Vegas	9	2.0
+Flo's Shanghai Cafe	AZ 85034,Sky Harbor International Airport Terminal 4 Phoenix	1	2.0
+P F Chang's China Bistro	AZ 85206,6610 E Superstition Springs Blvd Mesa	1	2.0
+Shan Dong Chinese Restaurant	NV 89146,3419 S Jones Blvd Chinatown Las Vegas	1	2.0
+Dumpling And Noodle house	NV 89109,3743 Las Vegas Boulevard S The Strip Las Vegas	1	2.0
+Flo's	AZ 85260,15027 N Thompson Peak Pkwy Scottsdale	1	2.0
+Bamboo Grille	AZ 85027,3049 W Agua Fria Fwy Ste B-3 Phoenix	1	2.0
+Gata Thai Cuisine	NV 89012,35 S Gibson Rd Henderson	1	2.0
+Champion Gourmet	NV 89146,5115 Spring Mountain Rd Chinatown Las Vegas	1	2.0
+Gold Chef	AZ 85286,1055 S Arizona Ave Ste 10 Chandler	2	2.0
+China Ginger	NV 89148,5035 S Fort Apache Rd Spring Valley Las Vegas	1	2.0
+Lucky Kitchen	AZ 85015,1520 W Indian School Rd Ste 1 Phoenix	1	2.0
+Lily Bowl Chinese Bistro	AZ 85233,785 W Warner Rd A# 103 Gilbert	2	2.0
+Chop and Wok	AZ 85253,10425 N Scottsdale Road Scottsdale	1	2.0
+Lee's Garden	WI 53717,7475 Mineral Point Rd Madison	1	2.0
+Little Szechuan	AZ 85281,524 W University Dr Tempe	3	1.67
+Sesame Inn Carefree	AZ 85262,34482 N Scottsdale Rd Scottsdale	2	1.5
+Jade House	AZ 85210,2711 S Alma School Rd Mesa	1	1.0
+Ocean Buffet	AZ 85210,1450 S Country Club Dr Mesa	1	1.0
+Yan's	AZ 85338,15557 W Roosevelt St #101 Goodyear	1	1.0
+Jen Buffet	AZ 85225,700 W Warner Rd Chandler	1	1.0
+Ming's Table	NV 89109,Harrah's Las Vegas 3475 Las Vegas Blvd S The Strip Las Vegas	1	1.0
+Liu's Kitchen	NV 89139,7377 S Jones Blvd Southwest Las Vegas	1	1.0
+Loon Fung	Edinburgh EH3 5LE,2 Warriston Pl Stockbridge	1	1.0
+Chang Jiang	WI 53590,984 W Main St Sun Prairie	1	1.0
+Bamboo House	AZ 85022,502 E Thunderbird Rd Phoenix	2	1.0
+Little Dumpling	NV 89123,9400 S Eastern Ave Southeast Las Vegas	1	1.0
+China Jade	AZ 85283,825 W Baseline Rd Ste 7 Tempe	1	1.0
+Hunan Express Chinese Delivery	AZ 85282,818 W Broadway Rd Ste 101 Tempe	1	1.0
+Taste of China	WI 53716,5415 Monona Dr Monona	1	1.0
+Go Go China	AZ 85032,13636 N Tatum Blvd Ste 10 Phoenix	1	1.0
+Shanghai Buffet	AZ 85053,4201 W Bell Rd Phoenix	1	1.0
