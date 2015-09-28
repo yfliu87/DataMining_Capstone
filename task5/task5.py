@@ -8,7 +8,7 @@ review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_
 chinese_dish_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/student_dn_annotations.txt'
 output_cuisine_occurrence_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task5/output/dumpling_restaurants_occurrence.txt'
 output_cuisine_avgStar_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task5/output/dumpling_restaurants_avgStar.txt'
-
+output_cuisine_address_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task5/output/dumpling_restaurants_address.txt'
 '''
 map: {business_id: (restaurant_name, address)}
 '''
@@ -30,7 +30,15 @@ def build_business_type_restaurant_id_map(target_type):
 			if business_id not in result:
 				restaurant_name = json_line['name']
 				address = json_line['full_address']
-				result[business_id] = (restaurant_name, address.replace('\n',' '))
+
+				if ',' in address:
+					state = address.split(', ')[1]
+					street = address.split(', ')[0].replace('\n', ' ')
+				else:
+					state = address.split('\n')[-1]
+					street = ' '.join(address.split('\n')[0:-1])
+
+				result[business_id] = (restaurant_name, state + ',' + street)
 
 		line = reader.readline()
 
@@ -186,6 +194,27 @@ def output_restaurant_info_by_avgStar(dumpling_restaurants):
 	writer.close()
 
 
+def output_restaurant_info_by_address(dumpling_restaurants):
+	import collections
+
+	sorted_map = collections.OrderedDict(sorted(dumpling_restaurants.items(), key=lambda k:k[1][0][1], reverse=False)) 
+
+	writer = open(output_cuisine_address_file, 'a')
+	writer.write('address' + '\t' + 'restaurant' + '\t' + 'review occur' + '\t' + 'avg Star' + '\n')
+
+	for restaurant in sorted_map.values():
+		name = restaurant[0][0]
+		address = restaurant[0][1]
+		occurrence = restaurant[1][0]
+		avgStar = restaurant[1][1]
+
+		message = address + '\t' + name + '\t' + str(occurrence) + '\t' + str(avgStar) + '\n'
+
+		writer.write(message)
+
+	writer.close()
+
+
 if __name__ == '__main__':
 	chinese_restaurants = build_business_type_restaurant_id_map("Chinese")
 	restaurant_reviews = build_restaurant_id_review_map(chinese_restaurants)
@@ -196,3 +225,4 @@ if __name__ == '__main__':
 	dumpling_restaurants = get_restaurant_info(id_occurrence_star_map, chinese_restaurants)
 	output_restaurant_info_by_occurrence(dumpling_restaurants)
 	output_restaurant_info_by_avgStar(dumpling_restaurants)
+	output_restaurant_info_by_address(dumpling_restaurants)
