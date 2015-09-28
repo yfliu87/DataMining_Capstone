@@ -88,7 +88,34 @@ def read_chinese_dish_from_file(dish_file):
 	return list(dishes)
 
 
+def build_dish_star_map(dishes, restaurant_reviews):
+	dish_star_map = {}
+
+	for dish in dishes:
+		dish_star_map[dish] = {}
+
+	for dish in dishes:
+		for bus_id in restaurant_reviews:
+			stars = restaurant_reviews[bus_id]
+
+			for star in stars:
+				reviews = restaurant_reviews[bus_id][star]
+
+				for review in reviews:
+					date = review[0]
+					content = review[1]
+
+					if dish in content:
+						if star not in dish_star_map[dish]:
+							dish_star_map[dish][star] = []
+
+						dish_star_map[dish][star].append((date))
+
+	return dish_star_map
+
+
 if __name__ == '__main__':
 	chinese_restaurants = build_business_type_restaurant_id_map("Chinese")
 	restaurant_reviews = build_restaurant_id_review_map(chinese_restaurants)
 	dishes = read_chinese_dish_from_file(chinese_dish_file)
+	dish_star_map = build_dish_star_map(dishes, restaurant_reviews)
