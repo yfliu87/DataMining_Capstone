@@ -114,8 +114,30 @@ def build_dish_star_map(dishes, restaurant_reviews):
 	return dish_star_map
 
 
+def get_specific_dish_occurrence_avgStar(target_cuisine, restaurant_reviews):
+	business_id_occurrence_star_map = {}
+
+	for business_id in restaurant_reviews.keys():
+		stars = []
+		for star in restaurant_reviews[business_id]:
+			reviews = restaurant_reviews[business_id][star]
+
+			for rev in reviews:
+				if target_cuisine in rev[1]:
+					stars.append(star)
+
+		if len(stars) == 0:
+			continue
+
+		business_id_occurrence_star_map[business_id] = (len(stars), float('%.2f'%(float(sum(stars))/len(stars))))
+
+	return business_id_occurrence_star_map
+
+
 if __name__ == '__main__':
 	chinese_restaurants = build_business_type_restaurant_id_map("Chinese")
 	restaurant_reviews = build_restaurant_id_review_map(chinese_restaurants)
-	dishes = read_chinese_dish_from_file(chinese_dish_file)
-	dish_star_map = build_dish_star_map(dishes, restaurant_reviews)
+	#dishes = read_chinese_dish_from_file(chinese_dish_file)
+	#dish_star_map = build_dish_star_map(dishes, restaurant_reviews)
+
+	id_occurrence_star_map = get_specific_dish_occurrence_avgStar("dumpling", restaurant_reviews)
