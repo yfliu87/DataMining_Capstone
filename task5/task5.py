@@ -6,9 +6,9 @@ business_file_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProjec
 
 def build_business_type_restaurant_id_map(target_type):
 	import json
+	import codecs
 
-	result = {}
-	result[target_type] = [] 
+	result = {} 
 
 	reader = codecs.open(business_file_path, 'r', 'utf-8')
 	line = reader.readline()
@@ -20,10 +20,16 @@ def build_business_type_restaurant_id_map(target_type):
 		if target_type in categories:
 			business_id = json_line['business_id']
 
-			if business_id not in result[target_type]:
-				result[target_type].append(business_id)
+			if business_id not in result:
+				restaurant_name = json_line['name']
+				address = json_line['full_address']
+				result[business_id] = (restaurant_name, address.replace('\n',' '))
 
 		line = reader.readline()
 
 	reader.close()
 	return result
+
+
+if __name__ == '__main__':
+	print build_business_type_restaurant_id_map("Chinese")
