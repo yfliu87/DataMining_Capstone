@@ -6,7 +6,7 @@ import codecs
 business_file_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_business.json'
 review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_review.json'
 chinese_dish_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/student_dn_annotations.txt'
-output_cuisine_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task5/output/dumpling_restaurants.txt'
+output_cuisine_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task5/output/dumpling_restaurants_occurrence.txt'
 '''
 map: {business_id: (restaurant_name, address)}
 '''
@@ -142,11 +142,15 @@ def get_restaurant_info(id_occurrence_star_map, chinese_restaurants):
 	return restaurants
 
 
-def output_restaurant_info(dumpling_restaurants):
+def output_restaurant_info_by_occurrence(dumpling_restaurants):
+	import collections
+
+	sorted_map = collections.OrderedDict(sorted(dumpling_restaurants.items(), key=lambda k:k[1][1][1], reverse=True)) 
+
 	writer = open(output_cuisine_file, 'a')
 	writer.write("restaurant" + '\t' + 'address' + '\t' + 'review occur' + '\t' + 'avg Star' + '\n')
 
-	for restaurant in dumpling_restaurants.values():
+	for restaurant in sorted_map.values():
 		name = restaurant[0][0]
 		address = restaurant[0][1]
 		occurrence = restaurant[1][0]
@@ -167,4 +171,5 @@ if __name__ == '__main__':
 
 	id_occurrence_star_map = get_specific_dish_occurrence_avgStar("dumpling", restaurant_reviews)
 	dumpling_restaurants = get_restaurant_info(id_occurrence_star_map, chinese_restaurants)
-	output_restaurant_info(dumpling_restaurants)
+	output_restaurant_info_by_occurrence(dumpling_restaurants)
+	#output_restaurant_info_by_avgStar(dumpling_restaurants)
