@@ -133,6 +133,14 @@ def get_specific_dish_occurrence_avgStar(target_cuisine, restaurant_reviews):
 
 	return business_id_occurrence_star_map
 
+def get_restaurant_info(id_occurrence_star_map, chinese_restaurants):
+	restaurants = {} 
+
+	for business_id in id_occurrence_star_map:
+		restaurants[business_id] = (chinese_restaurants[business_id], id_occurrence_star_map[business_id])
+
+	return restaurants
+
 
 if __name__ == '__main__':
 	chinese_restaurants = build_business_type_restaurant_id_map("Chinese")
@@ -141,3 +149,4 @@ if __name__ == '__main__':
 	#dish_star_map = build_dish_star_map(dishes, restaurant_reviews)
 
 	id_occurrence_star_map = get_specific_dish_occurrence_avgStar("dumpling", restaurant_reviews)
+	dumpling_restaurants = get_restaurant_info(id_occurrence_star_map, chinese_restaurants)
