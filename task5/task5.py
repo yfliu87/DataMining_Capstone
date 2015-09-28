@@ -6,7 +6,7 @@ import codecs
 business_file_path = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_business.json'
 review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/yelp_academic_dataset_review.json'
 chinese_dish_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task4/student_dn_annotations.txt'
-
+output_cuisine_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task5/output/dumpling_restaurants.txt'
 '''
 map: {business_id: (restaurant_name, address)}
 '''
@@ -142,6 +142,23 @@ def get_restaurant_info(id_occurrence_star_map, chinese_restaurants):
 	return restaurants
 
 
+def output_restaurant_info(dumpling_restaurants):
+	writer = open(output_cuisine_file, 'a')
+	writer.write("restaurant" + '\t' + 'address' + '\t' + 'review occur' + '\t' + 'avg Star' + '\n')
+
+	for restaurant in dumpling_restaurants.values():
+		name = restaurant[0][0]
+		address = restaurant[0][1]
+		occurrence = restaurant[1][0]
+		avgStar = restaurant[1][1]
+
+		message = name + '\t' + address + '\t' + str(occurrence) + '\t' + str(avgStar) + '\n'
+
+		writer.write(message)
+
+	writer.close()
+
+
 if __name__ == '__main__':
 	chinese_restaurants = build_business_type_restaurant_id_map("Chinese")
 	restaurant_reviews = build_restaurant_id_review_map(chinese_restaurants)
@@ -150,3 +167,4 @@ if __name__ == '__main__':
 
 	id_occurrence_star_map = get_specific_dish_occurrence_avgStar("dumpling", restaurant_reviews)
 	dumpling_restaurants = get_restaurant_info(id_occurrence_star_map, chinese_restaurants)
+	output_restaurant_info(dumpling_restaurants)
