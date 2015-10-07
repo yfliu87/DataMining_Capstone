@@ -9,7 +9,8 @@
 
 review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/Hygiene/hygiene.dat'
 def read_reviews(review_file):
-	review_map = {}
+	training_review_map = {}
+	test_review_map = {}
 
 	import codecs
 	reader = codecs.open(review_file, 'r', 'utf-8')
@@ -20,12 +21,27 @@ def read_reviews(review_file):
 	while line:
 		reviews = line.split(' &#160')
 
-		review_map[counter] = [rev.strip().lower() for rev in reviews]
+		training_review_map[counter] = [rev.strip().lower() for rev in reviews]
+
+		counter += 1
+
+		if counter >= 547:
+			break
+
+		line = reader.readline()
+
+	line = reader.readline()
+
+	while line:
+		reviews = line.split(' &#160')
+
+		test_review_map[counter] = [rev.strip().lower() for rev in reviews]
 
 		counter += 1
 		line = reader.readline()
 
-	return review_map
+	reader.close()
+	return training_review_map, test_review_map
 
 
 def preprocess(review_map):
@@ -88,7 +104,7 @@ def build_word_bank(word_bag):
 
 
 if __name__ == '__main__':
-	rev_map = read_reviews(review_file)
+	training_rev_map, test_rev_map = read_reviews(review_file)
 	processed_review = preprocess(rev_map)
 	word_bag = build_word_bag(processed_review)
 	word_bank = build_word_bank(word_bag)
