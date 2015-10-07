@@ -7,6 +7,8 @@
 5. predict new reviews
 '''
 review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/Hygiene/hygiene.dat'
+processed_training_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/processed_training_rev.txt'
+processed_test_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/processed_testing_rev.txt'
 word_bank_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/word_bank.txt'
 
 def read_reviews(review_file):
@@ -113,9 +115,38 @@ def build_word_bank(word_bag):
 	return word_bank
 
 
+def write_to_disk(review_map, output_file):
+	import codecs
+	writer = codecs.open(output_file, 'w', 'utf-8')
+
+	for rev_id, review in review_map.items():
+		message = ''
+		for rev in review:
+			message += ' '.join(rev) + ' '
+
+		writer.write(str(rev_id) + '\t' + message[0:-1] + '\n')
+
+	writer.close()
+
+
+def write_word_bank(word_bank):
+	import codecs
+	writer = codecs.open(word_bank_file, 'w', 'utf-8')
+
+	for word in word_bank:
+		writer.write(word + '\n')
+
+	writer.close()
+
+
 if __name__ == '__main__':
 	training_rev_map, test_rev_map = read_reviews(review_file)
 	processed_training_review = preprocess(training_rev_map)
+	write_to_disk(processed_training_review, processed_training_file)
+
 	processed_test_review = preprocess(test_rev_map)
+	write_to_disk(processed_test_review, processed_test_file)
+
 	word_bag = build_word_bag(processed_training_review, test_rev_map)
 	word_bank = build_word_bank(word_bag)
+	write_word_bank(word_bank)
