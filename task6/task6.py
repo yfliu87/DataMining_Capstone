@@ -6,8 +6,9 @@
 4. train SVC model
 5. predict new reviews
 '''
-
 review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/Hygiene/hygiene.dat'
+word_bank_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/word_bank.txt'
+
 def read_reviews(review_file):
 	training_review_map = {}
 	test_review_map = {}
@@ -78,17 +79,26 @@ def process(reviews):
 	return final_review
 
 
-def build_word_bag(processed_review):
+def build_word_bag(processed_training_review, processed_test_review):
 	word_bag = {}
 
-	for rev_id, review in processed_review.items():
+	for rev_id, review in processed_training_review.items():
 		word_bag[rev_id] = {}
 		for sub_rev in review:
 			for rev in sub_rev:
 				if rev not in word_bag[rev_id]:
 					word_bag[rev_id][rev] = 1
+				else:
+					word_bag[rev_id][rev] += 1
 
-				word_bag[rev_id][rev] += 1
+	for rev_id, review in processed_test_review.items():
+		word_bag[rev_id] = {}
+		for sub_rev in review:
+			for rev in sub_rev:
+				if rev not in word_bag[rev_id]:
+					word_bag[rev_id][rev] = 1
+				else:
+					word_bag[rev_id][rev] += 1
 
 	return word_bag
 
@@ -105,6 +115,7 @@ def build_word_bank(word_bag):
 
 if __name__ == '__main__':
 	training_rev_map, test_rev_map = read_reviews(review_file)
-	processed_review = preprocess(rev_map)
-	word_bag = build_word_bag(processed_review)
+	processed_training_review = preprocess(training_rev_map)
+	processed_test_review = preprocess(test_rev_map)
+	word_bag = build_word_bag(processed_training_review, test_rev_map)
 	word_bank = build_word_bank(word_bag)
