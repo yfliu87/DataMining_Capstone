@@ -46,7 +46,7 @@ def process(reviews):
 	review_filterd_stopwords = [[word for word in review if not word in english_stopwords] for review in review_tokenized]
 
 	#remove punctuations
-	english_punctuations = [',','.',':',';','?','(',')','&','!','@','#','$','%']
+	english_punctuations = [',','.','...', ':',';','?','(',')','&','!','@','#','$','%']
 	review_filtered = [[word for word in review if not word in english_punctuations] for review in review_filterd_stopwords]
 
 	#stemming
@@ -54,10 +54,10 @@ def process(reviews):
 	st = LancasterStemmer()
 	review_stemmed = [[st.stem(word) for word in review] for review in review_filtered]
 
-	#remove word whose frequency is 1
+	#remove word whose frequency is less than 3
 	all_stems = sum(review_stemmed, [])
-	stems_once = set(stem for stem in set(all_stems) if all_stems.count(stem) == 1)
-	final_review = [[stem for stem in text if stem not in stems_once] for text in review_stemmed]
+	stems_lt_three = set(stem for stem in set(all_stems) if all_stems.count(stem) <= 2)
+	final_review = [[stem for stem in text if stem not in stems_lt_three] for text in review_stemmed]
 
 	return final_review
 
@@ -76,7 +76,19 @@ def build_word_bag(processed_review):
 
 	return word_bag
 
+
+def build_word_bank(word_bag):
+	word_bank = set()
+
+	for rev_id, reviews in word_bag.items():
+		for rev in reviews:
+			word_bank.add(rev)
+
+	return word_bank
+
+
 if __name__ == '__main__':
 	rev_map = read_reviews(review_file)
 	processed_review = preprocess(rev_map)
 	word_bag = build_word_bag(processed_review)
+	word_bank = build_word_bank(word_bag)
