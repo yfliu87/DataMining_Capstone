@@ -62,6 +62,21 @@ def process(reviews):
 	return final_review
 
 
+def build_word_bag(processed_review):
+	word_bag = {}
+
+	for rev_id, review in processed_review.items():
+		word_bag[rev_id] = {}
+		for sub_rev in review:
+			for rev in sub_rev:
+				if rev not in word_bag[rev_id]:
+					word_bag[rev_id][rev] = 1
+
+				word_bag[rev_id][rev] += 1
+
+	return word_bag
+
 if __name__ == '__main__':
 	rev_map = read_reviews(review_file)
 	processed_review = preprocess(rev_map)
+	word_bag = build_word_bag(processed_review)
