@@ -14,7 +14,7 @@ review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_
 processed_training_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/processed_training_rev.txt'
 processed_test_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/processed_testing_rev.txt'
 word_bank_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/word_bank.txt'
-
+hygiene_lable_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/Hygiene/hygiene.dat.labels'
 def read_reviews(review_file):
 	training_review_map = {}
 	test_review_map = {}
@@ -175,6 +175,25 @@ def build_array_rep_from_file(processed_file, word_bank):
 	return array_rep
 
 
+def read_label(hygiene_lable_file):
+	training_label = {}
+
+	reader = codecs.open(hygiene_lable_file, 'r' ,'utf-8')
+	line = reader.readline()
+	counter = 1
+
+	while line:
+		training_label[counter] = int(line)
+		line = reader.readline()
+		counter += 1
+
+		if counter >= 547:
+			break
+
+	reader.close()
+	return training_label
+
+
 if __name__ == '__main__':
 	'''
 	training_rev_map, test_rev_map = read_reviews(review_file)
@@ -186,7 +205,11 @@ if __name__ == '__main__':
 	word_bag = build_word_bag(processed_training_review, processed_test_review)
 	word_bank = build_word_bank(word_bag)
 	write_word_bank(word_bank)
-	'''
+
 	word_bank = read_from_file(word_bank_file)
 	processed_training_review_array_representation = build_array_rep_from_file(processed_training_file, word_bank)
 	processed_testing_review_array_representation = build_array_rep_from_file(processed_test_file, word_bank)
+	'''
+
+	training_label = read_label(hygiene_lable_file)
+	print training_label
