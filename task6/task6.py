@@ -139,7 +139,21 @@ def write_word_bank(word_bank):
 	writer.close()
 
 
+def read_from_file(word_bank_file):
+	word_bank = set()
+	reader = codecs.open(word_bank_file, 'r', 'utf-8')
+	line = reader.readline()
+
+	while line:
+		word_bank.add(line.split('\n')[0])
+		line = reader.readline()
+
+	reader.close()
+	return word_bank
+
+
 if __name__ == '__main__':
+	'''
 	training_rev_map, test_rev_map = read_reviews(review_file)
 	processed_training_review = preprocess(training_rev_map)
 	write_to_disk(processed_training_review, processed_training_file)
@@ -150,5 +164,6 @@ if __name__ == '__main__':
 	word_bag = build_word_bag(processed_training_review, processed_test_review)
 	word_bank = build_word_bank(word_bag)
 	write_word_bank(word_bank)
-
+	'''
+	word_bank = read_from_file(word_bank_file)
 
