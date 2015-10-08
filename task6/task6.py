@@ -152,9 +152,9 @@ def read_from_file(word_bank_file):
 	return word_bank
 
 
-def build_array_rep_from_file(processed_training_file, word_bank):
+def build_array_rep_from_file(processed_file, word_bank):
 	array_rep = {} 
-	reader = codecs.open(processed_training_file, 'r', 'utf-8')
+	reader = codecs.open(processed_file, 'r', 'utf-8')
 	line = reader.readline()
 
 	while line:
@@ -163,8 +163,8 @@ def build_array_rep_from_file(processed_training_file, word_bank):
 		revs = review.split(' ')
 
 		array_rep[rev_id] = []
-		for rev in revs:
-			if rev in word_bank:
+		for word in word_bank:
+			if word in line:
 				array_rep[rev_id].append(1)
 			else:
 				array_rep[rev_id].append(0)
@@ -189,3 +189,4 @@ if __name__ == '__main__':
 	'''
 	word_bank = read_from_file(word_bank_file)
 	processed_training_review_array_representation = build_array_rep_from_file(processed_training_file, word_bank)
+	processed_testing_review_array_representation = build_array_rep_from_file(processed_test_file, word_bank)
