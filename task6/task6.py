@@ -194,6 +194,20 @@ def read_label(hygiene_lable_file):
 	return training_label
 
 
+def train_model(training_review_array_rep, training_label):
+	rep_list = []
+	label_list = []
+
+	for rev_id, array_rep in training_review_array_rep.items():
+		rep_list.append(array_rep)
+		label_list.append(training_label[rev_id])
+
+	import numpy as np
+	from sklearn.svm import SVC
+	model = SVC()
+	model.fit(np.array(rep_list), np.array(label_list))
+	return model
+
 if __name__ == '__main__':
 	'''
 	training_rev_map, test_rev_map = read_reviews(review_file)
@@ -205,11 +219,11 @@ if __name__ == '__main__':
 	word_bag = build_word_bag(processed_training_review, processed_test_review)
 	word_bank = build_word_bank(word_bag)
 	write_word_bank(word_bank)
-
+	'''
 	word_bank = read_from_file(word_bank_file)
 	processed_training_review_array_representation = build_array_rep_from_file(processed_training_file, word_bank)
 	processed_testing_review_array_representation = build_array_rep_from_file(processed_test_file, word_bank)
-	'''
 
 	training_label = read_label(hygiene_lable_file)
-	print training_label
+
+	model = train_model(processed_training_review_array_representation, training_label)
