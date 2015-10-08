@@ -9,12 +9,15 @@
 '''
 
 import codecs
+import numpy as np
 
 review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/Hygiene/hygiene.dat'
 processed_training_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/processed_training_rev.txt'
 processed_test_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/processed_testing_rev.txt'
 word_bank_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/word_bank.txt'
-hygiene_lable_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/Hygiene/hygiene.dat.labels'
+hygiene_label_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/Hygiene/hygiene.dat.labels'
+testing_label_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/testing_label_file.txt'
+
 def read_reviews(review_file):
 	training_review_map = {}
 	test_review_map = {}
@@ -175,10 +178,10 @@ def build_array_rep_from_file(processed_file, word_bank):
 	return array_rep
 
 
-def read_label(hygiene_lable_file):
+def read_label(hygiene_label_file):
 	training_label = {}
 
-	reader = codecs.open(hygiene_lable_file, 'r' ,'utf-8')
+	reader = codecs.open(hygiene_label_file, 'r' ,'utf-8')
 	line = reader.readline()
 	counter = 1
 
@@ -194,7 +197,7 @@ def read_label(hygiene_lable_file):
 	return training_label
 
 
-def train_model(training_review_array_rep, training_label):
+def train_SVC_model(training_review_array_rep, training_label):
 	rep_list = []
 	label_list = []
 
@@ -202,11 +205,25 @@ def train_model(training_review_array_rep, training_label):
 		rep_list.append(array_rep)
 		label_list.append(training_label[rev_id])
 
-	import numpy as np
 	from sklearn.svm import SVC
 	model = SVC()
 	model.fit(np.array(rep_list), np.array(label_list))
 	return model
+
+def predict(model, processed_testing_review_array_representation):
+	testing_rep_list = []
+
+	for array_rep in processed_testing_review_array_representation.values():
+		testing_rep_list.append(array_rep)
+
+	testing_label = model.predict(np.array(testing_rep_list))
+
+	with codecs.open(testing_label_file, 'w') as writer:
+		for label in testing_label:
+			writer.write(str(label) + '\n')
+
+	return testing_label
+
 
 if __name__ == '__main__':
 	'''
@@ -224,6 +241,8 @@ if __name__ == '__main__':
 	processed_training_review_array_representation = build_array_rep_from_file(processed_training_file, word_bank)
 	processed_testing_review_array_representation = build_array_rep_from_file(processed_test_file, word_bank)
 
-	training_label = read_label(hygiene_lable_file)
+	training_label = read_label(hygiene_label_file)
 
-	model = train_model(processed_training_review_array_representation, training_label)
+	svc_model = train_SVC_model(processed_training_review_array_representation, training_label)
+	test_label = predict(svc_model, processed_testing_review_array_representation)
+	
