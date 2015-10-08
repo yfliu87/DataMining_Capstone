@@ -1,11 +1,15 @@
 '''
-1. pre-process hygiene.dat file, 
+1. pre-process hygiene.dat file 
    use nltk to process each review including removing stop words, stemming, etc
-2. build word bag from all reviews
-3. convert each file to array representation
+2. build word bag from training and testing reviews
+3. write word bag and processed reviews into disk file
+3. read in disk file and convert to array representation according to word bag
 4. train SVC model
 5. predict new reviews
 '''
+
+import codecs
+
 review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/Hygiene/hygiene.dat'
 processed_training_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/processed_training_rev.txt'
 processed_test_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/processed_testing_rev.txt'
@@ -15,12 +19,10 @@ def read_reviews(review_file):
 	training_review_map = {}
 	test_review_map = {}
 
-	import codecs
 	reader = codecs.open(review_file, 'r', 'utf-8')
-
 	line = reader.readline()
-
 	counter = 1
+	
 	while line:
 		reviews = line.split(' &#160')
 
@@ -116,7 +118,6 @@ def build_word_bank(word_bag):
 
 
 def write_to_disk(review_map, output_file):
-	import codecs
 	writer = codecs.open(output_file, 'w', 'utf-8')
 
 	for rev_id, review in review_map.items():
@@ -130,7 +131,6 @@ def write_to_disk(review_map, output_file):
 
 
 def write_word_bank(word_bank):
-	import codecs
 	writer = codecs.open(word_bank_file, 'w', 'utf-8')
 
 	for word in word_bank:
@@ -147,6 +147,8 @@ if __name__ == '__main__':
 	processed_test_review = preprocess(test_rev_map)
 	write_to_disk(processed_test_review, processed_test_file)
 
-	word_bag = build_word_bag(processed_training_review, test_rev_map)
+	word_bag = build_word_bag(processed_training_review, processed_test_review)
 	word_bank = build_word_bank(word_bag)
 	write_word_bank(word_bank)
+
+
