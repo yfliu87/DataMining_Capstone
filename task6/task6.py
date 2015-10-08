@@ -210,6 +210,22 @@ def train_SVC_model(training_review_array_rep, training_label):
 	model.fit(np.array(rep_list), np.array(label_list))
 	return model
 
+
+
+def train_Bayes_model(training_review_array_rep, training_label):
+	rep_list = []
+	label_list = []
+
+	for rev_id, array_rep in training_review_array_rep.items():
+		rep_list.append(array_rep)
+		label_list.append(training_label[rev_id])
+
+	from sklearn.naive_bayes import GaussianNB
+	model = GaussianNB()
+	model.fit(np.array(rep_list), np.array(label_list))
+	return model
+
+
 def predict(model, processed_testing_review_array_representation):
 	testing_rep_list = []
 
@@ -244,5 +260,7 @@ if __name__ == '__main__':
 	training_label = read_label(hygiene_label_file)
 
 	svc_model = train_SVC_model(processed_training_review_array_representation, training_label)
-	test_label = predict(svc_model, processed_testing_review_array_representation)
-	
+	svc_test_label = predict(svc_model, processed_testing_review_array_representation)
+
+	bayes_model = train_Bayes_model(processed_training_review_array_representation, training_label)
+	bayes_test_label = predict(bayes_model, processed_testing_review_array_representation)
