@@ -15,6 +15,7 @@ review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_
 processed_training_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/processed_training_rev.txt'
 processed_test_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/processed_testing_rev.txt'
 word_bank_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/word_bank.txt'
+hygiene_additional_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/Hygiene/hygiene.dat.additional'
 hygiene_label_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/Hygiene/hygiene.dat.labels'
 testing_label_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/testing_label_file.txt'
 
@@ -197,6 +198,35 @@ def read_label(hygiene_label_file):
 	return training_label
 
 
+def read_avg_rate(hygiene_additional_file):
+	training_avg_rate_list = {}
+	testing_avg_rate_list = {}
+	reader = codecs.open(hygiene_additional_file, 'r')
+	line = reader.readline()
+
+	counter = 1
+	while line:
+		items = line.split('.')
+		training_avg_rate_list[counter] = items[-1]
+		counter += 1
+
+		if counter >= 547:
+			break
+
+		line = reader.readline()
+
+	line = reader.readline()
+	while line:
+		items = line.split('.')
+		testing_avg_rate_list[counter] = items[-1]
+
+		counter += 1
+		line = reader.readline()
+
+	reader.close()
+	return training_avg_rate_list, testing_avg_rate_list
+
+
 def train_SVC_model(training_review_array_rep, training_label):
 	rep_list = []
 	label_list = []
@@ -209,7 +239,6 @@ def train_SVC_model(training_review_array_rep, training_label):
 	model = SVC()
 	model.fit(np.array(rep_list), np.array(label_list))
 	return model
-
 
 
 def train_Bayes_model(training_review_array_rep, training_label):
@@ -272,13 +301,13 @@ if __name__ == '__main__':
 	processed_testing_review_array_representation = build_array_rep_from_file(processed_test_file, word_bank)
 
 	training_label = read_label(hygiene_label_file)
-	'''
+	training_avg_rate, testing_avg_rate = read_avg_rate(hygiene_additional_file)
+
 	svc_model = train_SVC_model(processed_training_review_array_representation, training_label)
 	svc_test_label = predict(svc_model, processed_testing_review_array_representation)
 
 	bayes_model = train_Bayes_model(processed_training_review_array_representation, training_label)
 	bayes_test_label = predict(bayes_model, processed_testing_review_array_representation)
-	'''
 
 	lda_model = train_LDA_model(processed_training_review_array_representation, training_label)
 	lda_test_label = predict(lda_model, processed_testing_review_array_representation)
