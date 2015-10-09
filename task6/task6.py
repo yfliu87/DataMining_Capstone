@@ -15,6 +15,8 @@ review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_
 processed_training_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/processed_training_rev.txt'
 processed_test_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/processed_testing_rev.txt'
 word_bank_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/word_bank.txt'
+random_bag_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/random_word_bag.txt'
+sorted_bag_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/sorted_word_bag.txt'
 hygiene_additional_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/Hygiene/hygiene.dat.additional'
 hygiene_label_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/Hygiene/hygiene.dat.labels'
 testing_label_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/testing_label_file.txt'
@@ -112,13 +114,36 @@ def build_word_bag(processed_training_review, processed_test_review):
 
 
 def build_word_bank(word_bag):
-	word_bank = set()
+	writer = codecs.open(random_bag_file, 'w')
 
 	for rev_id, reviews in word_bag.items():
 		for rev in reviews:
-			word_bank.add(rev)
+			writer.write(rev + '\t' + str(reviews[rev]) + '\n')
 
-	return word_bank
+	writer.close()
+
+	reader = codecs.open(random_bag_file, 'r')
+	line = reader.readline()
+	temp_bag = {}
+
+	while line:
+		word = line.split('\t')[0]
+		count = int(line.split('\t')[1].split('\n')[0])
+
+		if word not in temp_bag:
+			temp_bag[word] = count
+		else:
+			temp_bag[word] += count
+
+		line = reader.readline()
+
+	reader.close()
+
+	import collections
+	sorted_bag = collections.OrderedDict(sorted(temp_bag.items(), key=lambda k:k[1], reverse=True))
+	#sorted_bag = sorted(temp_bag.items(), lambda x,y : cmp(x[1], y[1]), reverse=True)
+
+	return sorted_bag.keys()
 
 
 def write_to_disk(review_map, output_file):
@@ -168,10 +193,13 @@ def build_array_rep_from_file(processed_file, word_bank):
 
 		array_rep[rev_id] = []
 		for word in word_bank:
+			array_rep[rev_id].append(line.count(word))
+			'''
 			if word in line:
 				array_rep[rev_id].append(1)
 			else:
 				array_rep[rev_id].append(0)
+			'''
 
 		line = reader.readline()
 
@@ -287,7 +315,7 @@ def predict(model, processed_testing_review_array_representation, testing_avg_ra
 
 
 if __name__ == '__main__':
-	'''
+	'''	
 	training_rev_map, test_rev_map = read_reviews(review_file)
 	processed_training_review = preprocess(training_rev_map)
 	write_to_disk(processed_training_review, processed_training_file)
@@ -298,6 +326,7 @@ if __name__ == '__main__':
 	word_bank = build_word_bank(word_bag)
 	write_word_bank(word_bank)
 	'''
+	
 	word_bank = read_from_file(word_bank_file)
 	processed_training_review_array_representation = build_array_rep_from_file(processed_training_file, word_bank)
 	processed_testing_review_array_representation = build_array_rep_from_file(processed_test_file, word_bank)
