@@ -15,6 +15,8 @@ review_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_
 processed_training_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/processed_training_rev.txt'
 processed_test_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/processed_testing_rev.txt'
 word_bank_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/word_bank.txt'
+segPhrase_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/frequent_phrase.csv'
+word_phrase_bank_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/word_phrase_bank.txt' 
 random_bag_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/random_word_bag.txt'
 sorted_bag_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/sorted_word_bag.txt'
 hygiene_additional_file = '/home/yfliu/DataMining_Workspace/DataMining/CapstoneProject/yelp_dataset_challenge_academic_dataset/task6/Hygiene/hygiene.dat.additional'
@@ -81,9 +83,9 @@ def process(reviews):
 	st = LancasterStemmer()
 	review_stemmed = [[st.stem(word) for word in review] for review in review_filtered]
 
-	#remove word whose frequency is less than 3
+	#remove word whose frequency is less than 5
 	all_stems = sum(review_stemmed, [])
-	stems_lt_three = set(stem for stem in set(all_stems) if all_stems.count(stem) <= 2)
+	stems_lt_three = set(stem for stem in set(all_stems) if all_stems.count(stem) < 5)
 	final_review = [[stem for stem in text if stem not in stems_lt_three] for text in review_stemmed]
 
 	return final_review
@@ -169,16 +171,36 @@ def write_word_bank(word_bank):
 
 
 def read_from_file(word_bank_file):
-	word_bank = set()
+	word_bank = list()
 	reader = codecs.open(word_bank_file, 'r', 'utf-8')
 	line = reader.readline()
 
 	while line:
-		word_bank.add(line.split('\n')[0])
+		word_bank.append(line.split('\n')[0])
 		line = reader.readline()
 
 	reader.close()
 	return word_bank
+
+
+def read_phrase_file(segPhrase_file, word_bank):
+	phrase_list = []
+	reader = codecs.open(segPhrase_file, 'r')
+	line = reader.readline()
+
+	counter = 1
+	while line:
+		phrase = line.split(',')[0].replace('_', ' ')
+		phrase_list.append(phrase)
+		counter += 1
+
+		if counter > 1000:
+			break
+
+		line = reader.readline()
+
+	reader.close()
+	return phrase_list + word_bank
 
 
 def build_array_rep_from_file(processed_file, word_bank):
@@ -194,12 +216,6 @@ def build_array_rep_from_file(processed_file, word_bank):
 		array_rep[rev_id] = []
 		for word in word_bank:
 			array_rep[rev_id].append(line.count(word))
-			'''
-			if word in line:
-				array_rep[rev_id].append(1)
-			else:
-				array_rep[rev_id].append(0)
-			'''
 
 		line = reader.readline()
 
@@ -284,11 +300,12 @@ def train_Bayes_model(training_review_array_rep, training_label):
 	return model
 
 
-def train_LDA_model(training_review_array_rep, training_label):
+def train_LDA_model(training_review_array_rep, training_label,training_avg_rate):
 	rep_list = []
 	label_list = []
 
 	for rev_id, array_rep in training_review_array_rep.items():
+		array_rep.insert(0, training_avg_rate[rev_id])
 		rep_list.append(array_rep)
 		label_list.append(training_label[rev_id])
 
@@ -313,9 +330,13 @@ def predict(model, processed_testing_review_array_representation, testing_avg_ra
 
 	return testing_label
 
+def write(word_phrase_bank):
+	with codecs.open(word_phrase_bank_file, 'w') as writer:
+		writer.write('\n'.join(word_phrase_bank))
+
 
 if __name__ == '__main__':
-	'''	
+	'''
 	training_rev_map, test_rev_map = read_reviews(review_file)
 	processed_training_review = preprocess(training_rev_map)
 	write_to_disk(processed_training_review, processed_training_file)
@@ -328,18 +349,20 @@ if __name__ == '__main__':
 	'''
 	
 	word_bank = read_from_file(word_bank_file)
-	processed_training_review_array_representation = build_array_rep_from_file(processed_training_file, word_bank)
-	processed_testing_review_array_representation = build_array_rep_from_file(processed_test_file, word_bank)
+	word_phrase_bank = read_phrase_file(segPhrase_file, word_bank)
+	write(word_phrase_bank)
+	processed_training_review_array_representation = build_array_rep_from_file(processed_training_file, word_phrase_bank)
+	processed_testing_review_array_representation = build_array_rep_from_file(processed_test_file, word_phrase_bank)
 
 	training_label = read_label(hygiene_label_file)
 	training_avg_rate, testing_avg_rate = read_avg_rate(hygiene_additional_file)
 
 	svc_model = train_SVC_model(processed_training_review_array_representation, training_label, training_avg_rate)
 	svc_test_label = predict(svc_model, processed_testing_review_array_representation, testing_avg_rate)
+
 	'''
 	bayes_model = train_Bayes_model(processed_training_review_array_representation, training_label)
 	bayes_test_label = predict(bayes_model, processed_testing_review_array_representation)
-
-	lda_model = train_LDA_model(processed_training_review_array_representation, training_label)
-	lda_test_label = predict(lda_model, processed_testing_review_array_representation)
+	lda_model = train_LDA_model(processed_training_review_array_representation, training_label, training_avg_rate)
+	lda_test_label = predict(lda_model, processed_testing_review_array_representation, testing_avg_rate)
 	'''
