@@ -175,8 +175,14 @@ def read_from_file(word_bank_file):
 	reader = codecs.open(word_bank_file, 'r', 'utf-8')
 	line = reader.readline()
 
+	counter = 1
 	while line:
 		word_bank.append(line.split('\n')[0])
+		counter += 1
+
+		if counter > 2000:
+			break
+
 		line = reader.readline()
 
 	reader.close()
@@ -200,7 +206,7 @@ def read_phrase_file(segPhrase_file, word_bank):
 		line = reader.readline()
 
 	reader.close()
-	return phrase_list + word_bank
+	return word_bank + phrase_list
 
 
 def build_array_rep_from_file(processed_file, word_bank):
@@ -279,7 +285,7 @@ def read_avg_rate(hygiene_additional_file):
 	counter = 1
 	while line:
 		items = line.split(',')
-		training_avg_rate_list[counter] = items[-1]
+		training_avg_rate_list[counter] = float(items[-1])
 		counter += 1
 
 		if counter >= 547:
@@ -290,7 +296,7 @@ def read_avg_rate(hygiene_additional_file):
 	line = reader.readline()
 	while line:
 		items = line.split(',')
-		testing_avg_rate_list[counter] = items[-1]
+		testing_avg_rate_list[counter] = float(items[-1])
 
 		counter += 1
 		line = reader.readline()
@@ -299,12 +305,13 @@ def read_avg_rate(hygiene_additional_file):
 	return training_avg_rate_list, testing_avg_rate_list
 
 
-def train_SVC_model(training_review_array_rep, training_label, training_avg_rate):
+def train_SVC_model(training_review_array_rep, training_label, training_avg_rate, training_rev_count):
 	rep_list = []
 	label_list = []
 
 	for rev_id, array_rep in training_review_array_rep.items():
-		array_rep.append(training_avg_rate[rev_id])
+		array_rep.insert(0, training_rev_count[rev_id])
+		array_rep.insert(0, int(round(training_avg_rate[rev_id]*10)))
 		rep_list.append(array_rep)
 		label_list.append(training_label[rev_id])
 
@@ -328,12 +335,13 @@ def train_Bayes_model(training_review_array_rep, training_label):
 	return model
 
 
-def train_LDA_model(training_review_array_rep, training_label,training_avg_rate):
+def train_LDA_model(training_review_array_rep, training_label,training_avg_rate, training_rev_count):
 	rep_list = []
 	label_list = []
 
 	for rev_id, array_rep in training_review_array_rep.items():
-		array_rep.insert(0, training_avg_rate[rev_id])
+		array_rep.insert(0, training_rev_count[rev_id])
+		array_rep.insert(0, int(round(training_avg_rate[rev_id]*10)))
 		rep_list.append(array_rep)
 		label_list.append(training_label[rev_id])
 
@@ -343,11 +351,12 @@ def train_LDA_model(training_review_array_rep, training_label,training_avg_rate)
 	return model
 
 
-def predict(model, processed_testing_review_array_representation, testing_avg_rate):
+def predict(model, processed_testing_review_array_representation, testing_avg_rate,testing_rev_count):
 	testing_rep_list = []
 
 	for rep_id, array_rep in processed_testing_review_array_representation.items():
-		array_rep.append(testing_avg_rate[rep_id])
+		array_rep.insert(0, testing_rev_count[rep_id])
+		array_rep.insert(0, int(round(testing_avg_rate[rep_id]*10)))
 		testing_rep_list.append(array_rep)
 
 	testing_label = model.predict(np.array(testing_rep_list))
@@ -374,24 +383,24 @@ if __name__ == '__main__':
 	word_bag = build_word_bag(processed_training_review, processed_test_review)
 	word_bank = build_word_bank(word_bag)
 	write_word_bank(word_bank)
-	
+	'''	
 	word_bank = read_from_file(word_bank_file)
 	word_phrase_bank = read_phrase_file(segPhrase_file, word_bank)
 	write(word_phrase_bank)
 	processed_training_review_array_representation = build_array_rep_from_file(processed_training_file, word_phrase_bank)
 	processed_testing_review_array_representation = build_array_rep_from_file(processed_test_file, word_phrase_bank)
-	'''
 
 	training_label = read_label(hygiene_label_file)
 	training_rev_count, testing_rev_count = read_rev_count(hygiene_additional_file)
 	training_avg_rate, testing_avg_rate = read_avg_rate(hygiene_additional_file)
 
-	svc_model = train_SVC_model(processed_training_review_array_representation, training_label, training_avg_rate)
-	svc_test_label = predict(svc_model, processed_testing_review_array_representation, testing_avg_rate)
+	svc_model = train_SVC_model(processed_training_review_array_representation, training_label, training_avg_rate, training_rev_count)
+	svc_test_label = predict(svc_model, processed_testing_review_array_representation, testing_avg_rate, testing_rev_count)
 
 	'''
 	bayes_model = train_Bayes_model(processed_training_review_array_representation, training_label)
 	bayes_test_label = predict(bayes_model, processed_testing_review_array_representation)
-	lda_model = train_LDA_model(processed_training_review_array_representation, training_label, training_avg_rate)
-	lda_test_label = predict(lda_model, processed_testing_review_array_representation, testing_avg_rate)
+
+	lda_model = train_LDA_model(processed_training_review_array_representation, training_label, training_avg_rate,training_rev_count)
+	lda_test_label = predict(lda_model, processed_testing_review_array_representation, testing_avg_rate, testing_rev_count)
 	'''
