@@ -242,6 +242,34 @@ def read_label(hygiene_label_file):
 	return training_label
 
 
+def read_rev_count(hygiene_additional_file):
+	training_rev_count = {}
+	testing_rev_count = {}
+
+	reader = codecs.open(hygiene_additional_file, 'r')
+	line = reader.readline()
+
+	counter = 1
+	while line:
+		training_rev_count[counter] = int(line.split(',')[-2])
+		counter += 1
+
+		if counter >= 547:
+			break
+
+		line = reader.readline()
+
+	line = reader.readline()
+	while line:
+		testing_rev_count[counter] = int(line.split(',')[-2])
+
+		counter += 1
+		line = reader.readline()
+
+	reader.close()
+	return training_rev_count, testing_rev_count
+
+
 def read_avg_rate(hygiene_additional_file):
 	training_avg_rate_list = {}
 	testing_avg_rate_list = {}
@@ -346,15 +374,16 @@ if __name__ == '__main__':
 	word_bag = build_word_bag(processed_training_review, processed_test_review)
 	word_bank = build_word_bank(word_bag)
 	write_word_bank(word_bank)
-	'''
 	
 	word_bank = read_from_file(word_bank_file)
 	word_phrase_bank = read_phrase_file(segPhrase_file, word_bank)
 	write(word_phrase_bank)
 	processed_training_review_array_representation = build_array_rep_from_file(processed_training_file, word_phrase_bank)
 	processed_testing_review_array_representation = build_array_rep_from_file(processed_test_file, word_phrase_bank)
+	'''
 
 	training_label = read_label(hygiene_label_file)
+	training_rev_count, testing_rev_count = read_rev_count(hygiene_additional_file)
 	training_avg_rate, testing_avg_rate = read_avg_rate(hygiene_additional_file)
 
 	svc_model = train_SVC_model(processed_training_review_array_representation, training_label, training_avg_rate)
