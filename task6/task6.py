@@ -85,7 +85,7 @@ def process(reviews):
 
 	#remove word whose frequency is less than 5
 	all_stems = sum(review_stemmed, [])
-	stems_lt_three = set(stem for stem in set(all_stems) if all_stems.count(stem) < 5)
+	stems_lt_three = set(stem for stem in set(all_stems) if all_stems.count(stem) == 1)
 	final_review = [[stem for stem in text if stem not in stems_lt_three] for text in review_stemmed]
 
 	return final_review
@@ -143,7 +143,6 @@ def build_word_bank(word_bag):
 
 	import collections
 	sorted_bag = collections.OrderedDict(sorted(temp_bag.items(), key=lambda k:k[1], reverse=True))
-	#sorted_bag = sorted(temp_bag.items(), lambda x,y : cmp(x[1], y[1]), reverse=True)
 
 	return sorted_bag.keys()
 
@@ -180,7 +179,7 @@ def read_from_file(word_bank_file):
 		word_bank.append(line.split('\n')[0])
 		counter += 1
 
-		if counter > 2000:
+		if counter > 9000:
 			break
 
 		line = reader.readline()
@@ -217,13 +216,14 @@ def build_array_rep_from_file(processed_file, word_bank):
 	while line:
 		rev_id = int(line[0:-1].split('\t')[0])
 		review = line[0:-1].split('\t')[1]
-		revs = review.split(' ')
+		revs = line.split(' ')
 
 		array_rep[rev_id] = []
 		for word in word_bank:
 			array_rep[rev_id].append(line.count(word))
 
 		line = reader.readline()
+		rev_id += 1
 
 	reader.close()
 	return array_rep
@@ -321,36 +321,6 @@ def train_SVC_model(training_review_array_rep, training_label, training_avg_rate
 	return model
 
 
-def train_Bayes_model(training_review_array_rep, training_label):
-	rep_list = []
-	label_list = []
-
-	for rev_id, array_rep in training_review_array_rep.items():
-		rep_list.append(array_rep)
-		label_list.append(training_label[rev_id])
-
-	from sklearn.naive_bayes import GaussianNB
-	model = GaussianNB()
-	model.fit(np.array(rep_list), np.array(label_list))
-	return model
-
-
-def train_LDA_model(training_review_array_rep, training_label,training_avg_rate, training_rev_count):
-	rep_list = []
-	label_list = []
-
-	for rev_id, array_rep in training_review_array_rep.items():
-		array_rep.insert(0, training_rev_count[rev_id])
-		array_rep.insert(0, int(round(training_avg_rate[rev_id]*10)))
-		rep_list.append(array_rep)
-		label_list.append(training_label[rev_id])
-
-	from sklearn.lda import LDA
-	model = LDA()
-	model.fit(np.array(rep_list), np.array(label_list))
-	return model
-
-
 def predict(model, processed_testing_review_array_representation, testing_avg_rate,testing_rev_count):
 	testing_rep_list = []
 
@@ -373,8 +343,8 @@ def write(word_phrase_bank):
 
 
 if __name__ == '__main__':
-	'''
 	training_rev_map, test_rev_map = read_reviews(review_file)
+
 	processed_training_review = preprocess(training_rev_map)
 	write_to_disk(processed_training_review, processed_training_file)
 	processed_test_review = preprocess(test_rev_map)
@@ -383,7 +353,7 @@ if __name__ == '__main__':
 	word_bag = build_word_bag(processed_training_review, processed_test_review)
 	word_bank = build_word_bank(word_bag)
 	write_word_bank(word_bank)
-	'''	
+
 	word_bank = read_from_file(word_bank_file)
 	word_phrase_bank = read_phrase_file(segPhrase_file, word_bank)
 	write(word_phrase_bank)
@@ -396,11 +366,3 @@ if __name__ == '__main__':
 
 	svc_model = train_SVC_model(processed_training_review_array_representation, training_label, training_avg_rate, training_rev_count)
 	svc_test_label = predict(svc_model, processed_testing_review_array_representation, testing_avg_rate, testing_rev_count)
-
-	'''
-	bayes_model = train_Bayes_model(processed_training_review_array_representation, training_label)
-	bayes_test_label = predict(bayes_model, processed_testing_review_array_representation)
-
-	lda_model = train_LDA_model(processed_training_review_array_representation, training_label, training_avg_rate,training_rev_count)
-	lda_test_label = predict(lda_model, processed_testing_review_array_representation, testing_avg_rate, testing_rev_count)
-	'''
